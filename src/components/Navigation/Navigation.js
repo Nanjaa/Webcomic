@@ -19,10 +19,7 @@ function Navigation({ className }) {
       <Link className={s.link} to="/archives">Archives</Link>
       <Link className={s.link} to="/about">About</Link>
       <Link className={s.link} to="/follow">Follow</Link>
-      <span className={s.spacer}> | </span>
-      <Link className={s.link} to="/login">Log in</Link>
-      <span className={s.spacer}>or</span>
-      <Link className={cx(s.link, s.highlight)} to="/register">Sign up</Link>
+      <Link className={s.link} to="/cast">Cast</Link>
     </div>
   );
 }
