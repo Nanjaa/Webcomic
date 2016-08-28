@@ -13,6 +13,8 @@ import s from './App.scss';
 import Header from '../Header';
 import ComicNavigation from '../ComicNavigation';
 import Footer from '../Footer';
+import Firebase from 'firebase';
+
 
 class App extends Component {
 
@@ -47,6 +49,19 @@ class App extends Component {
   componentWillMount() {
     const { insertCss } = this.props.context;
     this.removeCss = insertCss(s);
+
+    var config = {
+      apiKey: "AIzaSyDRbCxAuvflQlMGWN44UydmGGrSal10XD4",
+      authDomain: "webcomic-70311.firebaseapp.com",
+      databaseURL: "https://webcomic-70311.firebaseio.com",
+      storageBucket: "webcomic-70311.appspot.com",
+    };
+    try {
+      Firebase.initializeApp(config);
+    }
+    catch(e) {
+      console.log(e);
+    }
   }
 
   componentWillUnmount() {

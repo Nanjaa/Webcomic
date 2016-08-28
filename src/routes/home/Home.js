@@ -11,14 +11,15 @@ import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Home.scss';
 import ComicNavigation from '../../components/comicnavigation';
+import ComicDisplay from '../../components/comicdisplay';
 
 function Home({ news }) {
   return (
     <div className={s.root}>
       <div className={s.container}>
         <h2 className={s.title}>Comics Displayed Below</h2>
+        <ComicDisplay/>
       </div>
-      <ComicNavigation />
     </div>
   );
 }
