@@ -20,6 +20,7 @@ const routes = [
   require('./routes/archives'),
   require('./routes/about'),
   require('./routes/cast'),
+  require('./routes/upload'),
 ];
 
 const router = new Router(on => {

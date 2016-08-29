@@ -10,9 +10,12 @@ class ComicDisplay extends React.Component {
 	}
 
 	componentWillMount() {
-		Firebase.database().ref('test/').set({
-			hello: 2
-		});
+		var ref = Firebase.database().ref("Comics/");
+		ref.once("value")
+			.then(function(snapshot) {
+				var test = snapshot.val();
+				console.log(test);
+			})
 	}
 
 	render() {

@@ -3311,7 +3311,7 @@ module.exports =
    * LICENSE.txt file in the root directory of this source tree.
    */
   
-  var routes = [__webpack_require__(57), __webpack_require__(55), __webpack_require__(51), __webpack_require__(49), __webpack_require__(53)];
+  var routes = [__webpack_require__(57), __webpack_require__(55), __webpack_require__(51), __webpack_require__(49), __webpack_require__(53), __webpack_require__(134)];
   
   var router = new _Router2.default(function (on) {
     on('*', function () {
@@ -6539,8 +6539,10 @@ module.exports =
   	(0, _createClass3.default)(ComicDisplay, [{
   		key: 'componentWillMount',
   		value: function componentWillMount() {
-  			_firebase2.default.database().ref('test/').set({
-  				hello: 2
+  			var ref = _firebase2.default.database().ref("Comics/");
+  			ref.once("value").then(function (snapshot) {
+  				var test = snapshot.val();
+  				console.log(test);
   			});
   		}
   	}, {
@@ -6622,6 +6624,200 @@ module.exports =
 /***/ function(module, exports) {
 
   module.exports = require("firebase");
+
+/***/ },
+/* 134 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+  	value: true
+  });
+  exports.action = exports.path = undefined;
+  
+  var _regenerator = __webpack_require__(6);
+  
+  var _regenerator2 = _interopRequireDefault(_regenerator);
+  
+  var _asyncToGenerator2 = __webpack_require__(5);
+  
+  var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+  
+  var _react = __webpack_require__(1);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _upload = __webpack_require__(135);
+  
+  var _upload2 = _interopRequireDefault(_upload);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var path = exports.path = '/upload';
+  var action = exports.action = function () {
+  	var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(state) {
+  		var title;
+  		return _regenerator2.default.wrap(function _callee$(_context) {
+  			while (1) {
+  				switch (_context.prev = _context.next) {
+  					case 0:
+  						title = 'Upload Comic';
+  
+  						state.context.onSetTitle(title);
+  						return _context.abrupt('return', _react2.default.createElement(_upload2.default, { title: title }));
+  
+  					case 3:
+  					case 'end':
+  						return _context.stop();
+  				}
+  			}
+  		}, _callee, undefined);
+  	}));
+  
+  	return function action(_x) {
+  		return _ref.apply(this, arguments);
+  	};
+  }();
+
+/***/ },
+/* 135 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+  	value: true
+  });
+  
+  var _getPrototypeOf = __webpack_require__(8);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(9);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(10);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(12);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(11);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
+  var _react = __webpack_require__(1);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _withStyles = __webpack_require__(4);
+  
+  var _withStyles2 = _interopRequireDefault(_withStyles);
+  
+  var _Upload = __webpack_require__(137);
+  
+  var _Upload2 = _interopRequireDefault(_Upload);
+  
+  var _firebase = __webpack_require__(133);
+  
+  var _firebase2 = _interopRequireDefault(_firebase);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var Upload = function (_React$Component) {
+  	(0, _inherits3.default)(Upload, _React$Component);
+  
+  	function Upload(props) {
+  		(0, _classCallCheck3.default)(this, Upload);
+  		return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Upload).call(this, props));
+  	}
+  
+  	(0, _createClass3.default)(Upload, [{
+  		key: 'componentWillMount',
+  		value: function componentWillMount() {
+  			// Firebase.database().ref('Comics/').push({
+  			// 	Arc: 1,
+  			// 	Date: "08-30-2016",
+  			// 	Image: "hello3.png",
+  			// 	Page: 3
+  			// });
+  		}
+  	}, {
+  		key: 'render',
+  		value: function render() {
+  			return _react2.default.createElement(
+  				'div',
+  				{ className: _Upload2.default.root },
+  				_react2.default.createElement(
+  					'div',
+  					{ className: _Upload2.default.container },
+  					_react2.default.createElement(
+  						'h2',
+  						null,
+  						'Upload'
+  					)
+  				)
+  			);
+  		}
+  	}]);
+  	return Upload;
+  }(_react2.default.Component);
+  
+  exports.default = (0, _withStyles2.default)(Upload, _Upload2.default);
+
+/***/ },
+/* 136 */
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+  
+  
+  // module
+  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.Upload_root_2yl {\r\n  padding-left: 20px;\r\n  padding-right: 20px;\r\n}\r\n\r\n.Upload_container_25Q {\r\n  margin: 0 auto;\r\n  padding: 0 0 40px;\r\n  max-width: 1000px;\r\n}\r\n", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/routes/upload/Upload.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,mBAAmB;EACnB,oBAAoB;CACrB;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;CAC/B","file":"Upload.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../../components/variables.scss';\r\n\r\n.root {\r\n  padding-left: 20px;\r\n  padding-right: 20px;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 0 0 40px;\r\n  max-width: $max-content-width;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+  
+  // exports
+  exports.locals = {
+  	"root": "Upload_root_2yl",
+  	"container": "Upload_container_25Q"
+  };
+
+/***/ },
+/* 137 */
+/***/ function(module, exports, __webpack_require__) {
+
+  
+      var content = __webpack_require__(136);
+      var insertCss = __webpack_require__(3);
+  
+      if (typeof content === 'string') {
+        content = [[module.id, content, '']];
+      }
+  
+      module.exports = content.locals || {};
+      module.exports._getCss = function() { return content.toString(); };
+      module.exports._insertCss = insertCss.bind(null, content);
+    
+      var removeCss = function() {};
+  
+      // Hot Module Replacement
+      // https://webpack.github.io/docs/hot-module-replacement
+      // Only activated in browser context
+      if (false) {
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Upload.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Upload.scss");
+          if (typeof newContent === 'string') {
+            newContent = [[module.id, content, '']];
+          }
+          removeCss = insertCss(newContent, { replace: true });
+        });
+        module.hot.dispose(function() { removeCss(); });
+      }
+    
 
 /***/ }
 /******/ ]);
