@@ -9,6 +9,7 @@ class ComicDisplay extends React.Component {
 		super(props);
 
 		this.state = {
+			currentPg: 2,
 			arc: '',
 			date: '',
 			img: '',
@@ -22,10 +23,14 @@ class ComicDisplay extends React.Component {
 		var ref = Firebase.database().ref("Comics/");
 		ref.once("value")
 			.then(function(snapshot) {
-				var thisArc = snapshot.child('1').child('Arc').val();
-				var thisDate = snapshot.child('1').child('Date').val();
-				var thisImg = snapshot.child('1').child('Image').val();
-				var thisPg = snapshot.child('1').child('Page').val();
+				var comics = snapshot.val(),
+					latest = comics[comics.length-1],
+					currentComic = snapshot.child(this.state.currentPg).val(),
+					thisArc = currentComic.Arc,
+					thisDate = currentComic.Date,
+					thisImg = currentComic.Image,
+					thisPg = currentComic.Page;
+
 				this.setState({
 					arc: thisArc,
 					date: thisDate,
