@@ -6533,7 +6533,18 @@ module.exports =
   
   	function ComicDisplay(props) {
   		(0, _classCallCheck3.default)(this, ComicDisplay);
-  		return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(ComicDisplay).call(this, props));
+  
+  		var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(ComicDisplay).call(this, props));
+  
+  		_this.state = {
+  			arc: '',
+  			date: '',
+  			img: '',
+  			pg: ''
+  		};
+  
+  		_this.componentWillMount = _this.componentWillMount.bind(_this);
+  		return _this;
   	}
   
   	(0, _createClass3.default)(ComicDisplay, [{
@@ -6541,9 +6552,17 @@ module.exports =
   		value: function componentWillMount() {
   			var ref = _firebase2.default.database().ref("Comics/");
   			ref.once("value").then(function (snapshot) {
-  				var test = snapshot.val();
-  				console.log(test);
-  			});
+  				var thisArc = snapshot.child('1').child('Arc').val();
+  				var thisDate = snapshot.child('1').child('Date').val();
+  				var thisImg = snapshot.child('1').child('Image').val();
+  				var thisPg = snapshot.child('1').child('Page').val();
+  				this.setState({
+  					arc: thisArc,
+  					date: thisDate,
+  					img: thisImg,
+  					pg: thisPg
+  				});
+  			}.bind(this));
   		}
   	}, {
   		key: 'render',
@@ -6557,7 +6576,22 @@ module.exports =
   					_react2.default.createElement(
   						'p',
   						null,
-  						'Hello there'
+  						this.state.arc
+  					),
+  					_react2.default.createElement(
+  						'p',
+  						null,
+  						this.state.date
+  					),
+  					_react2.default.createElement(
+  						'p',
+  						null,
+  						this.state.img
+  					),
+  					_react2.default.createElement(
+  						'p',
+  						null,
+  						this.state.pg
   					),
   					_react2.default.createElement(_ComicNavigation2.default, null)
   				)

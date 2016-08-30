@@ -7,22 +7,42 @@ import Firebase from 'firebase';
 class ComicDisplay extends React.Component {
 	constructor(props) {
 		super(props);
+
+		this.state = {
+			arc: '',
+			date: '',
+			img: '',
+			pg: ''
+		}
+
+		this.componentWillMount = this.componentWillMount.bind(this);
 	}
 
 	componentWillMount() {
 		var ref = Firebase.database().ref("Comics/");
 		ref.once("value")
 			.then(function(snapshot) {
-				var test = snapshot.val();
-				console.log(test);
-			})
+				var thisArc = snapshot.child('1').child('Arc').val();
+				var thisDate = snapshot.child('1').child('Date').val();
+				var thisImg = snapshot.child('1').child('Image').val();
+				var thisPg = snapshot.child('1').child('Page').val();
+				this.setState({
+					arc: thisArc,
+					date: thisDate,
+					img: thisImg,
+					pg: thisPg
+				});
+			}.bind(this))
 	}
 
 	render() {
 		return(
 			<div className={s.root}>
 				<div className={s.container}>
-					<p>Hello there</p>
+					<p>{this.state.arc}</p>
+					<p>{this.state.date}</p>
+					<p>{this.state.img}</p>
+					<p>{this.state.pg}</p>
 					<ComicNavigation/>
 				</div>
 			</div>
