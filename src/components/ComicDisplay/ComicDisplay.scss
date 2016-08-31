@@ -10,5 +10,27 @@
   padding: 20px 8px;
   max-width: $max-content-width;
   text-align: center;
-  font-size: 1.5em; /* ~24px */
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  margin: 0 20px;
+}
+
+.link,
+.link:active,
+.link:hover,
+.link:visited {
+  color: #333;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.spacer {
+  padding-right: 15px;
+  padding-left: 15px;
 }

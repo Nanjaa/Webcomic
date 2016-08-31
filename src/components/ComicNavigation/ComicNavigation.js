@@ -10,12 +10,13 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ComicNavigation.scss';
+import ComicDisplay from '../ComicDisplay';
 
 function ComicNavigation() {
   return (
     <div className={s.root}>
       <div className={s.container}>
-        <a href="#">Beginning</a>
+        <a onClick={this.changePage} href="#">Beginning</a>
         <span className={s.spacer}>|</span>
         <a href="#">Previous</a>
         <span className={s.spacer}>|</span>
