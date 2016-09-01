@@ -16,11 +16,13 @@ class ComicDisplay extends React.Component {
 			pg: ''
 		}
 
-		this.componentWillUpdate = this.componentWillUpdate.bind(this);
+		this.componentWillMount = this.componentWillMount.bind(this);
+		this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
 		this.firstPage = this.firstPage.bind(this);
 		this.previousPage = this.previousPage.bind(this);
 		this.nextPage = this.nextPage.bind(this);
 		this.lastPage = this.lastPage.bind(this);
+		this.updatePage = this.updatePage.bind(this);
 	}
 
 	// Navigation functions
@@ -45,16 +47,8 @@ class ComicDisplay extends React.Component {
 		})
 	}
 
-	// Initial state update
-	componentWillMount() {
-		// var storagePage = localStorage.getItem('currentPg');
-		this.setState({
-			currentPg: 0
-		})
-	}
-
-	// State ypdates after that
-	componentWillUpdate() {
+	// Update the display with the new page
+	updatePage() {
 		var ref = Firebase.database().ref("Comics/");
 		ref.once("value")
 			.then(function(snapshot) {
@@ -64,6 +58,7 @@ class ComicDisplay extends React.Component {
 
 				// Check if the most recent page shoud display
 				if(this.state.currentPg == 0) {
+					console.log('Hello??!!');
 					var currentComic = latest;
 					this.setState({
 						currentPg: comics.length-1
@@ -85,7 +80,19 @@ class ComicDisplay extends React.Component {
 					pg: thisPg
 				});
 			}.bind(this))
-		console.log(this.state.currentPg);
+	}
+
+	// Initial state update
+	componentWillMount() {
+		this.setState({
+			currentPg: 0
+		})
+		this.updatePage();
+	}
+
+	// State ypdates after that
+	componentWillReceiveProps() {
+		this.updatePage();
 	}
 
 	render() {
