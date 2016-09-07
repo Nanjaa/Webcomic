@@ -37,7 +37,7 @@ class ArchivesTable extends React.Component {
 					<h2>This is where the archive list goes.</h2>
 					<ul>
 						{this.state.pages.map((page) => {
-							return <li key={page.id}>{page}</li>;
+							return <li key={page.Page}><a href="#">[ {page.Page} ]</a></li>;
 						})}
 					</ul>
 				</div>
