@@ -1,0 +1,6 @@
+{
+	"name": "ArchivesTable",
+	"version": "0.0.0",
+	"private": true,
+	"main": "./ArchivesTable.js"
+}

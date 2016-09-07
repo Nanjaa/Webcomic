@@ -34,3 +34,7 @@ a {
   padding-right: 15px;
   padding-left: 15px;
 }
+.inactive {
+  pointer-events: none;
+  color: gray;
+}
