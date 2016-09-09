@@ -11,7 +11,7 @@ import React from 'react';
 import Home from './Home';
 import fetch from '../../core/fetch';
 
-export const path = '/';
+export const path = '/:id';
 export const action = async (state) => {
   const title = 'Comic Title Page ...';
   state.context.onSetTitle(title);

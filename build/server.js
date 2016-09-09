@@ -971,6 +971,8 @@ module.exports =
   
   var _firebase2 = _interopRequireDefault(_firebase);
   
+  var _reactRouter = __webpack_require__(144);
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
   var ArchivesTable = function (_React$Component) {
@@ -1026,8 +1028,8 @@ module.exports =
   								'li',
   								{ key: page.Page },
   								_react2.default.createElement(
-  									'a',
-  									{ href: '#' },
+  									_reactRouter.Link,
+  									{ to: '/{page.Page}' },
   									'[ ',
   									page.Page,
   									' ]'
@@ -4637,14 +4639,14 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  var path = exports.path = '/'; /**
-                                  * React Starter Kit (https://www.reactstarterkit.com/)
-                                  *
-                                  * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
-                                  *
-                                  * This source code is licensed under the MIT license found in the
-                                  * LICENSE.txt file in the root directory of this source tree.
-                                  */
+  var path = exports.path = '/:id'; /**
+                                     * React Starter Kit (https://www.reactstarterkit.com/)
+                                     *
+                                     * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
+                                     *
+                                     * This source code is licensed under the MIT license found in the
+                                     * LICENSE.txt file in the root directory of this source tree.
+                                     */
   
   var action = exports.action = function () {
     var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(state) {
@@ -7550,6 +7552,12 @@ module.exports =
 /***/ function(module, exports) {
 
   module.exports = require("react-dom/server");
+
+/***/ },
+/* 144 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-router");
 
 /***/ }
 /******/ ]);
