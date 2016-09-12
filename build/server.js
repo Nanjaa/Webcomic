@@ -1250,6 +1250,11 @@ module.exports =
   			}
   		}
   	}, {
+  		key: 'test',
+  		value: function test(props) {
+  			return 5;
+  		}
+  	}, {
   		key: 'render',
   		value: function render() {
   			return _react2.default.createElement(
@@ -1258,6 +1263,11 @@ module.exports =
   				_react2.default.createElement(
   					'div',
   					{ className: _ComicDisplay2.default.container },
+  					_react2.default.createElement(
+  						'h2',
+  						null,
+  						this.test()
+  					),
   					_react2.default.createElement(
   						'p',
   						null,
@@ -2914,6 +2924,11 @@ module.exports =
   			}
   		}
   	}, {
+  		key: 'test',
+  		value: function test(props) {
+  			return 5;
+  		}
+  	}, {
   		key: 'render',
   		value: function render() {
   			return _react2.default.createElement(
@@ -2922,6 +2937,11 @@ module.exports =
   				_react2.default.createElement(
   					'div',
   					{ className: _ComicDisplay2.default.container },
+  					_react2.default.createElement(
+  						'h2',
+  						null,
+  						this.test()
+  					),
   					_react2.default.createElement(
   						'p',
   						null,
@@ -4027,39 +4047,47 @@ module.exports =
   
   var _ErrorPage2 = _interopRequireDefault(_ErrorPage);
   
+  var _ComicDisplay = __webpack_require__(22);
+  
+  var _ComicDisplay2 = _interopRequireDefault(_ComicDisplay);
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  /**
-   * React Starter Kit (https://www.reactstarterkit.com/)
-   *
-   * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
-   *
-   * This source code is licensed under the MIT license found in the
-   * LICENSE.txt file in the root directory of this source tree.
-   */
-  
-  var routes = [__webpack_require__(61), __webpack_require__(59), __webpack_require__(55), __webpack_require__(53), __webpack_require__(57), __webpack_require__(62)];
+  var routes = [__webpack_require__(61), __webpack_require__(59), __webpack_require__(55), __webpack_require__(53), __webpack_require__(57), __webpack_require__(62), __webpack_require__(145)]; /**
+                                                                                                                                                                                                                 * React Starter Kit (https://www.reactstarterkit.com/)
+                                                                                                                                                                                                                 *
+                                                                                                                                                                                                                 * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
+                                                                                                                                                                                                                 *
+                                                                                                                                                                                                                 * This source code is licensed under the MIT license found in the
+                                                                                                                                                                                                                 * LICENSE.txt file in the root directory of this source tree.
+                                                                                                                                                                                                                 */
   
   var router = new _Router2.default(function (on) {
-    on('*', function () {
-      var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(state, next) {
-        var component;
+  
+    on('/page/:id', function () {
+      var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(state, params) {
+        var response, data;
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return next();
+                return (0, _fetch2.default)('/graphql?query={product(id:"${params.id}"){name,summary}}');
   
               case 2:
-                component = _context.sent;
-                return _context.abrupt('return', component && _react2.default.createElement(
+                response = _context.sent;
+                _context.next = 5;
+                return response.json();
+  
+              case 5:
+                data = _context.sent;
+                return _context.abrupt('return', _react2.default.createElement(
                   _App2.default,
                   { context: state.context },
-                  component
+                  _react2.default.createElement(_ComicDisplay2.default, { pageNumber: '2' })
                 ));
   
-              case 4:
+              case 7:
               case 'end':
                 return _context.stop();
             }
@@ -4072,33 +4100,25 @@ module.exports =
       };
     }());
   
-    routes.forEach(function (route) {
-      on(route.path, route.action);
-    });
-  
     on('*', function () {
-      var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(state) {
-        var query, response, _ref3, data;
-  
+      var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(state, next) {
+        var component;
         return _regenerator2.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                query = '/graphql?query={content(path:"' + state.path + '"){path,title,content,component}}';
-                _context2.next = 3;
-                return (0, _fetch2.default)(query);
+                _context2.next = 2;
+                return next();
   
-              case 3:
-                response = _context2.sent;
-                _context2.next = 6;
-                return response.json();
+              case 2:
+                component = _context2.sent;
+                return _context2.abrupt('return', component && _react2.default.createElement(
+                  _App2.default,
+                  { context: state.context },
+                  component
+                ));
   
-              case 6:
-                _ref3 = _context2.sent;
-                data = _ref3.data;
-                return _context2.abrupt('return', data && data.content && _react2.default.createElement(ContentPage, data.content));
-  
-              case 9:
+              case 4:
               case 'end':
                 return _context2.stop();
             }
@@ -4106,8 +4126,47 @@ module.exports =
         }, _callee2, undefined);
       }));
   
-      return function (_x3) {
+      return function (_x3, _x4) {
         return _ref2.apply(this, arguments);
+      };
+    }());
+  
+    routes.forEach(function (route) {
+      on(route.path, route.action);
+    });
+  
+    on('*', function () {
+      var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(state) {
+        var query, response, _ref4, data;
+  
+        return _regenerator2.default.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                query = '/graphql?query={content(path:"' + state.path + '"){path,title,content,component}}';
+                _context3.next = 3;
+                return (0, _fetch2.default)(query);
+  
+              case 3:
+                response = _context3.sent;
+                _context3.next = 6;
+                return response.json();
+  
+              case 6:
+                _ref4 = _context3.sent;
+                data = _ref4.data;
+                return _context3.abrupt('return', data && data.content && _react2.default.createElement(ContentPage, data.content));
+  
+              case 9:
+              case 'end':
+                return _context3.stop();
+            }
+          }
+        }, _callee3, undefined);
+      }));
+  
+      return function (_x5) {
+        return _ref3.apply(this, arguments);
       };
     }());
   
@@ -4639,14 +4698,14 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  var path = exports.path = '/:id'; /**
-                                     * React Starter Kit (https://www.reactstarterkit.com/)
-                                     *
-                                     * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
-                                     *
-                                     * This source code is licensed under the MIT license found in the
-                                     * LICENSE.txt file in the root directory of this source tree.
-                                     */
+  var path = exports.path = '/'; /**
+                                  * React Starter Kit (https://www.reactstarterkit.com/)
+                                  *
+                                  * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
+                                  *
+                                  * This source code is licensed under the MIT license found in the
+                                  * LICENSE.txt file in the root directory of this source tree.
+                                  */
   
   var action = exports.action = function () {
     var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(state) {
@@ -7558,6 +7617,157 @@ module.exports =
 /***/ function(module, exports) {
 
   module.exports = require("react-router");
+
+/***/ },
+/* 145 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+  	value: true
+  });
+  exports.action = exports.path = undefined;
+  
+  var _regenerator = __webpack_require__(6);
+  
+  var _regenerator2 = _interopRequireDefault(_regenerator);
+  
+  var _asyncToGenerator2 = __webpack_require__(5);
+  
+  var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
+  
+  var _react = __webpack_require__(1);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _page = __webpack_require__(146);
+  
+  var _page2 = _interopRequireDefault(_page);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var path = exports.path = '/page';
+  var action = exports.action = function () {
+  	var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(state) {
+  		var title;
+  		return _regenerator2.default.wrap(function _callee$(_context) {
+  			while (1) {
+  				switch (_context.prev = _context.next) {
+  					case 0:
+  						title = 'Page';
+  
+  						state.context.onSetTitle(title);
+  						return _context.abrupt('return', _react2.default.createElement(_page2.default, { title: title }));
+  
+  					case 3:
+  					case 'end':
+  						return _context.stop();
+  				}
+  			}
+  		}, _callee, undefined);
+  	}));
+  
+  	return function action(_x) {
+  		return _ref.apply(this, arguments);
+  	};
+  }();
+
+/***/ },
+/* 146 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+  	value: true
+  });
+  
+  var _react = __webpack_require__(1);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _withStyles = __webpack_require__(4);
+  
+  var _withStyles2 = _interopRequireDefault(_withStyles);
+  
+  var _Page = __webpack_require__(148);
+  
+  var _Page2 = _interopRequireDefault(_Page);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  function Page(_ref) {
+  	var title = _ref.title;
+  
+  	return _react2.default.createElement(
+  		'div',
+  		{ className: _Page2.default.root },
+  		_react2.default.createElement(
+  			'div',
+  			{ className: _Page2.default.container },
+  			_react2.default.createElement(
+  				'h2',
+  				null,
+  				'It worked!'
+  			)
+  		)
+  	);
+  }
+  
+  Page.propTypes = { title: _react.PropTypes.string.isRequired };
+  
+  exports.default = (0, _withStyles2.default)(Page, _Page2.default);
+
+/***/ },
+/* 147 */
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+  
+  
+  // module
+  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.Page_root_3_S {\r\n  padding-left: 20px;\r\n  padding-right: 20px;\r\n}\r\n\r\n.Page_container_2qC {\r\n  margin: 0 auto;\r\n  padding: 0 0 40px;\r\n  max-width: 1000px;\r\n}\r\n", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/routes/page/Page.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,mBAAmB;EACnB,oBAAoB;CACrB;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;CAC/B","file":"Page.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n"," @import '../../components/variables.scss';\r\n\r\n.root {\r\n  padding-left: 20px;\r\n  padding-right: 20px;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 0 0 40px;\r\n  max-width: $max-content-width;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+  
+  // exports
+  exports.locals = {
+  	"root": "Page_root_3_S",
+  	"container": "Page_container_2qC"
+  };
+
+/***/ },
+/* 148 */
+/***/ function(module, exports, __webpack_require__) {
+
+  
+      var content = __webpack_require__(147);
+      var insertCss = __webpack_require__(3);
+  
+      if (typeof content === 'string') {
+        content = [[module.id, content, '']];
+      }
+  
+      module.exports = content.locals || {};
+      module.exports._getCss = function() { return content.toString(); };
+      module.exports._insertCss = insertCss.bind(null, content);
+    
+      var removeCss = function() {};
+  
+      // Hot Module Replacement
+      // https://webpack.github.io/docs/hot-module-replacement
+      // Only activated in browser context
+      if (false) {
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Page.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Page.scss");
+          if (typeof newContent === 'string') {
+            newContent = [[module.id, content, '']];
+          }
+          removeCss = insertCss(newContent, { replace: true });
+        });
+        module.hot.dispose(function() { removeCss(); });
+      }
+    
 
 /***/ }
 /******/ ]);

@@ -123,10 +123,15 @@ class ComicDisplay extends React.Component {
 		}
 	}
 
+	test(props) {
+		return 5;
+	}
+
 	render() {
 		return(
 			<div className={s.root}>
 				<div className={s.container}>
+					<h2>{this.test()}</h2>
 					<p>#{this.state.currentPg}</p>
 					<p>Arc {this.state.arc}, Page {this.state.pg}</p>
 					<p>{this.state.date}</p>

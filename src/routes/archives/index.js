@@ -7,3 +7,4 @@ export const action = async (state) => {
   state.context.onSetTitle(title);
   return <Archives title={title} />;
 };
+

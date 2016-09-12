@@ -13,6 +13,7 @@ import fetch from './core/fetch';
 import App from './components/App';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
+import ComicDisplay from './components/ComicDisplay';
 
 const routes = [
   require('./routes/home'),
@@ -21,9 +22,17 @@ const routes = [
   require('./routes/about'),
   require('./routes/cast'),
   require('./routes/upload'),
+  require('./routes/page'),
 ];
 
 const router = new Router(on => {
+
+  on('/page/:id', async (state, params) => {
+    const response = await fetch('/graphql?query={product(id:"${params.id}"){name,summary}}');
+    const data = await response.json();
+    return <App context={state.context}><ComicDisplay pageNumber="2"/></App>;
+  });
+
   on('*', async (state, next) => {
     const component = await next();
     return component && <App context={state.context}>{component}</App>;
@@ -44,6 +53,8 @@ const router = new Router(on => {
     <App context={state.context} error={error}><NotFoundPage /></App> :
     <App context={state.context} error={error}><ErrorPage /></App>
   );
+
+
 });
 
 export default router;
