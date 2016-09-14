@@ -28,9 +28,7 @@ const routes = [
 const router = new Router(on => {
 
   on('/page/:id', async (state, params) => {
-    const response = await fetch('/graphql?query={product(id:"${params.id}"){name,summary}}');
-    const data = await response.json();
-    return <App context={state.context}><ComicDisplay pageNumber="2"/></App>;
+    return <App context={state.context}><ComicDisplay pageNumber={state.params.id}/></App>;
   });
 
   on('*', async (state, next) => {

@@ -4,6 +4,7 @@ import s from './ComicDisplay.scss';
 import ComicNavigation from '../ComicNavigation';
 import Firebase from 'firebase';
 import ArchivesTable from '../ArchivesTable';
+import Link from '../Link';
 
 class ComicDisplay extends React.Component {
 	constructor(props) {
@@ -21,7 +22,6 @@ class ComicDisplay extends React.Component {
 		this.componentWillMount = this.componentWillMount.bind(this);
 		this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
 		this.componentDidMount = this.componentDidMount.bind(this);
-		this.firstPage = this.firstPage.bind(this);
 		this.previousPage = this.previousPage.bind(this);
 		this.nextPage = this.nextPage.bind(this);
 		this.lastPage = this.lastPage.bind(this);
@@ -30,25 +30,17 @@ class ComicDisplay extends React.Component {
 	}
 
 	// Navigation functions
-	firstPage() {
-		this.setState({
-			currentPg: 1
-		})
-	}
 	previousPage() {
-		this.setState({
-			currentPg: this.state.currentPg - 1
-		})
+		var previousPageNumber = '/page/' + (parseInt(this.props.pageNumber) -1);
+		return previousPageNumber;
 	}
 	nextPage() {
-		this.setState({
-			currentPg: this.state.currentPg + 1
-		})
+		var previousPageNumber = '/page/' + (parseInt(this.props.pageNumber) +1);
+		return previousPageNumber;
 	}
 	lastPage() {
-		this.setState({
-			currentPg: 0
-		})
+		var lastPageNumber = '/page/' + (this.state.latestPg);
+		return lastPageNumber;
 	}
 
 	// Update the display with the new page
@@ -123,15 +115,11 @@ class ComicDisplay extends React.Component {
 		}
 	}
 
-	test(props) {
-		return 5;
-	}
-
-	render() {
+	render(props) {
 		return(
 			<div className={s.root}>
 				<div className={s.container}>
-					<h2>{this.test()}</h2>
+					<h2>{this.props.pageNumber}</h2>
 					<p>#{this.state.currentPg}</p>
 					<p>Arc {this.state.arc}, Page {this.state.pg}</p>
 					<p>{this.state.date}</p>
@@ -145,6 +133,16 @@ class ComicDisplay extends React.Component {
 			        <a className={this.isInactive('last')} onClick={this.nextPage} href="#">Next</a>
 			        <span className={s.spacer}>|</span>
 			        <a className={this.isInactive('last')} onClick={this.lastPage} href="#">End</a>
+			    </div>
+
+			    <div className={s.container}>
+			    	<Link className={this.isInactive('first')} to="/page/1">First</Link>
+			    	
+			    	<Link to={this.previousPage()}>Last</Link>
+
+			    	<Link to={this.nextPage()}>Next</Link>
+
+			    	<Link to={this.lastPage()}>Last</Link>
 			    </div>
 
 			    <div className={s.container}>
