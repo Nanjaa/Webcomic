@@ -26,9 +26,6 @@ class ArchivesTable extends React.Component {
 				this.setState({
 					pages: comics
 				});
-
-				console.log(this.state.pages);
-
 			}.bind(this))
 	}
 

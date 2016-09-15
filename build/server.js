@@ -835,6 +835,7 @@ module.exports =
   		_this.lastPage = _this.lastPage.bind(_this);
   		_this.updatePage = _this.updatePage.bind(_this);
   		_this.onKeyDown = _this.onKeyDown.bind(_this);
+  		_this.checkIfPage = _this.checkIfPage.bind(_this);
   		return _this;
   	}
   
@@ -859,6 +860,21 @@ module.exports =
   			var lastPageNumber = '/page/' + this.state.latestPg;
   			return lastPageNumber;
   		}
+  		// Check if there is a designated page number to load. Otherwise, default to the most recent page.
+  
+  	}, {
+  		key: 'checkIfPage',
+  		value: function checkIfPage() {
+  			if (this.props.pageNumber) {
+  				this.setState({
+  					currentPg: this.props.pageNumber
+  				});
+  			} else {
+  				this.setState({
+  					currentPg: 0
+  				});
+  			}
+  		}
   
   		// Update the display with the new page
   
@@ -867,6 +883,9 @@ module.exports =
   		value: function updatePage() {
   			var ref = _firebase2.default.database().ref("Comics/");
   			ref.once("value").then(function (snapshot) {
+  
+  				this.checkIfPage();
+  
   				// Set up variables to be used in this function
   				var comics = snapshot.val(),
   				    latest = comics[comics.length - 1],
@@ -912,9 +931,6 @@ module.exports =
   	}, {
   		key: 'componentWillMount',
   		value: function componentWillMount() {
-  			this.setState({
-  				currentPg: 0
-  			});
   			this.updatePage();
   		}
   
@@ -989,62 +1005,23 @@ module.exports =
   					'div',
   					{ className: _ComicDisplay2.default.container },
   					_react2.default.createElement(
-  						'a',
-  						{ className: this.isInactive('first'), onClick: this.firstPage, href: '#' },
-  						'Beginning'
-  					),
-  					_react2.default.createElement(
-  						'span',
-  						{ className: _ComicDisplay2.default.spacer },
-  						'|'
-  					),
-  					_react2.default.createElement(
-  						'a',
-  						{ className: this.isInactive('first'), onClick: this.previousPage, href: '#' },
-  						'Previous'
-  					),
-  					_react2.default.createElement(
-  						'span',
-  						{ className: _ComicDisplay2.default.spacer },
-  						'|'
-  					),
-  					_react2.default.createElement(
-  						'a',
-  						{ className: this.isInactive('last'), onClick: this.nextPage, href: '#' },
-  						'Next'
-  					),
-  					_react2.default.createElement(
-  						'span',
-  						{ className: _ComicDisplay2.default.spacer },
-  						'|'
-  					),
-  					_react2.default.createElement(
-  						'a',
-  						{ className: this.isInactive('last'), onClick: this.lastPage, href: '#' },
-  						'End'
-  					)
-  				),
-  				_react2.default.createElement(
-  					'div',
-  					{ className: _ComicDisplay2.default.container },
-  					_react2.default.createElement(
   						_Link2.default,
   						{ className: this.isInactive('first'), to: '/page/1' },
   						'First'
   					),
   					_react2.default.createElement(
   						_Link2.default,
-  						{ to: this.previousPage() },
-  						'Last'
+  						{ className: this.isInactive('first'), to: this.previousPage() },
+  						'Previous'
   					),
   					_react2.default.createElement(
   						_Link2.default,
-  						{ to: this.nextPage() },
+  						{ className: this.isInactive('last'), to: this.nextPage() },
   						'Next'
   					),
   					_react2.default.createElement(
   						_Link2.default,
-  						{ to: this.lastPage() },
+  						{ className: this.isInactive('last'), to: this.lastPage() },
   						'Last'
   					)
   				),
@@ -1321,8 +1298,6 @@ module.exports =
   				this.setState({
   					pages: comics
   				});
-  
-  				console.log(this.state.pages);
   			}.bind(this));
   		}
   	}, {
@@ -2828,6 +2803,7 @@ module.exports =
   		_this.lastPage = _this.lastPage.bind(_this);
   		_this.updatePage = _this.updatePage.bind(_this);
   		_this.onKeyDown = _this.onKeyDown.bind(_this);
+  		_this.checkIfPage = _this.checkIfPage.bind(_this);
   		return _this;
   	}
   
@@ -2852,6 +2828,21 @@ module.exports =
   			var lastPageNumber = '/page/' + this.state.latestPg;
   			return lastPageNumber;
   		}
+  		// Check if there is a designated page number to load. Otherwise, default to the most recent page.
+  
+  	}, {
+  		key: 'checkIfPage',
+  		value: function checkIfPage() {
+  			if (this.props.pageNumber) {
+  				this.setState({
+  					currentPg: this.props.pageNumber
+  				});
+  			} else {
+  				this.setState({
+  					currentPg: 0
+  				});
+  			}
+  		}
   
   		// Update the display with the new page
   
@@ -2860,6 +2851,9 @@ module.exports =
   		value: function updatePage() {
   			var ref = _firebase2.default.database().ref("Comics/");
   			ref.once("value").then(function (snapshot) {
+  
+  				this.checkIfPage();
+  
   				// Set up variables to be used in this function
   				var comics = snapshot.val(),
   				    latest = comics[comics.length - 1],
@@ -2905,9 +2899,6 @@ module.exports =
   	}, {
   		key: 'componentWillMount',
   		value: function componentWillMount() {
-  			this.setState({
-  				currentPg: 0
-  			});
   			this.updatePage();
   		}
   
@@ -2982,62 +2973,23 @@ module.exports =
   					'div',
   					{ className: _ComicDisplay2.default.container },
   					_react2.default.createElement(
-  						'a',
-  						{ className: this.isInactive('first'), onClick: this.firstPage, href: '#' },
-  						'Beginning'
-  					),
-  					_react2.default.createElement(
-  						'span',
-  						{ className: _ComicDisplay2.default.spacer },
-  						'|'
-  					),
-  					_react2.default.createElement(
-  						'a',
-  						{ className: this.isInactive('first'), onClick: this.previousPage, href: '#' },
-  						'Previous'
-  					),
-  					_react2.default.createElement(
-  						'span',
-  						{ className: _ComicDisplay2.default.spacer },
-  						'|'
-  					),
-  					_react2.default.createElement(
-  						'a',
-  						{ className: this.isInactive('last'), onClick: this.nextPage, href: '#' },
-  						'Next'
-  					),
-  					_react2.default.createElement(
-  						'span',
-  						{ className: _ComicDisplay2.default.spacer },
-  						'|'
-  					),
-  					_react2.default.createElement(
-  						'a',
-  						{ className: this.isInactive('last'), onClick: this.lastPage, href: '#' },
-  						'End'
-  					)
-  				),
-  				_react2.default.createElement(
-  					'div',
-  					{ className: _ComicDisplay2.default.container },
-  					_react2.default.createElement(
   						_Link2.default,
   						{ className: this.isInactive('first'), to: '/page/1' },
   						'First'
   					),
   					_react2.default.createElement(
   						_Link2.default,
-  						{ to: this.previousPage() },
-  						'Last'
+  						{ className: this.isInactive('first'), to: this.previousPage() },
+  						'Previous'
   					),
   					_react2.default.createElement(
   						_Link2.default,
-  						{ to: this.nextPage() },
+  						{ className: this.isInactive('last'), to: this.nextPage() },
   						'Next'
   					),
   					_react2.default.createElement(
   						_Link2.default,
-  						{ to: this.lastPage() },
+  						{ className: this.isInactive('last'), to: this.lastPage() },
   						'Last'
   					)
   				),
