@@ -2,7 +2,7 @@ import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ArchivesTable.scss';
 import Firebase from 'firebase';
-import { Link } from 'react-router';
+import Link from '../Link';
 
 class ArchivesTable extends React.Component {
 	constructor(props) {
@@ -11,6 +11,7 @@ class ArchivesTable extends React.Component {
 		this.state = {
 			pages: []
 		}
+		this.pageLink = this.pageLink.bind(this);
 	}
 
 	componentWillMount() {
@@ -31,6 +32,11 @@ class ArchivesTable extends React.Component {
 			}.bind(this))
 	}
 
+	pageLink(number) {
+		var pageNumber = '/page/' + number;
+		return pageNumber;
+	}
+
 	render() {
 		return(
 			<div className={s.root}>
@@ -38,7 +44,7 @@ class ArchivesTable extends React.Component {
 					<h2>This is where the archive list goes.</h2>
 					<ul>
 						{this.state.pages.map((page) => {
-							return <li key={page.Page}><Link to="/{page.Page}">[ {page.Page} ]</Link></li>;
+							return <li key={page.Page}><Link to={this.pageLink(page.Page)}>[ {page.Page} ]</Link></li>;
 						})}
 					</ul>
 				</div>

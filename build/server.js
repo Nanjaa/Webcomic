@@ -1287,7 +1287,9 @@ module.exports =
   
   var _firebase2 = _interopRequireDefault(_firebase);
   
-  var _reactRouter = __webpack_require__(148);
+  var _Link = __webpack_require__(14);
+  
+  var _Link2 = _interopRequireDefault(_Link);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
@@ -1302,6 +1304,7 @@ module.exports =
   		_this.state = {
   			pages: []
   		};
+  		_this.pageLink = _this.pageLink.bind(_this);
   		return _this;
   	}
   
@@ -1323,8 +1326,16 @@ module.exports =
   			}.bind(this));
   		}
   	}, {
+  		key: 'pageLink',
+  		value: function pageLink(number) {
+  			var pageNumber = '/page/' + number;
+  			return pageNumber;
+  		}
+  	}, {
   		key: 'render',
   		value: function render() {
+  			var _this2 = this;
+  
   			return _react2.default.createElement(
   				'div',
   				{ className: _ArchivesTable2.default.root },
@@ -1344,8 +1355,8 @@ module.exports =
   								'li',
   								{ key: page.Page },
   								_react2.default.createElement(
-  									_reactRouter.Link,
-  									{ to: '/{page.Page}' },
+  									_Link2.default,
+  									{ to: _this2.pageLink(page.Page) },
   									'[ ',
   									page.Page,
   									' ]'
@@ -7782,12 +7793,6 @@ module.exports =
 /***/ function(module, exports) {
 
   module.exports = require("react-dom/server");
-
-/***/ },
-/* 148 */
-/***/ function(module, exports) {
-
-  module.exports = require("react-router");
 
 /***/ }
 /******/ ]);
