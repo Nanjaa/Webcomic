@@ -834,7 +834,6 @@ module.exports =
   		_this.nextPage = _this.nextPage.bind(_this);
   		_this.lastPage = _this.lastPage.bind(_this);
   		_this.updatePage = _this.updatePage.bind(_this);
-  		_this.onKeyDown = _this.onKeyDown.bind(_this);
   		_this.checkIfPage = _this.checkIfPage.bind(_this);
   		return _this;
   	}
@@ -928,14 +927,6 @@ module.exports =
   			}.bind(this));
   		}
   
-  		// Use the arrow keys
-  
-  	}, {
-  		key: 'onKeyDown',
-  		value: function onKeyDown() {
-  			console.log('hello there, you pressed a key!');
-  		}
-  
   		// Initial state update
   
   	}, {
@@ -957,7 +948,20 @@ module.exports =
   	}, {
   		key: 'componentDidMount',
   		value: function componentDidMount() {
-  			console.log('hello');
+  			document.addEventListener("keydown", function (e) {
+  				// Left arrow
+  				if (e.keyCode == 37) {
+  					var prevUrl = this.previousPage();
+  					console.log(prevUrl);
+  					location.href = prevUrl;
+  				}
+  				// Right arrow
+  				else if (e.keyCode == 39) {
+  						var nextUrl = this.nextPage();
+  						console.log(nextUrl);
+  						location.href = nextUrl;
+  					}
+  			}.bind(this));
   		}
   
   		// Deactivate links
@@ -1516,7 +1520,6 @@ module.exports =
   		_this.nextPage = _this.nextPage.bind(_this);
   		_this.lastPage = _this.lastPage.bind(_this);
   		_this.updatePage = _this.updatePage.bind(_this);
-  		_this.onKeyDown = _this.onKeyDown.bind(_this);
   		_this.checkIfPage = _this.checkIfPage.bind(_this);
   		return _this;
   	}
@@ -1610,14 +1613,6 @@ module.exports =
   			}.bind(this));
   		}
   
-  		// Use the arrow keys
-  
-  	}, {
-  		key: 'onKeyDown',
-  		value: function onKeyDown() {
-  			console.log('hello there, you pressed a key!');
-  		}
-  
   		// Initial state update
   
   	}, {
@@ -1639,7 +1634,20 @@ module.exports =
   	}, {
   		key: 'componentDidMount',
   		value: function componentDidMount() {
-  			console.log('hello');
+  			document.addEventListener("keydown", function (e) {
+  				// Left arrow
+  				if (e.keyCode == 37) {
+  					var prevUrl = this.previousPage();
+  					console.log(prevUrl);
+  					location.href = prevUrl;
+  				}
+  				// Right arrow
+  				else if (e.keyCode == 39) {
+  						var nextUrl = this.nextPage();
+  						console.log(nextUrl);
+  						location.href = nextUrl;
+  					}
+  			}.bind(this));
   		}
   
   		// Deactivate links

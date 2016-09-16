@@ -26,7 +26,6 @@ class ComicDisplay extends React.Component {
 		this.nextPage = this.nextPage.bind(this);
 		this.lastPage = this.lastPage.bind(this);
 		this.updatePage = this.updatePage.bind(this);
-		this.onKeyDown = this.onKeyDown.bind(this);
 		this.checkIfPage = this.checkIfPage.bind(this);
 	}
 
@@ -110,11 +109,6 @@ class ComicDisplay extends React.Component {
 			}.bind(this))
 	}
 
-	// Use the arrow keys
-	onKeyDown() {
-		console.log('hello there, you pressed a key!');
-	}
-
 	// Initial state update
 	componentWillMount() {
 		this.updatePage();
@@ -127,7 +121,20 @@ class ComicDisplay extends React.Component {
 
 	// Watch for keypress
 	componentDidMount() {
-		console.log('hello');
+		document.addEventListener("keydown", function(e) {
+			// Left arrow
+			if(e.keyCode == 37) {
+				var prevUrl = this.previousPage();
+				console.log(prevUrl);
+				location.href = prevUrl;
+			}
+			// Right arrow
+			else if(e.keyCode == 39) {
+				var nextUrl = this.nextPage();
+				console.log(nextUrl);
+				location.href = nextUrl;
+			}
+		}.bind(this));
 	}
 
 	// Deactivate links
