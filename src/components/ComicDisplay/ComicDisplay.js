@@ -124,15 +124,19 @@ class ComicDisplay extends React.Component {
 		document.addEventListener("keydown", function(e) {
 			// Left arrow
 			if(e.keyCode == 37) {
-				var prevUrl = this.previousPage();
-				console.log(prevUrl);
-				location.href = prevUrl;
+				// Make sure you're not on page 1
+				if(parseInt(this.state.currentPg) !== 1) {
+					var prevUrl = this.previousPage();
+					location.href = prevUrl;
+				}
 			}
 			// Right arrow
 			else if(e.keyCode == 39) {
-				var nextUrl = this.nextPage();
-				console.log(nextUrl);
-				location.href = nextUrl;
+				// Make sure you're not on the latest page
+				if(parseInt(this.state.currentPg) !== parseInt(this.state.latestPg)) {
+					var nextUrl = this.nextPage();
+					location.href = nextUrl;
+				}
 			}
 		}.bind(this));
 	}
