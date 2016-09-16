@@ -32,12 +32,24 @@ class ComicDisplay extends React.Component {
 
 	// Navigation functions
 	previousPage() {
-		var previousPageNumber = '/page/' + (parseInt(this.props.pageNumber) -1);
-		return previousPageNumber;
+		if(this.props.pageNumber) {
+			var previousPageNumber = '/page/' + (parseInt(this.props.pageNumber) -1);
+			return previousPageNumber;
+		}
+		else {
+			var previousPageNumber = '/page/' + (this.state.currentPg -1);
+			return previousPageNumber;
+		}
 	}
 	nextPage() {
-		var previousPageNumber = '/page/' + (parseInt(this.props.pageNumber) +1);
-		return previousPageNumber;
+		if(this.props.pageNumber) {
+			var nextPageNumber = '/page/' + (parseInt(this.props.pageNumber) +1);
+			return nextPageNumber;
+		}
+		else {
+			var nextPageNumber = '/page/' + (this.state.currentPg +1);
+			return nextPageNumber;
+		}
 	}
 	lastPage() {
 		var lastPageNumber = '/page/' + (this.state.latestPg);
