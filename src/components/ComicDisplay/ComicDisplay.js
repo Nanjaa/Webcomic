@@ -60,6 +60,12 @@ class ComicDisplay extends React.Component {
 			this.setState({
 				currentPg: this.props.pageNumber
 			})
+			localStorage.setItem('hubrisPage', this.props.pageNumber);
+		}
+		else if(localStorage.getItem('hubrisPage')) {
+			this.setState({
+				currentPg: parseInt(localStorage.getItem('hubrisPage'))
+			})
 		}
 		else {
 			this.setState({

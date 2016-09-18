@@ -878,6 +878,11 @@ module.exports =
   				this.setState({
   					currentPg: this.props.pageNumber
   				});
+  				localStorage.setItem('hubrisPage', this.props.pageNumber);
+  			} else if (localStorage.getItem('hubrisPage')) {
+  				this.setState({
+  					currentPg: parseInt(localStorage.getItem('hubrisPage'))
+  				});
   			} else {
   				this.setState({
   					currentPg: 0
@@ -1567,6 +1572,11 @@ module.exports =
   			if (this.props.pageNumber) {
   				this.setState({
   					currentPg: this.props.pageNumber
+  				});
+  				localStorage.setItem('hubrisPage', this.props.pageNumber);
+  			} else if (localStorage.getItem('hubrisPage')) {
+  				this.setState({
+  					currentPg: parseInt(localStorage.getItem('hubrisPage'))
   				});
   			} else {
   				this.setState({
@@ -3016,7 +3026,7 @@ module.exports =
               _react2.default.createElement(
                 'h1',
                 { className: _Header2.default.bannerTitle },
-                'Webcomic Title'
+                'Hubris Comic'
               )
             )
           )
