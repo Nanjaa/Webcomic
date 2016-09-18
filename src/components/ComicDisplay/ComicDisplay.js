@@ -63,9 +63,19 @@ class ComicDisplay extends React.Component {
 			localStorage.setItem('hubrisPage', this.props.pageNumber);
 		}
 		else if(localStorage.getItem('hubrisPage')) {
-			this.setState({
-				currentPg: parseInt(localStorage.getItem('hubrisPage'))
-			})
+			var storedPage = parseInt(localStorage.getItem('hubrisPage'));
+			if(parseInt(this.state.latestPg -1) == storedPage) {
+				this.setState({
+					currentPg: this.state.latestPg
+				})
+				localStorage.setItem('hubrisPage', this.state.latestPg);
+			}
+			else {
+				this.setState({
+					currentPg: storedPage
+				})
+			}
+
 		}
 		else {
 			this.setState({
@@ -82,13 +92,9 @@ class ComicDisplay extends React.Component {
 
 				this.checkIfPage();
 
-				// Set up variables to be used in this function
 				var comics = snapshot.val(),
 					latest = comics[comics.length-1],
 					latestNumber = comics.length-1;
-				this.setState({
-					latestPg: latestNumber
-				})
 
 				// Check if the most recent page shoud display
 				if(this.state.currentPg == 0) {
@@ -117,7 +123,19 @@ class ComicDisplay extends React.Component {
 
 	// Initial state update
 	componentWillMount() {
-		this.updatePage();
+		var ref = Firebase.database().ref("Comics/");
+		ref.once("value")
+			.then(function(snapshot) {
+				// Set up variables to be used in this function
+				var comics = snapshot.val(),
+					latest = comics[comics.length-1],
+					latestNumber = comics.length-1;
+				this.setState({
+					latestPg: latestNumber
+				})
+				// Update the page with the current set of values
+				this.updatePage();
+			}.bind(this))
 	}
 
 	// State updates after that
