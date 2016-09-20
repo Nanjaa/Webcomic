@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Archives.scss';
+import ArchivesTable from '../../components/ArchivesTable';
 
 
 function Archives({ title }) {
@@ -8,6 +9,7 @@ function Archives({ title }) {
     <div className={s.root}>
       <div className={s.container}>
         <h2>{title}</h2>
+        <ArchivesTable/>
       </div>
     </div>
   );

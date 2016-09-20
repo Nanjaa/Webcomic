@@ -21,3 +21,12 @@ li {
 li a {
 	margin: 0 5px;	
 }
+ul {
+  text-align: left;
+}
+ul > div {
+  display: inline-block;
+}
+arcTitle {
+  display: block;
+}

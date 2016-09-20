@@ -362,7 +362,7 @@ module.exports =
   
   var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
   
-  var _getIterator2 = __webpack_require__(20);
+  var _getIterator2 = __webpack_require__(21);
   
   var _getIterator3 = _interopRequireDefault(_getIterator2);
   
@@ -788,11 +788,177 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
+  var _ArchivesTable = __webpack_require__(91);
+  
+  var _ArchivesTable2 = _interopRequireDefault(_ArchivesTable);
+  
+  var _firebase = __webpack_require__(14);
+  
+  var _firebase2 = _interopRequireDefault(_firebase);
+  
+  var _Link = __webpack_require__(12);
+  
+  var _Link2 = _interopRequireDefault(_Link);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var ArchivesTable = function (_React$Component) {
+  	(0, _inherits3.default)(ArchivesTable, _React$Component);
+  
+  	function ArchivesTable(props) {
+  		(0, _classCallCheck3.default)(this, ArchivesTable);
+  
+  		var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(ArchivesTable).call(this, props));
+  
+  		_this.state = {
+  			pages: [],
+  			arcs: [],
+  			arcStarts: [],
+  			count: 0
+  		};
+  		_this.pageLink = _this.pageLink.bind(_this);
+  		_this.allArcs = _this.allArcs.bind(_this);
+  		_this.componentWillMount = _this.componentWillMount.bind(_this);
+  		return _this;
+  	}
+  
+  	(0, _createClass3.default)(ArchivesTable, [{
+  		key: 'componentWillMount',
+  		value: function componentWillMount() {
+  			var ref = _firebase2.default.database().ref("Comics/");
+  			ref.once("value").then(function (snapshot) {
+  				// Set up variables to be used in this function
+  				var comics = snapshot.val(),
+  				    latest = comics[comics.length - 1],
+  				    latestNumber = comics.length - 1;
+  
+  				this.setState({
+  					pages: comics
+  				});
+  			}.bind(this));
+  			var ref2 = _firebase2.default.database().ref("Arcs/");
+  			ref2.once("value").then(function (snapshot) {
+  				// Set up variables to be used in this function
+  				var arcs = snapshot.val(),
+  				    arcStarts = [];
+  
+  				for (var i = 1; i < arcs.length; i++) {
+  					arcStarts.push(arcs[i].StartPage);
+  				}
+  				this.setState({
+  					arcs: arcs,
+  					arcStarts: arcStarts
+  				});
+  			}.bind(this));
+  		}
+  	}, {
+  		key: 'pageLink',
+  		value: function pageLink(number) {
+  			var pageNumber = '/page/' + number;
+  			return pageNumber;
+  		}
+  	}, {
+  		key: 'allArcs',
+  		value: function allArcs(pageNumber) {
+  			for (var i = 0; i < this.state.arcStarts.length; i++) {
+  				if (pageNumber == this.state.arcStarts[i]) {
+  					return _react2.default.createElement(
+  						'div',
+  						{ className: _ArchivesTable2.default.arcTitle },
+  						_react2.default.createElement(
+  							'h3',
+  							null,
+  							this.state.arcs[i + 1].Title
+  						)
+  					);
+  				}
+  			}
+  		}
+  	}, {
+  		key: 'render',
+  		value: function render() {
+  			var _this2 = this;
+  
+  			return _react2.default.createElement(
+  				'div',
+  				{ className: _ArchivesTable2.default.root },
+  				_react2.default.createElement(
+  					'div',
+  					{ className: _ArchivesTable2.default.container },
+  					_react2.default.createElement(
+  						'ul',
+  						null,
+  						this.state.pages.map(function (page) {
+  							return _react2.default.createElement(
+  								'div',
+  								{ key: page.Page },
+  								_this2.allArcs(page.Page),
+  								_react2.default.createElement(
+  									'li',
+  									null,
+  									_react2.default.createElement(
+  										_Link2.default,
+  										{ to: _this2.pageLink(page.Page) },
+  										'[ ',
+  										page.Page,
+  										' ]'
+  									)
+  								)
+  							);
+  						})
+  					)
+  				)
+  			);
+  		}
+  	}]);
+  	return ArchivesTable;
+  }(_react2.default.Component);
+  
+  exports.default = (0, _withStyles2.default)(ArchivesTable, _ArchivesTable2.default);
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+  	value: true
+  });
+  
+  var _getPrototypeOf = __webpack_require__(7);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(8);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(9);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(11);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(10);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
+  var _react = __webpack_require__(1);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _withStyles = __webpack_require__(4);
+  
+  var _withStyles2 = _interopRequireDefault(_withStyles);
+  
   var _ComicDisplay = __webpack_require__(92);
   
   var _ComicDisplay2 = _interopRequireDefault(_ComicDisplay);
   
-  var _ComicNavigation = __webpack_require__(17);
+  var _ComicNavigation = __webpack_require__(18);
   
   var _ComicNavigation2 = _interopRequireDefault(_ComicNavigation);
   
@@ -800,7 +966,7 @@ module.exports =
   
   var _firebase2 = _interopRequireDefault(_firebase);
   
-  var _ArchivesTable = __webpack_require__(22);
+  var _ArchivesTable = __webpack_require__(16);
   
   var _ArchivesTable2 = _interopRequireDefault(_ArchivesTable);
   
@@ -1082,7 +1248,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(ComicDisplay, _ComicDisplay2.default);
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1103,7 +1269,7 @@ module.exports =
   
   var _ComicNavigation2 = _interopRequireDefault(_ComicNavigation);
   
-  var _ComicDisplay = __webpack_require__(16);
+  var _ComicDisplay = __webpack_require__(17);
   
   var _ComicDisplay2 = _interopRequireDefault(_ComicDisplay);
   
@@ -1176,7 +1342,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(ComicNavigation, _ComicNavigation2.default);
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1186,7 +1352,7 @@ module.exports =
   });
   exports.Response = exports.Headers = exports.Request = exports.default = undefined;
   
-  var _bluebird = __webpack_require__(21);
+  var _bluebird = __webpack_require__(22);
   
   var _bluebird2 = _interopRequireDefault(_bluebird);
   
@@ -1231,7 +1397,7 @@ module.exports =
   exports.Response = _nodeFetch.Response;
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
   "use strict";
@@ -1245,146 +1411,16 @@ module.exports =
   };
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-runtime/core-js/get-iterator");
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
   module.exports = require("bluebird");
-
-/***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-  	value: true
-  });
-  
-  var _getPrototypeOf = __webpack_require__(7);
-  
-  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-  
-  var _classCallCheck2 = __webpack_require__(8);
-  
-  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  
-  var _createClass2 = __webpack_require__(9);
-  
-  var _createClass3 = _interopRequireDefault(_createClass2);
-  
-  var _possibleConstructorReturn2 = __webpack_require__(11);
-  
-  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  
-  var _inherits2 = __webpack_require__(10);
-  
-  var _inherits3 = _interopRequireDefault(_inherits2);
-  
-  var _react = __webpack_require__(1);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _withStyles = __webpack_require__(4);
-  
-  var _withStyles2 = _interopRequireDefault(_withStyles);
-  
-  var _ArchivesTable = __webpack_require__(91);
-  
-  var _ArchivesTable2 = _interopRequireDefault(_ArchivesTable);
-  
-  var _firebase = __webpack_require__(14);
-  
-  var _firebase2 = _interopRequireDefault(_firebase);
-  
-  var _Link = __webpack_require__(12);
-  
-  var _Link2 = _interopRequireDefault(_Link);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  var ArchivesTable = function (_React$Component) {
-  	(0, _inherits3.default)(ArchivesTable, _React$Component);
-  
-  	function ArchivesTable(props) {
-  		(0, _classCallCheck3.default)(this, ArchivesTable);
-  
-  		var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(ArchivesTable).call(this, props));
-  
-  		_this.state = {
-  			pages: []
-  		};
-  		_this.pageLink = _this.pageLink.bind(_this);
-  		return _this;
-  	}
-  
-  	(0, _createClass3.default)(ArchivesTable, [{
-  		key: 'componentWillMount',
-  		value: function componentWillMount() {
-  			var ref = _firebase2.default.database().ref("Comics/");
-  			ref.once("value").then(function (snapshot) {
-  				// Set up variables to be used in this function
-  				var comics = snapshot.val(),
-  				    latest = comics[comics.length - 1],
-  				    latestNumber = comics.length - 1;
-  
-  				this.setState({
-  					pages: comics
-  				});
-  			}.bind(this));
-  		}
-  	}, {
-  		key: 'pageLink',
-  		value: function pageLink(number) {
-  			var pageNumber = '/page/' + number;
-  			return pageNumber;
-  		}
-  	}, {
-  		key: 'render',
-  		value: function render() {
-  			var _this2 = this;
-  
-  			return _react2.default.createElement(
-  				'div',
-  				{ className: _ArchivesTable2.default.root },
-  				_react2.default.createElement(
-  					'div',
-  					{ className: _ArchivesTable2.default.container },
-  					_react2.default.createElement(
-  						'h2',
-  						null,
-  						'This is where the archive list goes.'
-  					),
-  					_react2.default.createElement(
-  						'ul',
-  						null,
-  						this.state.pages.map(function (page) {
-  							return _react2.default.createElement(
-  								'li',
-  								{ key: page.Page },
-  								_react2.default.createElement(
-  									_Link2.default,
-  									{ to: _this2.pageLink(page.Page) },
-  									'[ ',
-  									page.Page,
-  									' ]'
-  								)
-  							);
-  						})
-  					)
-  				)
-  			);
-  		}
-  	}]);
-  	return ArchivesTable;
-  }(_react2.default.Component);
-  
-  exports.default = (0, _withStyles2.default)(ArchivesTable, _ArchivesTable2.default);
 
 /***/ },
 /* 23 */
@@ -1502,7 +1538,7 @@ module.exports =
   
   var _ComicDisplay2 = _interopRequireDefault(_ComicDisplay);
   
-  var _ComicNavigation = __webpack_require__(17);
+  var _ComicNavigation = __webpack_require__(18);
   
   var _ComicNavigation2 = _interopRequireDefault(_ComicNavigation);
   
@@ -1510,7 +1546,7 @@ module.exports =
   
   var _firebase2 = _interopRequireDefault(_firebase);
   
-  var _ArchivesTable = __webpack_require__(22);
+  var _ArchivesTable = __webpack_require__(16);
   
   var _ArchivesTable2 = _interopRequireDefault(_ArchivesTable);
   
@@ -1813,7 +1849,7 @@ module.exports =
   
   var _ComicNavigation2 = _interopRequireDefault(_ComicNavigation);
   
-  var _ComicDisplay = __webpack_require__(16);
+  var _ComicDisplay = __webpack_require__(17);
   
   var _ComicDisplay2 = _interopRequireDefault(_ComicDisplay);
   
@@ -2213,7 +2249,7 @@ module.exports =
   
   var _create2 = _interopRequireDefault(_create);
   
-  var _classCallCheck2 = __webpack_require__(19);
+  var _classCallCheck2 = __webpack_require__(20);
   
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
   
@@ -2261,7 +2297,7 @@ module.exports =
     value: true
   });
   
-  var _classCallCheck2 = __webpack_require__(19);
+  var _classCallCheck2 = __webpack_require__(20);
   
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
   
@@ -2335,7 +2371,7 @@ module.exports =
   
   var _create2 = _interopRequireDefault(_create);
   
-  var _classCallCheck2 = __webpack_require__(19);
+  var _classCallCheck2 = __webpack_require__(20);
   
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
   
@@ -2716,7 +2752,7 @@ module.exports =
   
   var _Header2 = _interopRequireDefault(_Header);
   
-  var _ComicNavigation = __webpack_require__(17);
+  var _ComicNavigation = __webpack_require__(18);
   
   var _ComicNavigation2 = _interopRequireDefault(_ComicNavigation);
   
@@ -3230,7 +3266,7 @@ module.exports =
   
   var _pg2 = _interopRequireDefault(_pg);
   
-  var _bluebird = __webpack_require__(21);
+  var _bluebird = __webpack_require__(22);
   
   var _bluebird2 = _interopRequireDefault(_bluebird);
   
@@ -3535,7 +3571,7 @@ module.exports =
     value: true
   });
   
-  var _getIterator2 = __webpack_require__(20);
+  var _getIterator2 = __webpack_require__(21);
   
   var _getIterator3 = _interopRequireDefault(_getIterator2);
   
@@ -3702,7 +3738,7 @@ module.exports =
   
   var _path = __webpack_require__(32);
   
-  var _bluebird = __webpack_require__(21);
+  var _bluebird = __webpack_require__(22);
   
   var _bluebird2 = _interopRequireDefault(_bluebird);
   
@@ -3870,7 +3906,7 @@ module.exports =
   
   var _graphql = __webpack_require__(13);
   
-  var _fetch = __webpack_require__(18);
+  var _fetch = __webpack_require__(19);
   
   var _fetch2 = _interopRequireDefault(_fetch);
   
@@ -4094,7 +4130,7 @@ module.exports =
   
   var _Router2 = _interopRequireDefault(_Router);
   
-  var _fetch = __webpack_require__(18);
+  var _fetch = __webpack_require__(19);
   
   var _fetch2 = _interopRequireDefault(_fetch);
   
@@ -4110,7 +4146,7 @@ module.exports =
   
   var _ErrorPage2 = _interopRequireDefault(_ErrorPage);
   
-  var _ComicDisplay = __webpack_require__(16);
+  var _ComicDisplay = __webpack_require__(17);
   
   var _ComicDisplay2 = _interopRequireDefault(_ComicDisplay);
   
@@ -4360,6 +4396,10 @@ module.exports =
   
   var _Archives2 = _interopRequireDefault(_Archives);
   
+  var _ArchivesTable = __webpack_require__(16);
+  
+  var _ArchivesTable2 = _interopRequireDefault(_ArchivesTable);
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
   function Archives(_ref) {
@@ -4375,7 +4415,8 @@ module.exports =
           'h2',
           null,
           title
-        )
+        ),
+        _react2.default.createElement(_ArchivesTable2.default, null)
       )
     );
   }
@@ -4744,7 +4785,7 @@ module.exports =
   
   var _Home2 = _interopRequireDefault(_Home);
   
-  var _fetch = __webpack_require__(18);
+  var _fetch = __webpack_require__(19);
   
   var _fetch2 = _interopRequireDefault(_fetch);
   
@@ -5097,7 +5138,7 @@ module.exports =
   
   var _isIterable3 = _interopRequireDefault(_isIterable2);
   
-  var _getIterator2 = __webpack_require__(20);
+  var _getIterator2 = __webpack_require__(21);
   
   var _getIterator3 = _interopRequireDefault(_getIterator2);
   
@@ -5861,7 +5902,7 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ArchivesTable_root_20y {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.ArchivesTable_container_TM1 {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\nli {\r\n\tlist-style: none;\r\n\tdisplay: inline-block;\r\n\twidth: auto;\r\n}\r\n\r\nli a {\r\n\tmargin: 0 5px;\t\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/ArchivesTable/ArchivesTable.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;EAC9B,mBAAmB;EACnB,gBAAgB;CACjB;;AAED;CACC,iBAAiB;CACjB,sBAAsB;CACtB,YAAY;CACZ;;AACD;CACC,cAAc;CACd","file":"ArchivesTable.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.root {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: $max-content-width;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\nli {\r\n\tlist-style: none;\r\n\tdisplay: inline-block;\r\n\twidth: auto;\r\n}\r\nli a {\r\n\tmargin: 0 5px;\t\r\n}"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ArchivesTable_root_20y {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.ArchivesTable_container_TM1 {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\nli {\r\n\tlist-style: none;\r\n\tdisplay: inline-block;\r\n\twidth: auto;\r\n}\r\n\r\nli a {\r\n\tmargin: 0 5px;\t\r\n}\r\n\r\nul {\r\n  text-align: left;\r\n}\r\n\r\nul > div {\r\n  display: inline-block;\r\n}\r\n\r\narcTitle {\r\n  display: block;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/ArchivesTable/ArchivesTable.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;EAC9B,mBAAmB;EACnB,gBAAgB;CACjB;;AAED;CACC,iBAAiB;CACjB,sBAAsB;CACtB,YAAY;CACZ;;AACD;CACC,cAAc;CACd;;AACD;EACE,iBAAiB;CAClB;;AACD;EACE,sBAAsB;CACvB;;AACD;EACE,eAAe;CAChB","file":"ArchivesTable.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.root {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: $max-content-width;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\nli {\r\n\tlist-style: none;\r\n\tdisplay: inline-block;\r\n\twidth: auto;\r\n}\r\nli a {\r\n\tmargin: 0 5px;\t\r\n}\r\nul {\r\n  text-align: left;\r\n}\r\nul > div {\r\n  display: inline-block;\r\n}\r\narcTitle {\r\n  display: block;\r\n}"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
