@@ -19,7 +19,8 @@ li {
 	width: auto;
 }
 li a {
-	margin: 0 5px;	
+	margin: 0 5px;
+  text-decoration: none;
 }
 ul {
   text-align: left;
@@ -27,6 +28,11 @@ ul {
 ul > div {
   display: inline-block;
 }
-arcTitle {
-  display: block;
+.arcTitle {
+  width: 100%;
+  margin: 0;
+
+  h3 {
+    margin: 15px 0 5px 0;
+  }
 }

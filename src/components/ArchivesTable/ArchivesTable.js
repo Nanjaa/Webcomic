@@ -15,7 +15,7 @@ class ArchivesTable extends React.Component {
 			count: 0
 		}
 		this.pageLink = this.pageLink.bind(this);
-		this.allArcs = this.allArcs.bind(this);
+		this.checkIfArcstart = this.checkIfArcstart.bind(this);
 		this.componentWillMount = this.componentWillMount.bind(this);
 	}
 
@@ -46,7 +46,6 @@ class ArchivesTable extends React.Component {
 					arcs: arcs,
 					arcStarts:arcStarts
 				})
-
 			}.bind(this))
 	}
 
@@ -55,13 +54,16 @@ class ArchivesTable extends React.Component {
 		return pageNumber;
 	}
 
-	allArcs(pageNumber) {
-		for(var i=0; i<this.state.arcStarts.length; i++) {
-			if(pageNumber == this.state.arcStarts[i]) {
-				return <div className={s.arcTitle}><h3>{this.state.arcs[i+1].Title}</h3></div>
+	checkIfArcstart(pageNumber) {
+		for(var i=1; i<this.state.arcs.length; i++) {
+			if(pageNumber === this.state.arcs[i].StartPage) {
+				return <h3>{this.state.arcs[i].Title}</h3>
 			}
 		}
+		return null;
 	}
+
+
 
 	render() {
 		return(
@@ -69,7 +71,16 @@ class ArchivesTable extends React.Component {
 				<div className={s.container}>
 					<ul>
 						{this.state.pages.map((page) => {
-							return <div key={page.Page}>{this.allArcs(page.Page)}<li><Link to={this.pageLink(page.Page)}>[ {page.Page} ]</Link></li></div>;
+							var arcTitle = this.checkIfArcstart(page.Page);
+							if (arcTitle === null) {
+								return <li key={page.Page}><Link to={this.pageLink(page.Page)}>[ {page.Page} ]</Link></li>
+							}
+							else {
+								return ([
+									<li key={page.Page} className={s.arcTitle}>{arcTitle}</li>,
+									<li><Link to={this.pageLink(page.Page)}>[ {page.Page} ]</Link></li>
+								]);
+							}
 						})}
 						
 					</ul>
