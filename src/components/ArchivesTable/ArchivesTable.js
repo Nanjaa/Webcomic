@@ -11,7 +11,6 @@ class ArchivesTable extends React.Component {
 		this.state = {
 			pages: [],
 			arcs: [],
-			arcStarts: [],
 			count: 0
 		}
 		this.pageLink = this.pageLink.bind(this);
@@ -36,15 +35,9 @@ class ArchivesTable extends React.Component {
 		ref2.once("value")
 			.then(function(snapshot) {
 				// Set up variables to be used in this function
-				var arcs = snapshot.val(),
-					arcStarts = [];
-				
-				for(var i=1;i<arcs.length;i++) {
-					arcStarts.push(arcs[i].StartPage);
-				}
+				var arcs = snapshot.val();
 				this.setState({
-					arcs: arcs,
-					arcStarts:arcStarts
+					arcs: arcs
 				})
 			}.bind(this))
 	}

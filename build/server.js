@@ -1319,7 +1319,6 @@ module.exports =
   		_this.state = {
   			pages: [],
   			arcs: [],
-  			arcStarts: [],
   			count: 0
   		};
   		_this.pageLink = _this.pageLink.bind(_this);
@@ -1345,15 +1344,9 @@ module.exports =
   			var ref2 = _firebase2.default.database().ref("Arcs/");
   			ref2.once("value").then(function (snapshot) {
   				// Set up variables to be used in this function
-  				var arcs = snapshot.val(),
-  				    arcStarts = [];
-  
-  				for (var i = 1; i < arcs.length; i++) {
-  					arcStarts.push(arcs[i].StartPage);
-  				}
+  				var arcs = snapshot.val();
   				this.setState({
-  					arcs: arcs,
-  					arcStarts: arcStarts
+  					arcs: arcs
   				});
   			}.bind(this));
   		}
