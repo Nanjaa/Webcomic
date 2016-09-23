@@ -999,7 +999,8 @@ module.exports =
   			date: '',
   			img: _loading2.default,
   			pg: '',
-  			isHidden: true
+  			loadingHidden: true,
+  			missingHidden: true
   		};
   
   		_this.componentWillMount = _this.componentWillMount.bind(_this);
@@ -1051,7 +1052,7 @@ module.exports =
   		key: 'checkIfPage',
   		value: function checkIfPage() {
   			this.setState({
-  				isHidden: true
+  				loadingHidden: true
   			});
   
   			if (this.props.pageNumber) {
@@ -1084,7 +1085,8 @@ module.exports =
   		key: 'updatePage',
   		value: function updatePage() {
   			this.setState({
-  				img: _loading2.default
+  				img: _loading2.default,
+  				missingHidden: true
   			});
   
   			var ref = _firebase2.default.database().ref("Comics/");
@@ -1106,18 +1108,25 @@ module.exports =
   					var currentComic = snapshot.child(this.state.currentPg).val();
   				}
   
-  				var thisArc = currentComic.Arc,
-  				    thisDate = currentComic.Date,
-  				    thisImg = currentComic.Image,
-  				    thisPg = currentComic.Page;
+  				if (currentComic !== null) {
+  					var thisArc = currentComic.Arc,
+  					    thisDate = currentComic.Date,
+  					    thisImg = currentComic.Image,
+  					    thisPg = currentComic.Page;
   
-  				this.setState({
-  					arc: thisArc,
-  					date: thisDate,
-  					img: 'http://nanja.space/Hubris/' + thisImg,
-  					pg: thisPg,
-  					isHidden: false
-  				});
+  					this.setState({
+  						arc: thisArc,
+  						date: thisDate,
+  						img: 'http://nanja.space/Hubris/' + thisImg,
+  						pg: thisPg,
+  						loadingHidden: false
+  					});
+  				} else {
+  					this.setState({
+  						missingHidden: false,
+  						img: ''
+  					});
+  				}
   			}.bind(this));
   		}
   
@@ -1187,9 +1196,15 @@ module.exports =
   		}
   	}, {
   		key: 'hidden',
-  		value: function hidden() {
-  			if (this.state.isHidden) {
-  				return _ComicDisplay2.default.hidden;
+  		value: function hidden(element) {
+  			if (element === 'loading') {
+  				if (this.state.loadingHidden) {
+  					return _ComicDisplay2.default.hidden;
+  				}
+  			} else if (element === 'missing') {
+  				if (this.state.missingHidden) {
+  					return _ComicDisplay2.default.hidden;
+  				}
   			}
   		}
   	}, {
@@ -1203,7 +1218,7 @@ module.exports =
   					{ className: _ComicDisplay2.default.container },
   					_react2.default.createElement(
   						'div',
-  						{ className: this.hidden() },
+  						{ className: this.hidden('loading') },
   						_react2.default.createElement(
   							'p',
   							null,
@@ -1224,7 +1239,26 @@ module.exports =
   							this.state.date
   						)
   					),
-  					_react2.default.createElement('img', { src: this.state.img })
+  					_react2.default.createElement('img', { src: this.state.img }),
+  					_react2.default.createElement(
+  						'div',
+  						{ className: this.hidden('missing') },
+  						_react2.default.createElement(
+  							'h2',
+  							null,
+  							'Empty Treasure Room!'
+  						),
+  						_react2.default.createElement(
+  							'p',
+  							null,
+  							'We\'re sorry, but your URL currently leads nowhere. Looking for a page in particular? check out our ',
+  							_react2.default.createElement(
+  								_Link2.default,
+  								{ to: '/archives' },
+  								'archives'
+  							)
+  						)
+  					)
   				),
   				_react2.default.createElement(
   					'div',
@@ -1596,7 +1630,8 @@ module.exports =
   			date: '',
   			img: _loading2.default,
   			pg: '',
-  			isHidden: true
+  			loadingHidden: true,
+  			missingHidden: true
   		};
   
   		_this.componentWillMount = _this.componentWillMount.bind(_this);
@@ -1648,7 +1683,7 @@ module.exports =
   		key: 'checkIfPage',
   		value: function checkIfPage() {
   			this.setState({
-  				isHidden: true
+  				loadingHidden: true
   			});
   
   			if (this.props.pageNumber) {
@@ -1681,7 +1716,8 @@ module.exports =
   		key: 'updatePage',
   		value: function updatePage() {
   			this.setState({
-  				img: _loading2.default
+  				img: _loading2.default,
+  				missingHidden: true
   			});
   
   			var ref = _firebase2.default.database().ref("Comics/");
@@ -1703,18 +1739,25 @@ module.exports =
   					var currentComic = snapshot.child(this.state.currentPg).val();
   				}
   
-  				var thisArc = currentComic.Arc,
-  				    thisDate = currentComic.Date,
-  				    thisImg = currentComic.Image,
-  				    thisPg = currentComic.Page;
+  				if (currentComic !== null) {
+  					var thisArc = currentComic.Arc,
+  					    thisDate = currentComic.Date,
+  					    thisImg = currentComic.Image,
+  					    thisPg = currentComic.Page;
   
-  				this.setState({
-  					arc: thisArc,
-  					date: thisDate,
-  					img: 'http://nanja.space/Hubris/' + thisImg,
-  					pg: thisPg,
-  					isHidden: false
-  				});
+  					this.setState({
+  						arc: thisArc,
+  						date: thisDate,
+  						img: 'http://nanja.space/Hubris/' + thisImg,
+  						pg: thisPg,
+  						loadingHidden: false
+  					});
+  				} else {
+  					this.setState({
+  						missingHidden: false,
+  						img: ''
+  					});
+  				}
   			}.bind(this));
   		}
   
@@ -1784,9 +1827,15 @@ module.exports =
   		}
   	}, {
   		key: 'hidden',
-  		value: function hidden() {
-  			if (this.state.isHidden) {
-  				return _ComicDisplay2.default.hidden;
+  		value: function hidden(element) {
+  			if (element === 'loading') {
+  				if (this.state.loadingHidden) {
+  					return _ComicDisplay2.default.hidden;
+  				}
+  			} else if (element === 'missing') {
+  				if (this.state.missingHidden) {
+  					return _ComicDisplay2.default.hidden;
+  				}
   			}
   		}
   	}, {
@@ -1800,7 +1849,7 @@ module.exports =
   					{ className: _ComicDisplay2.default.container },
   					_react2.default.createElement(
   						'div',
-  						{ className: this.hidden() },
+  						{ className: this.hidden('loading') },
   						_react2.default.createElement(
   							'p',
   							null,
@@ -1821,7 +1870,26 @@ module.exports =
   							this.state.date
   						)
   					),
-  					_react2.default.createElement('img', { src: this.state.img })
+  					_react2.default.createElement('img', { src: this.state.img }),
+  					_react2.default.createElement(
+  						'div',
+  						{ className: this.hidden('missing') },
+  						_react2.default.createElement(
+  							'h2',
+  							null,
+  							'Empty Treasure Room!'
+  						),
+  						_react2.default.createElement(
+  							'p',
+  							null,
+  							'We\'re sorry, but your URL currently leads nowhere. Looking for a page in particular? check out our ',
+  							_react2.default.createElement(
+  								_Link2.default,
+  								{ to: '/archives' },
+  								'archives'
+  							)
+  						)
+  					)
   				),
   				_react2.default.createElement(
   					'div',

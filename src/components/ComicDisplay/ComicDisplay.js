@@ -18,7 +18,8 @@ class ComicDisplay extends React.Component {
 			date: '',
 			img: Loading,
 			pg: '',
-			isHidden: true
+			loadingHidden: true,
+			missingHidden: true
 		}
 
 		this.componentWillMount = this.componentWillMount.bind(this);
@@ -60,7 +61,7 @@ class ComicDisplay extends React.Component {
 	// Check if there is a designated page number to load. Otherwise, default to the most recent page.
 	checkIfPage() {
 		this.setState({
-			isHidden: true
+			loadingHidden: true
 		})
 
 		if(this.props.pageNumber) {
@@ -94,7 +95,8 @@ class ComicDisplay extends React.Component {
 	// Update the display with the new page
 	updatePage() {
 		this.setState({
-			img: Loading
+			img: Loading,
+			missingHidden: true
 		});
 
 		var ref = Firebase.database().ref("Comics/");
@@ -118,18 +120,27 @@ class ComicDisplay extends React.Component {
 					var currentComic = snapshot.child(this.state.currentPg).val()
 				}
 				
-				var thisArc = currentComic.Arc,
-					thisDate = currentComic.Date,
-					thisImg = currentComic.Image,
-					thisPg = currentComic.Page;
- 
-				this.setState({
-					arc: thisArc,
-					date: thisDate,
-					img: 'http://nanja.space/Hubris/' + thisImg,
-					pg: thisPg,
-					isHidden: false
-				});
+				if(currentComic !== null) {
+					var thisArc = currentComic.Arc,
+						thisDate = currentComic.Date,
+						thisImg = currentComic.Image,
+						thisPg = currentComic.Page;
+	 
+					this.setState({
+						arc: thisArc,
+						date: thisDate,
+						img: 'http://nanja.space/Hubris/' + thisImg,
+						pg: thisPg,
+						loadingHidden: false
+					});
+				}
+				else {
+					this.setState({
+						missingHidden: false,
+						img: ''
+					})
+				}
+
 			}.bind(this))
 	}
 
@@ -188,22 +199,34 @@ class ComicDisplay extends React.Component {
 		}
 	}
 
-	hidden() {
-		if(this.state.isHidden) {
-			return s.hidden;
+	hidden(element) {
+		if(element === 'loading') {
+			if(this.state.loadingHidden) {
+				return s.hidden;
+			}
 		}
+		else if(element === 'missing') {
+			if(this.state.missingHidden) {
+				return s.hidden;
+			}
+		}
+
 	}
 
 	render(props) {
 		return(
 			<div className={s.root}>
 				<div className={s.container}>
-					<div className={this.hidden()}>
+					<div className={this.hidden('loading')}>
 						<p>#{this.state.currentPg}</p>
 						<p>Arc {this.state.arc}, Page {this.state.pg}</p>
 						<p>{this.state.date}</p>
 					</div>
 					<img src={this.state.img}/>
+					<div className={this.hidden('missing')}>
+						<h2>Empty Treasure Room!</h2>
+						<p>We're sorry, but your URL currently leads nowhere. Looking for a page in particular? check out our <Link to="/archives">archives</Link></p>
+					</div>
 				</div>
 
 				<div className={s.container}>
