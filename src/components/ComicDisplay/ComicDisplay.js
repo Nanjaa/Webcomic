@@ -115,7 +115,7 @@ class ComicDisplay extends React.Component {
 				this.setState({
 					arc: thisArc,
 					date: thisDate,
-					img: thisImg,
+					img: 'http://nanja.space/Hubris/' + thisImg,
 					pg: thisPg
 				});
 			}.bind(this))
@@ -184,7 +184,7 @@ class ComicDisplay extends React.Component {
 					<p>#{this.state.currentPg}</p>
 					<p>Arc {this.state.arc}, Page {this.state.pg}</p>
 					<p>{this.state.date}</p>
-					<p>{this.state.img}</p>
+					<img src={this.state.img}/>
 				</div>
 
 			    <div className={s.container}>
