@@ -5,6 +5,7 @@ import ComicNavigation from '../ComicNavigation';
 import Firebase from 'firebase';
 import ArchivesTable from '../ArchivesTable';
 import Link from '../Link';
+import Loading from './loading.gif';
 
 class ComicDisplay extends React.Component {
 	constructor(props) {
@@ -15,7 +16,7 @@ class ComicDisplay extends React.Component {
 			latestPg: '',
 			arc: '',
 			date: '',
-			img: '',
+			img: Loading,
 			pg: ''
 		}
 
@@ -86,6 +87,10 @@ class ComicDisplay extends React.Component {
 
 	// Update the display with the new page
 	updatePage() {
+		this.setState({
+			img: Loading
+		});
+		
 		var ref = Firebase.database().ref("Comics/");
 		ref.once("value")
 			.then(function(snapshot) {
