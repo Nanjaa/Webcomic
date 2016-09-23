@@ -998,7 +998,8 @@ module.exports =
   			arc: '',
   			date: '',
   			img: _loading2.default,
-  			pg: ''
+  			pg: '',
+  			isHidden: true
   		};
   
   		_this.componentWillMount = _this.componentWillMount.bind(_this);
@@ -1009,6 +1010,7 @@ module.exports =
   		_this.lastPage = _this.lastPage.bind(_this);
   		_this.updatePage = _this.updatePage.bind(_this);
   		_this.checkIfPage = _this.checkIfPage.bind(_this);
+  		_this.hidden = _this.hidden.bind(_this);
   		return _this;
   	}
   
@@ -1048,6 +1050,10 @@ module.exports =
   	}, {
   		key: 'checkIfPage',
   		value: function checkIfPage() {
+  			this.setState({
+  				isHidden: true
+  			});
+  
   			if (this.props.pageNumber) {
   				this.setState({
   					currentPg: this.props.pageNumber
@@ -1109,7 +1115,8 @@ module.exports =
   					arc: thisArc,
   					date: thisDate,
   					img: 'http://nanja.space/Hubris/' + thisImg,
-  					pg: thisPg
+  					pg: thisPg,
+  					isHidden: false
   				});
   			}.bind(this));
   		}
@@ -1179,6 +1186,13 @@ module.exports =
   			}
   		}
   	}, {
+  		key: 'hidden',
+  		value: function hidden() {
+  			if (this.state.isHidden) {
+  				return _ComicDisplay2.default.hidden;
+  			}
+  		}
+  	}, {
   		key: 'render',
   		value: function render(props) {
   			return _react2.default.createElement(
@@ -1188,28 +1202,27 @@ module.exports =
   					'div',
   					{ className: _ComicDisplay2.default.container },
   					_react2.default.createElement(
-  						'h2',
-  						null,
-  						this.props.pageNumber
-  					),
-  					_react2.default.createElement(
-  						'p',
-  						null,
-  						'#',
-  						this.state.currentPg
-  					),
-  					_react2.default.createElement(
-  						'p',
-  						null,
-  						'Arc ',
-  						this.state.arc,
-  						', Page ',
-  						this.state.pg
-  					),
-  					_react2.default.createElement(
-  						'p',
-  						null,
-  						this.state.date
+  						'div',
+  						{ className: this.hidden() },
+  						_react2.default.createElement(
+  							'p',
+  							null,
+  							'#',
+  							this.state.currentPg
+  						),
+  						_react2.default.createElement(
+  							'p',
+  							null,
+  							'Arc ',
+  							this.state.arc,
+  							', Page ',
+  							this.state.pg
+  						),
+  						_react2.default.createElement(
+  							'p',
+  							null,
+  							this.state.date
+  						)
   					),
   					_react2.default.createElement('img', { src: this.state.img })
   				),
@@ -1582,7 +1595,8 @@ module.exports =
   			arc: '',
   			date: '',
   			img: _loading2.default,
-  			pg: ''
+  			pg: '',
+  			isHidden: true
   		};
   
   		_this.componentWillMount = _this.componentWillMount.bind(_this);
@@ -1593,6 +1607,7 @@ module.exports =
   		_this.lastPage = _this.lastPage.bind(_this);
   		_this.updatePage = _this.updatePage.bind(_this);
   		_this.checkIfPage = _this.checkIfPage.bind(_this);
+  		_this.hidden = _this.hidden.bind(_this);
   		return _this;
   	}
   
@@ -1632,6 +1647,10 @@ module.exports =
   	}, {
   		key: 'checkIfPage',
   		value: function checkIfPage() {
+  			this.setState({
+  				isHidden: true
+  			});
+  
   			if (this.props.pageNumber) {
   				this.setState({
   					currentPg: this.props.pageNumber
@@ -1693,7 +1712,8 @@ module.exports =
   					arc: thisArc,
   					date: thisDate,
   					img: 'http://nanja.space/Hubris/' + thisImg,
-  					pg: thisPg
+  					pg: thisPg,
+  					isHidden: false
   				});
   			}.bind(this));
   		}
@@ -1763,6 +1783,13 @@ module.exports =
   			}
   		}
   	}, {
+  		key: 'hidden',
+  		value: function hidden() {
+  			if (this.state.isHidden) {
+  				return _ComicDisplay2.default.hidden;
+  			}
+  		}
+  	}, {
   		key: 'render',
   		value: function render(props) {
   			return _react2.default.createElement(
@@ -1772,28 +1799,27 @@ module.exports =
   					'div',
   					{ className: _ComicDisplay2.default.container },
   					_react2.default.createElement(
-  						'h2',
-  						null,
-  						this.props.pageNumber
-  					),
-  					_react2.default.createElement(
-  						'p',
-  						null,
-  						'#',
-  						this.state.currentPg
-  					),
-  					_react2.default.createElement(
-  						'p',
-  						null,
-  						'Arc ',
-  						this.state.arc,
-  						', Page ',
-  						this.state.pg
-  					),
-  					_react2.default.createElement(
-  						'p',
-  						null,
-  						this.state.date
+  						'div',
+  						{ className: this.hidden() },
+  						_react2.default.createElement(
+  							'p',
+  							null,
+  							'#',
+  							this.state.currentPg
+  						),
+  						_react2.default.createElement(
+  							'p',
+  							null,
+  							'Arc ',
+  							this.state.arc,
+  							', Page ',
+  							this.state.pg
+  						),
+  						_react2.default.createElement(
+  							'p',
+  							null,
+  							this.state.date
+  						)
   					),
   					_react2.default.createElement('img', { src: this.state.img })
   				),
@@ -4751,11 +4777,6 @@ module.exports =
       _react2.default.createElement(
         'div',
         { className: _Home2.default.container },
-        _react2.default.createElement(
-          'h2',
-          { className: _Home2.default.title },
-          'Comics Displayed Below'
-        ),
         _react2.default.createElement(_comicdisplay2.default, null)
       )
     );
@@ -4933,11 +4954,6 @@ module.exports =
       _react2.default.createElement(
         'div',
         { className: _Page2.default.container },
-        _react2.default.createElement(
-          'h2',
-          { className: _Page2.default.title },
-          'Comics Displayed Below'
-        ),
         _react2.default.createElement(_comicdisplay2.default, null)
       )
     );
@@ -5932,7 +5948,7 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ComicDisplay_root_3Y6 {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.ComicDisplay_container_2e4 {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.ComicDisplay_container_2e4 img {\r\n  width: 100%;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  margin: 0 20px;\r\n}\r\n\r\n.ComicDisplay_link_i-9, .ComicDisplay_link_i-9:active, .ComicDisplay_link_i-9:hover, .ComicDisplay_link_i-9:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_link_i-9:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_spacer_37l {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_inactive_3tB {\r\n  pointer-events: none;\r\n  color: gray;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/ComicDisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;EAC9B,mBAAmB;EACnB,gBAAgB;CAKjB;;AAHC;EACE,YAAY;CACb;;AAGH;EACE,sBAAsB;EACtB,eAAe;CAChB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;EACrB,YAAY;CACb","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.root {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: $max-content-width;\r\n  text-align: center;\r\n  font-size: 20px;\r\n\r\n  img {\r\n    width: 100%;\r\n  }\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  margin: 0 20px;\r\n}\r\n\r\n.link,\r\n.link:active,\r\n.link:hover,\r\n.link:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.link:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.spacer {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n.inactive {\r\n  pointer-events: none;\r\n  color: gray;\r\n}"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ComicDisplay_root_3Y6 {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.ComicDisplay_container_2e4 {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.ComicDisplay_container_2e4 img {\r\n  width: 100%;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  margin: 0 20px;\r\n}\r\n\r\n.ComicDisplay_link_i-9, .ComicDisplay_link_i-9:active, .ComicDisplay_link_i-9:hover, .ComicDisplay_link_i-9:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_link_i-9:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_spacer_37l {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_inactive_3tB {\r\n  pointer-events: none;\r\n  color: gray;\r\n}\r\n\r\n.ComicDisplay_hidden_3DM {\r\n  display: none;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/ComicDisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;EAC9B,mBAAmB;EACnB,gBAAgB;CAKjB;;AAHC;EACE,YAAY;CACb;;AAGH;EACE,sBAAsB;EACtB,eAAe;CAChB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;EACrB,YAAY;CACb;;AACD;EACE,cAAc;CACf","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.root {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: $max-content-width;\r\n  text-align: center;\r\n  font-size: 20px;\r\n\r\n  img {\r\n    width: 100%;\r\n  }\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  margin: 0 20px;\r\n}\r\n\r\n.link,\r\n.link:active,\r\n.link:hover,\r\n.link:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.link:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.spacer {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n.inactive {\r\n  pointer-events: none;\r\n  color: gray;\r\n}\r\n.hidden {\r\n  display: none;\r\n}"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
@@ -5940,7 +5956,8 @@ module.exports =
   	"container": "ComicDisplay_container_2e4",
   	"link": "ComicDisplay_link_i-9",
   	"spacer": "ComicDisplay_spacer_37l",
-  	"inactive": "ComicDisplay_inactive_3tB"
+  	"inactive": "ComicDisplay_inactive_3tB",
+  	"hidden": "ComicDisplay_hidden_3DM"
   };
 
 /***/ },
@@ -6062,7 +6079,7 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ComicDisplay_root_33y {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.ComicDisplay_container_31L {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.ComicDisplay_container_31L img {\r\n  width: 100%;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  margin: 0 20px;\r\n}\r\n\r\n.ComicDisplay_link_2K6, .ComicDisplay_link_2K6:active, .ComicDisplay_link_2K6:hover, .ComicDisplay_link_2K6:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_link_2K6:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_spacer_BXM {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_inactive_17r {\r\n  pointer-events: none;\r\n  color: gray;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/comicdisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;EAC9B,mBAAmB;EACnB,gBAAgB;CAKjB;;AAHC;EACE,YAAY;CACb;;AAGH;EACE,sBAAsB;EACtB,eAAe;CAChB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;EACrB,YAAY;CACb","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.root {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: $max-content-width;\r\n  text-align: center;\r\n  font-size: 20px;\r\n\r\n  img {\r\n    width: 100%;\r\n  }\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  margin: 0 20px;\r\n}\r\n\r\n.link,\r\n.link:active,\r\n.link:hover,\r\n.link:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.link:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.spacer {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n.inactive {\r\n  pointer-events: none;\r\n  color: gray;\r\n}"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ComicDisplay_root_33y {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.ComicDisplay_container_31L {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.ComicDisplay_container_31L img {\r\n  width: 100%;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  margin: 0 20px;\r\n}\r\n\r\n.ComicDisplay_link_2K6, .ComicDisplay_link_2K6:active, .ComicDisplay_link_2K6:hover, .ComicDisplay_link_2K6:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_link_2K6:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_spacer_BXM {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_inactive_17r {\r\n  pointer-events: none;\r\n  color: gray;\r\n}\r\n\r\n.ComicDisplay_hidden_Zk2 {\r\n  display: none;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/comicdisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;EAC9B,mBAAmB;EACnB,gBAAgB;CAKjB;;AAHC;EACE,YAAY;CACb;;AAGH;EACE,sBAAsB;EACtB,eAAe;CAChB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;EACrB,YAAY;CACb;;AACD;EACE,cAAc;CACf","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.root {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: $max-content-width;\r\n  text-align: center;\r\n  font-size: 20px;\r\n\r\n  img {\r\n    width: 100%;\r\n  }\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  margin: 0 20px;\r\n}\r\n\r\n.link,\r\n.link:active,\r\n.link:hover,\r\n.link:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.link:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.spacer {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n.inactive {\r\n  pointer-events: none;\r\n  color: gray;\r\n}\r\n.hidden {\r\n  display: none;\r\n}"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
@@ -6070,7 +6087,8 @@ module.exports =
   	"container": "ComicDisplay_container_31L",
   	"link": "ComicDisplay_link_2K6",
   	"spacer": "ComicDisplay_spacer_BXM",
-  	"inactive": "ComicDisplay_inactive_17r"
+  	"inactive": "ComicDisplay_inactive_17r",
+  	"hidden": "ComicDisplay_hidden_Zk2"
   };
 
 /***/ },

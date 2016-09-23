@@ -8,7 +8,6 @@ function Page({ news }) {
   return (
     <div className={s.root}>
       <div className={s.container}>
-        <h2 className={s.title}>Comics Displayed Below</h2>
         <ComicDisplay/>
       </div>
     </div>

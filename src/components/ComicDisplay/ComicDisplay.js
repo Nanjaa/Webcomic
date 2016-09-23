@@ -17,7 +17,8 @@ class ComicDisplay extends React.Component {
 			arc: '',
 			date: '',
 			img: Loading,
-			pg: ''
+			pg: '',
+			isHidden: true
 		}
 
 		this.componentWillMount = this.componentWillMount.bind(this);
@@ -28,6 +29,7 @@ class ComicDisplay extends React.Component {
 		this.lastPage = this.lastPage.bind(this);
 		this.updatePage = this.updatePage.bind(this);
 		this.checkIfPage = this.checkIfPage.bind(this);
+		this.hidden = this.hidden.bind(this);
 	}
 
 	// Navigation functions
@@ -57,6 +59,10 @@ class ComicDisplay extends React.Component {
 	}
 	// Check if there is a designated page number to load. Otherwise, default to the most recent page.
 	checkIfPage() {
+		this.setState({
+			isHidden: true
+		})
+
 		if(this.props.pageNumber) {
 			this.setState({
 				currentPg: this.props.pageNumber
@@ -90,7 +96,7 @@ class ComicDisplay extends React.Component {
 		this.setState({
 			img: Loading
 		});
-		
+
 		var ref = Firebase.database().ref("Comics/");
 		ref.once("value")
 			.then(function(snapshot) {
@@ -121,7 +127,8 @@ class ComicDisplay extends React.Component {
 					arc: thisArc,
 					date: thisDate,
 					img: 'http://nanja.space/Hubris/' + thisImg,
-					pg: thisPg
+					pg: thisPg,
+					isHidden: false
 				});
 			}.bind(this))
 	}
@@ -181,31 +188,38 @@ class ComicDisplay extends React.Component {
 		}
 	}
 
+	hidden() {
+		if(this.state.isHidden) {
+			return s.hidden;
+		}
+	}
+
 	render(props) {
 		return(
 			<div className={s.root}>
 				<div className={s.container}>
-					<h2>{this.props.pageNumber}</h2>
-					<p>#{this.state.currentPg}</p>
-					<p>Arc {this.state.arc}, Page {this.state.pg}</p>
-					<p>{this.state.date}</p>
+					<div className={this.hidden()}>
+						<p>#{this.state.currentPg}</p>
+						<p>Arc {this.state.arc}, Page {this.state.pg}</p>
+						<p>{this.state.date}</p>
+					</div>
 					<img src={this.state.img}/>
 				</div>
 
-			    <div className={s.container}>
-			    	<Link className={this.isInactive('first')} to="/page/1">First</Link>
-			    	
-			    	<Link className={this.isInactive('first')} to={this.previousPage()}>Previous</Link>
+				<div className={s.container}>
+					<Link className={this.isInactive('first')} to="/page/1">First</Link>
+					
+					<Link className={this.isInactive('first')} to={this.previousPage()}>Previous</Link>
 
-			    	<Link className={this.isInactive('last')} to={this.nextPage()}>Next</Link>
+					<Link className={this.isInactive('last')} to={this.nextPage()}>Next</Link>
 
-			    	<Link className={this.isInactive('last')} to={this.lastPage()}>Last</Link>
-			    </div>
+					<Link className={this.isInactive('last')} to={this.lastPage()}>Last</Link>
+				</div>
 
-			    <div className={s.container}>
-			        <a href="#">Expand Archives List</a>
-			        <ArchivesTable/>
-			    </div>
+				<div className={s.container}>
+					<a href="#">Expand Archives List</a>
+					<ArchivesTable/>
+				</div>
 			</div>
 		)		
 	}
