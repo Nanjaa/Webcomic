@@ -1,5 +1,9 @@
 @import '../variables.scss';
 
+body * {
+  box-sizing: border-box;
+}
+
 .root {
   background: #f5f5f5;
   color: #333;
@@ -13,8 +17,39 @@
   font-size: 20px;
 
   img {
-    width: 100%;
+    width: 96%;
   }
+}
+
+.comicDetails {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.leftResize, .rightResize {
+  width: 2%;
+  background: white;
+  border: 1px solid darkgray;
+  display: inline-block;
+  cursor: col-resize;
+  padding-bottom: 15px;
+
+  span {
+    float: left;
+    line-height: 1;
+    width: 100%;
+    display: inline-block;
+  }
+}
+.leftResize {
+  border-right: none;
+}
+.rightResize {
+  border-left: none;
+}
+
+.imgContainer, .imgContainer * {
+  user-select: none;
 }
 
 a {
