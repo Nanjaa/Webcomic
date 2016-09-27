@@ -31,7 +31,6 @@ class ComicDisplay extends React.Component {
 		this.updatePage = this.updatePage.bind(this);
 		this.checkIfPage = this.checkIfPage.bind(this);
 		this.hidden = this.hidden.bind(this);
-		this.resizeComic = this.resizeComic.bind(this);
 	}
 
 	// Navigation functions
@@ -128,10 +127,10 @@ class ComicDisplay extends React.Component {
 						thisPg = currentComic.Page;
 	 
 					this.setState({
-						pg: thisPg,
 						arc: thisArc,
 						date: thisDate,
 						img: 'http://nanja.space/Hubris/' + thisImg,
+						pg: thisPg,
 						loadingHidden: false
 					});
 				}
@@ -211,13 +210,7 @@ class ComicDisplay extends React.Component {
 				return s.hidden;
 			}
 		}
-		else {
-			return s.comicDetails;
-		}
-	}
 
-	resizeComic() {
-		console.log('resizing!');
 	}
 
 	render(props) {
@@ -229,19 +222,7 @@ class ComicDisplay extends React.Component {
 						<p>Arc {this.state.arc}, Page {this.state.pg}</p>
 						<p>{this.state.date}</p>
 					</div>
-					<div className={s.imgContainer}>
-						<div className={s.leftResize} draggable="true" onDragStart={this.resizeComic()}>
-							<span>.</span>
-							<span>.</span>
-							<span>.</span>
-						</div>
-						<img src={this.state.img}/>
-						<div className={s.rightResize} draggable="true" onDragStart={this.resizeComic()}>
-							<span>.</span>
-							<span>.</span>
-							<span>.</span>
-						</div>
-					</div>
+					<img src={this.state.img}/>
 					<div className={this.hidden('missing')}>
 						<h2>Empty Treasure Room!</h2>
 						<p>We're sorry, but your URL currently leads nowhere. Looking for a page in particular? check out our <Link to="/archives">archives</Link></p>
