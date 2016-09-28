@@ -8048,10 +8048,13 @@ module.exports =
   		var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(CastTable).call(this, props));
   
   		_this.state = {
-  			cast: []
+  			mainCharacters: [],
+  			secondaryCharacters: [],
+  			otherCharacters: []
   		};
   		_this.pageLink = _this.pageLink.bind(_this);
   		_this.componentWillMount = _this.componentWillMount.bind(_this);
+  		_this.characterCard = _this.characterCard.bind(_this);
   		return _this;
   	}
   
@@ -8060,10 +8063,25 @@ module.exports =
   		value: function componentWillMount() {
   			var ref = _firebase2.default.database().ref("Cast/");
   			ref.once("value").then(function (snapshot) {
-  				var cast = snapshot.val();
+  				var cast = snapshot.val(),
+  				    mainCharacters = [],
+  				    secondaryCharacters = [],
+  				    otherCharacters = [];
+  
+  				for (var i = 0; i < cast.length; i++) {
+  					if (cast[i].Importance === 1) {
+  						mainCharacters.push(cast[i]);
+  					} else if (cast[i].Importance === 2) {
+  						secondaryCharacters.push(cast[i]);
+  					} else {
+  						otherCharacters.push(cast[i]);
+  					}
+  				}
   
   				this.setState({
-  					cast: cast
+  					mainCharacters: mainCharacters,
+  					secondaryCharacters: secondaryCharacters,
+  					otherCharacters: otherCharacters
   				});
   			}.bind(this));
   		}
@@ -8074,8 +8092,36 @@ module.exports =
   			return pageNumber;
   		}
   	}, {
+  		key: 'characterCard',
+  		value: function characterCard(character) {
+  			var characterImg = 'http://nanja.space/Hubris/Cast/' + character.Img;
+  			return _react2.default.createElement(
+  				'ul',
+  				null,
+  				_react2.default.createElement(
+  					'h4',
+  					null,
+  					character.Name
+  				),
+  				_react2.default.createElement('img', { src: characterImg }),
+  				_react2.default.createElement(
+  					'li',
+  					null,
+  					character.Desc
+  				),
+  				_react2.default.createElement(
+  					_Link2.default,
+  					{ to: this.pageLink(character.FirstPage) },
+  					'First Appearance: Page ',
+  					character.FirstPage
+  				)
+  			);
+  		}
+  	}, {
   		key: 'render',
   		value: function render() {
+  			var _this2 = this;
+  
   			return _react2.default.createElement(
   				'div',
   				{ className: _CastTable2.default.root },
@@ -8083,43 +8129,50 @@ module.exports =
   					'div',
   					{ className: _CastTable2.default.container },
   					_react2.default.createElement(
+  						'h2',
+  						null,
+  						'Main Characters'
+  					),
+  					_react2.default.createElement(
   						'ul',
-  						{ className: _CastTable2.default.charactersList },
-  						this.state.cast.map(function (character) {
+  						null,
+  						this.state.mainCharacters.map(function (character) {
   							return _react2.default.createElement(
-  								'ul',
-  								{ key: character.Name },
-  								_react2.default.createElement(
-  									'li',
-  									null,
-  									_react2.default.createElement(
-  										'h4',
-  										null,
-  										character.Name
-  									)
-  								),
-  								_react2.default.createElement(
-  									'li',
-  									null,
-  									character.Img
-  								),
-  								_react2.default.createElement(
-  									'li',
-  									null,
-  									character.Desc
-  								),
-  								_react2.default.createElement(
-  									'li',
-  									null,
-  									'First Appearance: ',
-  									character.FirstPage
-  								),
-  								_react2.default.createElement(
-  									'li',
-  									null,
-  									'Importance: ',
-  									character.Importance
-  								)
+  								'div',
+  								{ className: _CastTable2.default.charactersList, key: character.Name },
+  								_this2.characterCard(character)
+  							);
+  						})
+  					),
+  					_react2.default.createElement(
+  						'h2',
+  						null,
+  						'Secondary Characters'
+  					),
+  					_react2.default.createElement(
+  						'ul',
+  						null,
+  						this.state.secondaryCharacters.map(function (character) {
+  							return _react2.default.createElement(
+  								'div',
+  								{ className: _CastTable2.default.charactersList, key: character.Name },
+  								_this2.characterCard(character)
+  							);
+  						})
+  					),
+  					_react2.default.createElement(
+  						'h2',
+  						null,
+  						'Other Characters'
+  					),
+  					_react2.default.createElement(
+  						'ul',
+  						null,
+  						this.state.otherCharacters.map(function (character) {
+  							return _react2.default.createElement(
+  								'div',
+  								{ className: _CastTable2.default.charactersList, key: character.Name },
+  								_this2.characterCard(character)
   							);
   						})
   					)
@@ -8141,7 +8194,7 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.CastTable_root_3sF {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.CastTable_container_1Zs {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.CastTable_charactersList_1e_ li {\r\n  text-align: left;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/CastTable/CastTable.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;EAC9B,mBAAmB;EACnB,gBAAgB;CACjB;;AAGA;EACC,iBAAiB;CACjB","file":"CastTable.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.root {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: $max-content-width;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.charactersList {\r\n\tli {\r\n\t\ttext-align: left;\r\n\t}\r\n}"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.CastTable_root_3sF {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.CastTable_container_1Zs {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.CastTable_charactersList_1e_ {\r\n  width: 25%;\r\n  display: inline-block;\r\n  border: 1px solid black;\r\n  vertical-align: top;\r\n  padding-bottom: 15px;\r\n  margin: 5px;\r\n}\r\n\r\n.CastTable_charactersList_1e_ ul img {\r\n  width: 100%;\r\n}\r\n\r\n.CastTable_charactersList_1e_ ul li {\r\n  text-align: left;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/CastTable/CastTable.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;EAC9B,mBAAmB;EACnB,gBAAgB;CACjB;;AAED;EACE,WAAW;EACX,sBAAsB;EACtB,wBAAwB;EACxB,oBAAoB;EACpB,qBAAqB;EACrB,YAAY;CAUb;;AAPG;EACE,YAAY;CACb;;AACD;EACE,iBAAiB;CAClB","file":"CastTable.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.root {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: $max-content-width;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.charactersList {\r\n  width: 25%;\r\n  display: inline-block;\r\n  border: 1px solid black;\r\n  vertical-align: top;\r\n  padding-bottom: 15px;\r\n  margin: 5px;\r\n\r\n  ul {\r\n    img {\r\n      width: 100%;\r\n    }\r\n    li {\r\n      text-align: left;\r\n    }\r\n  }\r\n}"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {

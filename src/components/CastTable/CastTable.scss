@@ -14,7 +14,19 @@
 }
 
 .charactersList {
-	li {
-		text-align: left;
-	}
+  width: 25%;
+  display: inline-block;
+  border: 1px solid black;
+  vertical-align: top;
+  padding-bottom: 15px;
+  margin: 5px;
+
+  ul {
+    img {
+      width: 100%;
+    }
+    li {
+      text-align: left;
+    }
+  }
 }

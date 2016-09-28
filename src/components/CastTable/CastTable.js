@@ -9,20 +9,40 @@ class CastTable extends React.Component {
 		super(props);
 
 		this.state = {
-			cast: []
+			mainCharacters: [],
+			secondaryCharacters: [],
+			otherCharacters: []
 		}
 		this.pageLink = this.pageLink.bind(this);
 		this.componentWillMount = this.componentWillMount.bind(this);
+		this.characterCard = this.characterCard.bind(this);
 	}
 
 	componentWillMount() {
 		var ref = Firebase.database().ref("Cast/");
 		ref.once("value")
 			.then(function(snapshot) {
-				var cast = snapshot.val();
+				var cast = snapshot.val(),
+					mainCharacters = [],
+					secondaryCharacters = [],
+					otherCharacters = [];
+
+				for(var i=0; i<cast.length; i++) {
+					if(cast[i].Importance === 1) {
+						mainCharacters.push(cast[i]);
+					}
+					else if(cast[i].Importance === 2) {
+						secondaryCharacters.push(cast[i]);
+					}
+					else {
+						otherCharacters.push(cast[i]);
+					}
+				}
 
 				this.setState({
-					cast: cast
+					mainCharacters: mainCharacters,
+					secondaryCharacters: secondaryCharacters,
+					otherCharacters: otherCharacters
 				});
 			}.bind(this))
 	}
@@ -32,25 +52,56 @@ class CastTable extends React.Component {
 		return pageNumber;
 	}
 
+	characterCard(character) {
+		var characterImg = 'http://nanja.space/Hubris/Cast/' + character.Img;
+		return(
+			<ul>
+				<h4>{character.Name}</h4>
+				<img src={characterImg}/>
+				<li>{character.Desc}</li>
+				<Link to={this.pageLink(character.FirstPage)}>First Appearance: Page {character.FirstPage}</Link>
+			</ul>
+		)
+
+	}
+
 
 
 	render() {
 		return(
 			<div className={s.root}>
 				<div className={s.container}>
-					<ul className={s.charactersList}>
-						{this.state.cast.map((character) => {
-							return (
-								<ul key={character.Name}>
-									<li><h4>{character.Name}</h4></li>
-									<li>{character.Img}</li>
-									<li>{character.Desc}</li>
-									<li>First Appearance: {character.FirstPage}</li>
-									<li>Importance: {character.Importance}</li>
-								</ul>
+					<h2>Main Characters</h2>
+					<ul>
+						{this.state.mainCharacters.map((character) => {
+							return(
+								<div className={s.charactersList} key={character.Name}>
+									{this.characterCard(character)}
+								</div>
 							)
 						})}
-						
+					</ul>
+
+					<h2>Secondary Characters</h2>
+					<ul>
+						{this.state.secondaryCharacters.map((character) => {
+							return(
+								<div className={s.charactersList} key={character.Name}>
+									{this.characterCard(character)}
+								</div>
+							)
+						})}
+					</ul>
+
+					<h2>Other Characters</h2>
+					<ul>
+						{this.state.otherCharacters.map((character) => {
+							return(
+								<div className={s.charactersList} key={character.Name}>
+									{this.characterCard(character)}
+								</div>
+							)
+						})}
 					</ul>
 				</div>
 			</div>
