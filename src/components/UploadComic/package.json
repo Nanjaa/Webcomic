@@ -1,0 +1,6 @@
+{
+	"name": "UploadComic",
+	"version": "0.0.0",
+	"private": true,
+	"main": "./UploadComic.js"
+}
