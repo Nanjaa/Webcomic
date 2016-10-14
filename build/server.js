@@ -3582,6 +3582,8 @@ module.exports =
   		};
   
   		_this.signIn = _this.signIn.bind(_this);
+  		_this.signOut = _this.signOut.bind(_this);
+  		_this.uploadNew = _this.uploadNew.bind(_this);
   		return _this;
   	}
   
@@ -3593,12 +3595,44 @@ module.exports =
   			    password = this.refs.password,
   			    passwordVal = password.value;
   
-  			firebase.auth().signInWithEmailAndPassword(usernameVal, passwordVal).catch(function (error) {
+  			_firebase2.default.auth().signInWithEmailAndPassword(usernameVal, passwordVal).catch(function (error) {
   				// Handle Errors here.
   				var errorCode = error.code;
   				var errorMessage = error.message;
-  				console.log(errorMessage);
+  				this.setState({
+  					error: errorMessage
+  				});
   			}.bind(this));
+  		}
+  	}, {
+  		key: 'signOut',
+  		value: function signOut() {
+  			_firebase2.default.auth().signOut().then(function () {
+  				this.setState({
+  					error: "Successfully signed out!"
+  				});
+  			}.bind(this), function (error) {
+  				this.setState({
+  					error: error
+  				});
+  			}.bind(this));
+  		}
+  	}, {
+  		key: 'uploadNew',
+  		value: function uploadNew() {
+  			var database = _firebase2.default.database(),
+  			    arc = this.refs.arc,
+  			    date = this.refs.date,
+  			    image = this.refs.image;
+  			//Firebase.database().ref('Comics/' + )
+  		}
+  	}, {
+  		key: 'componentWillMount',
+  		value: function componentWillMount() {
+  			var ref = _firebase2.default.database().ref("Comics/");
+  			ref.once("value").then(function (snapshot) {
+  				console.log(snapshot);
+  			});
   		}
   	}, {
   		key: 'render',
@@ -3612,7 +3646,7 @@ module.exports =
   					_react2.default.createElement(
   						'h2',
   						null,
-  						'Upload New Comic'
+  						'Sign In'
   					),
   					_react2.default.createElement('input', { ref: 'username', type: 'text' }),
   					_react2.default.createElement('input', { ref: 'password', type: 'text' }),
@@ -3622,9 +3656,42 @@ module.exports =
   						'Click Here'
   					),
   					_react2.default.createElement(
+  						'a',
+  						{ href: '#', onClick: this.signOut },
+  						'Sign Out'
+  					),
+  					_react2.default.createElement(
   						'h3',
   						null,
   						this.state.error
+  					),
+  					_react2.default.createElement(
+  						'h2',
+  						null,
+  						'Upload New Comic'
+  					),
+  					_react2.default.createElement(
+  						'h3',
+  						null,
+  						'Arc'
+  					),
+  					_react2.default.createElement('input', { ref: 'arc', type: 'text' }),
+  					_react2.default.createElement(
+  						'h3',
+  						null,
+  						'Date'
+  					),
+  					_react2.default.createElement('input', { ref: 'date', type: 'text' }),
+  					_react2.default.createElement(
+  						'h3',
+  						null,
+  						'Image'
+  					),
+  					_react2.default.createElement('input', { ref: 'image', type: 'text' }),
+  					_react2.default.createElement(
+  						'a',
+  						{ href: '#', onClick: this.uploadNew },
+  						'Click Here'
   					)
   				)
   			);
