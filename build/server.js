@@ -685,13 +685,13 @@ module.exports =
 /* 13 */
 /***/ function(module, exports) {
 
-  module.exports = require("graphql");
+  module.exports = require("firebase");
 
 /***/ },
 /* 14 */
 /***/ function(module, exports) {
 
-  module.exports = require("firebase");
+  module.exports = require("graphql");
 
 /***/ },
 /* 15 */
@@ -792,7 +792,7 @@ module.exports =
   
   var _ArchivesTable2 = _interopRequireDefault(_ArchivesTable);
   
-  var _firebase = __webpack_require__(14);
+  var _firebase = __webpack_require__(13);
   
   var _firebase2 = _interopRequireDefault(_firebase);
   
@@ -870,48 +870,40 @@ module.exports =
   			var _this2 = this;
   
   			return _react2.default.createElement(
-  				'div',
-  				{ className: _ArchivesTable2.default.root },
-  				_react2.default.createElement(
-  					'div',
-  					{ className: _ArchivesTable2.default.container },
-  					_react2.default.createElement(
-  						'ul',
-  						null,
-  						this.state.pages.map(function (page) {
-  							var arcTitle = _this2.checkIfArcstart(page.Page);
-  							if (arcTitle === null) {
-  								return _react2.default.createElement(
-  									'li',
-  									{ key: page.Page },
-  									_react2.default.createElement(
-  										_Link2.default,
-  										{ to: _this2.pageLink(page.Page) },
-  										'[ ',
-  										page.Page,
-  										' ]'
-  									)
-  								);
-  							} else {
-  								return [_react2.default.createElement(
-  									'li',
-  									{ key: page.Page, className: _ArchivesTable2.default.arcTitle },
-  									arcTitle
-  								), _react2.default.createElement(
-  									'li',
-  									null,
-  									_react2.default.createElement(
-  										_Link2.default,
-  										{ to: _this2.pageLink(page.Page) },
-  										'[ ',
-  										page.Page,
-  										' ]'
-  									)
-  								)];
-  							}
-  						})
-  					)
-  				)
+  				'ul',
+  				null,
+  				this.state.pages.map(function (page) {
+  					var arcTitle = _this2.checkIfArcstart(page.Page);
+  					if (arcTitle === null) {
+  						return _react2.default.createElement(
+  							'li',
+  							{ key: page.Page },
+  							_react2.default.createElement(
+  								_Link2.default,
+  								{ to: _this2.pageLink(page.Page) },
+  								'[ ',
+  								page.Page,
+  								' ]'
+  							)
+  						);
+  					} else {
+  						return [_react2.default.createElement(
+  							'li',
+  							{ key: page.Page, className: _ArchivesTable2.default.arcTitle },
+  							arcTitle
+  						), _react2.default.createElement(
+  							'li',
+  							null,
+  							_react2.default.createElement(
+  								_Link2.default,
+  								{ to: _this2.pageLink(page.Page) },
+  								'[ ',
+  								page.Page,
+  								' ]'
+  							)
+  						)];
+  					}
+  				})
   			);
   		}
   	}]);
@@ -966,7 +958,7 @@ module.exports =
   
   var _ComicNavigation2 = _interopRequireDefault(_ComicNavigation);
   
-  var _firebase = __webpack_require__(14);
+  var _firebase = __webpack_require__(13);
   
   var _firebase2 = _interopRequireDefault(_firebase);
   
@@ -1212,7 +1204,7 @@ module.exports =
   		value: function render(props) {
   			return _react2.default.createElement(
   				'div',
-  				{ className: _ComicDisplay2.default.root },
+  				{ className: _ComicDisplay2.default.cDisplayRoot },
   				_react2.default.createElement(
   					'div',
   					{ className: _ComicDisplay2.default.container },
@@ -1222,16 +1214,12 @@ module.exports =
   						_react2.default.createElement(
   							'p',
   							null,
-  							'#',
-  							this.state.currentPg
-  						),
-  						_react2.default.createElement(
-  							'p',
-  							null,
-  							'Arc ',
-  							this.state.arc,
-  							', Page ',
-  							this.state.pg
+  							_react2.default.createElement(
+  								'span',
+  								{ className: _ComicDisplay2.default.bold },
+  								'Page ',
+  								this.state.currentPg
+  							)
   						),
   						_react2.default.createElement(
   							'p',
@@ -1258,41 +1246,41 @@ module.exports =
   								'archives'
   							)
   						)
+  					),
+  					_react2.default.createElement(
+  						'div',
+  						{ className: _ComicDisplay2.default.prevNext },
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('first'), to: '/page/1' },
+  							'First'
+  						),
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('first'), to: this.previousPage() },
+  							'Previous'
+  						),
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('last'), to: this.nextPage() },
+  							'Next'
+  						),
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('last'), to: this.lastPage() },
+  							'Last'
+  						)
+  					),
+  					_react2.default.createElement(
+  						'div',
+  						{ className: _ComicDisplay2.default.expandArchives },
+  						_react2.default.createElement(
+  							'a',
+  							{ href: '#' },
+  							'Expand Archives List'
+  						),
+  						_react2.default.createElement(_ArchivesTable2.default, null)
   					)
-  				),
-  				_react2.default.createElement(
-  					'div',
-  					{ className: _ComicDisplay2.default.container },
-  					_react2.default.createElement(
-  						_Link2.default,
-  						{ className: this.isInactive('first'), to: '/page/1' },
-  						'First'
-  					),
-  					_react2.default.createElement(
-  						_Link2.default,
-  						{ className: this.isInactive('first'), to: this.previousPage() },
-  						'Previous'
-  					),
-  					_react2.default.createElement(
-  						_Link2.default,
-  						{ className: this.isInactive('last'), to: this.nextPage() },
-  						'Next'
-  					),
-  					_react2.default.createElement(
-  						_Link2.default,
-  						{ className: this.isInactive('last'), to: this.lastPage() },
-  						'Last'
-  					)
-  				),
-  				_react2.default.createElement(
-  					'div',
-  					{ className: _ComicDisplay2.default.container },
-  					_react2.default.createElement(
-  						'a',
-  						{ href: '#' },
-  						'Expand Archives List'
-  					),
-  					_react2.default.createElement(_ArchivesTable2.default, null)
   				)
   			);
   		}
@@ -1597,7 +1585,7 @@ module.exports =
   
   var _ComicNavigation2 = _interopRequireDefault(_ComicNavigation);
   
-  var _firebase = __webpack_require__(14);
+  var _firebase = __webpack_require__(13);
   
   var _firebase2 = _interopRequireDefault(_firebase);
   
@@ -1843,7 +1831,7 @@ module.exports =
   		value: function render(props) {
   			return _react2.default.createElement(
   				'div',
-  				{ className: _ComicDisplay2.default.root },
+  				{ className: _ComicDisplay2.default.cDisplayRoot },
   				_react2.default.createElement(
   					'div',
   					{ className: _ComicDisplay2.default.container },
@@ -1853,16 +1841,12 @@ module.exports =
   						_react2.default.createElement(
   							'p',
   							null,
-  							'#',
-  							this.state.currentPg
-  						),
-  						_react2.default.createElement(
-  							'p',
-  							null,
-  							'Arc ',
-  							this.state.arc,
-  							', Page ',
-  							this.state.pg
+  							_react2.default.createElement(
+  								'span',
+  								{ className: _ComicDisplay2.default.bold },
+  								'Page ',
+  								this.state.currentPg
+  							)
   						),
   						_react2.default.createElement(
   							'p',
@@ -1889,41 +1873,41 @@ module.exports =
   								'archives'
   							)
   						)
+  					),
+  					_react2.default.createElement(
+  						'div',
+  						{ className: _ComicDisplay2.default.prevNext },
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('first'), to: '/page/1' },
+  							'First'
+  						),
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('first'), to: this.previousPage() },
+  							'Previous'
+  						),
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('last'), to: this.nextPage() },
+  							'Next'
+  						),
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('last'), to: this.lastPage() },
+  							'Last'
+  						)
+  					),
+  					_react2.default.createElement(
+  						'div',
+  						{ className: _ComicDisplay2.default.expandArchives },
+  						_react2.default.createElement(
+  							'a',
+  							{ href: '#' },
+  							'Expand Archives List'
+  						),
+  						_react2.default.createElement(_ArchivesTable2.default, null)
   					)
-  				),
-  				_react2.default.createElement(
-  					'div',
-  					{ className: _ComicDisplay2.default.container },
-  					_react2.default.createElement(
-  						_Link2.default,
-  						{ className: this.isInactive('first'), to: '/page/1' },
-  						'First'
-  					),
-  					_react2.default.createElement(
-  						_Link2.default,
-  						{ className: this.isInactive('first'), to: this.previousPage() },
-  						'Previous'
-  					),
-  					_react2.default.createElement(
-  						_Link2.default,
-  						{ className: this.isInactive('last'), to: this.nextPage() },
-  						'Next'
-  					),
-  					_react2.default.createElement(
-  						_Link2.default,
-  						{ className: this.isInactive('last'), to: this.lastPage() },
-  						'Last'
-  					)
-  				),
-  				_react2.default.createElement(
-  					'div',
-  					{ className: _ComicDisplay2.default.container },
-  					_react2.default.createElement(
-  						'a',
-  						{ href: '#' },
-  						'Expand Archives List'
-  					),
-  					_react2.default.createElement(_ArchivesTable2.default, null)
   				)
   			);
   		}
@@ -2866,7 +2850,7 @@ module.exports =
   
   var _Footer2 = _interopRequireDefault(_Footer);
   
-  var _firebase = __webpack_require__(14);
+  var _firebase = __webpack_require__(13);
   
   var _firebase2 = _interopRequireDefault(_firebase);
   
@@ -2997,7 +2981,7 @@ module.exports =
   
   var _CastTable2 = _interopRequireDefault(_CastTable);
   
-  var _firebase = __webpack_require__(14);
+  var _firebase = __webpack_require__(13);
   
   var _firebase2 = _interopRequireDefault(_firebase);
   
@@ -3384,7 +3368,6 @@ module.exports =
           _react2.default.createElement(
             'div',
             { className: _Header2.default.container },
-            _react2.default.createElement(_Navigation2.default, { className: _Header2.default.nav }),
             _react2.default.createElement(
               _Link2.default,
               { className: _Header2.default.brand, to: '/' },
@@ -3396,8 +3379,9 @@ module.exports =
               _react2.default.createElement(
                 'h1',
                 { className: _Header2.default.bannerTitle },
-                'Hubris Comic'
-              )
+                'Forged Divinity'
+              ),
+              _react2.default.createElement(_Navigation2.default, { className: _Header2.default.nav })
             )
           )
         );
@@ -3563,7 +3547,7 @@ module.exports =
   
   var _UploadComic2 = _interopRequireDefault(_UploadComic);
   
-  var _firebase = __webpack_require__(14);
+  var _firebase = __webpack_require__(13);
   
   var _firebase2 = _interopRequireDefault(_firebase);
   
@@ -4239,7 +4223,7 @@ module.exports =
   
   var _markdownIt2 = _interopRequireDefault(_markdownIt);
   
-  var _graphql = __webpack_require__(13);
+  var _graphql = __webpack_require__(14);
   
   var _ContentType = __webpack_require__(50);
   
@@ -4389,7 +4373,7 @@ module.exports =
     value: true
   });
   
-  var _graphql = __webpack_require__(13);
+  var _graphql = __webpack_require__(14);
   
   var _fetch = __webpack_require__(19);
   
@@ -4459,7 +4443,7 @@ module.exports =
     value: true
   });
   
-  var _graphql = __webpack_require__(13);
+  var _graphql = __webpack_require__(14);
   
   var _me = __webpack_require__(47);
   
@@ -4507,7 +4491,7 @@ module.exports =
     value: true
   });
   
-  var _graphql = __webpack_require__(13);
+  var _graphql = __webpack_require__(14);
   
   var ContentType = new _graphql.GraphQLObjectType({
     name: 'Content',
@@ -4538,7 +4522,7 @@ module.exports =
     value: true
   });
   
-  var _graphql = __webpack_require__(13);
+  var _graphql = __webpack_require__(14);
   
   var NewsItemType = new _graphql.GraphQLObjectType({
     name: 'NewsItem',
@@ -4570,7 +4554,7 @@ module.exports =
     value: true
   });
   
-  var _graphql = __webpack_require__(13);
+  var _graphql = __webpack_require__(14);
   
   var UserType = new _graphql.GraphQLObjectType({
     name: 'User',
@@ -6373,12 +6357,10 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ArchivesTable_root_20y {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.ArchivesTable_container_TM1 {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\nli {\r\n\tlist-style: none;\r\n\tdisplay: inline-block;\r\n\twidth: auto;\r\n}\r\n\r\nli a {\r\n\tmargin: 0 5px;\r\n  text-decoration: none;\r\n}\r\n\r\nul {\r\n  text-align: left;\r\n}\r\n\r\nul > div {\r\n  display: inline-block;\r\n}\r\n\r\n.ArchivesTable_arcTitle_1_1 {\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\n.ArchivesTable_arcTitle_1_1 h3 {\r\n  margin: 15px 0 5px 0;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/ArchivesTable/ArchivesTable.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;EAC9B,mBAAmB;EACnB,gBAAgB;CACjB;;AAED;CACC,iBAAiB;CACjB,sBAAsB;CACtB,YAAY;CACZ;;AACD;CACC,cAAc;EACb,sBAAsB;CACvB;;AACD;EACE,iBAAiB;CAClB;;AACD;EACE,sBAAsB;CACvB;;AACD;EACE,YAAY;EACZ,UAAU;CAKX;;AAHC;EACE,qBAAqB;CACtB","file":"ArchivesTable.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.root {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: $max-content-width;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\nli {\r\n\tlist-style: none;\r\n\tdisplay: inline-block;\r\n\twidth: auto;\r\n}\r\nli a {\r\n\tmargin: 0 5px;\r\n  text-decoration: none;\r\n}\r\nul {\r\n  text-align: left;\r\n}\r\nul > div {\r\n  display: inline-block;\r\n}\r\n.arcTitle {\r\n  width: 100%;\r\n  margin: 0;\r\n\r\n  h3 {\r\n    margin: 15px 0 5px 0;\r\n  }\r\n}"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\nli {\r\n\tlist-style: none;\r\n\tdisplay: inline-block;\r\n\twidth: auto;\r\n}\r\n\r\nli a {\r\n\tmargin: 0 5px;\r\n  text-decoration: none;\r\n}\r\n\r\nul {\r\n  text-align: left;\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n\r\nul > div {\r\n  display: inline-block;\r\n}\r\n\r\n.ArchivesTable_arcTitle_1_1 {\r\n  width: 100%;\r\n  margin: 0;\r\n}\r\n\r\n.ArchivesTable_arcTitle_1_1 h3 {\r\n\tmargin: 15px 0 5px 0;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/ArchivesTable/ArchivesTable.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;CACC,iBAAiB;CACjB,sBAAsB;CACtB,YAAY;CACZ;;AACD;CACC,cAAc;EACb,sBAAsB;CACvB;;AACD;EACE,iBAAiB;EACjB,WAAW;EACX,UAAU;CACX;;AACD;EACE,sBAAsB;CACvB;;AACD;EACE,YAAY;EACZ,UAAU;CAKX;;AAHC;CACE,qBAAqB;CACtB","file":"ArchivesTable.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\nli {\r\n\tlist-style: none;\r\n\tdisplay: inline-block;\r\n\twidth: auto;\r\n}\r\nli a {\r\n\tmargin: 0 5px;\r\n  text-decoration: none;\r\n}\r\nul {\r\n  text-align: left;\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\nul > div {\r\n  display: inline-block;\r\n}\r\n.arcTitle {\r\n  width: 100%;\r\n  margin: 0;\r\n\r\n  h3 {\r\n    margin: 15px 0 5px 0;\r\n  }\r\n}"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
-  	"root": "ArchivesTable_root_20y",
-  	"container": "ArchivesTable_container_TM1",
   	"arcTitle": "ArchivesTable_arcTitle_1_1"
   };
 
@@ -6409,12 +6391,14 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\nbody * {\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\r\n}\r\n\r\n.ComicDisplay_root_3Y6 {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.ComicDisplay_container_2e4 {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.ComicDisplay_container_2e4 img {\r\n  width: 96%;\r\n}\r\n\r\n.ComicDisplay_comicDetails_39f {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.ComicDisplay_leftResize_1tw, .ComicDisplay_rightResize_2Hi {\r\n  width: 2%;\r\n  background: white;\r\n  border: 1px solid darkgray;\r\n  display: inline-block;\r\n  cursor: col-resize;\r\n  padding-bottom: 15px;\r\n}\r\n\r\n.ComicDisplay_leftResize_1tw span, .ComicDisplay_rightResize_2Hi span {\r\n  float: left;\r\n  line-height: 1;\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n.ComicDisplay_leftResize_1tw {\r\n  border-right: none;\r\n}\r\n\r\n.ComicDisplay_rightResize_2Hi {\r\n  border-left: none;\r\n}\r\n\r\n.ComicDisplay_imgContainer_3iu, .ComicDisplay_imgContainer_3iu * {\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  margin: 0 20px;\r\n}\r\n\r\n.ComicDisplay_link_i-9, .ComicDisplay_link_i-9:active, .ComicDisplay_link_i-9:hover, .ComicDisplay_link_i-9:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_link_i-9:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_spacer_37l {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_inactive_3tB {\r\n  pointer-events: none;\r\n  color: gray;\r\n}\r\n\r\n.ComicDisplay_hidden_3DM {\r\n  display: none;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/ComicDisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,+BAAuB;UAAvB,uBAAuB;CACxB;;AAED;EACE,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;EAC9B,mBAAmB;EACnB,gBAAgB;CAKjB;;AAHC;EACE,WAAW;CACZ;;AAGH;EACE,kBAAkB;EAClB,eAAe;CAChB;;AAED;EACE,UAAU;EACV,kBAAkB;EAClB,2BAA2B;EAC3B,sBAAsB;EACtB,mBAAmB;EACnB,qBAAqB;CAQtB;;AANC;EACE,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,sBAAsB;CACvB;;AAEH;EACE,mBAAmB;CACpB;;AACD;EACE,kBAAkB;CACnB;;AAED;EACE,0BAAkB;KAAlB,uBAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;CACnB;;AAED;EACE,sBAAsB;EACtB,eAAe;CAChB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;EACrB,YAAY;CACb;;AACD;EACE,cAAc;CACf","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\nbody * {\r\n  box-sizing: border-box;\r\n}\r\n\r\n.root {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: $max-content-width;\r\n  text-align: center;\r\n  font-size: 20px;\r\n\r\n  img {\r\n    width: 96%;\r\n  }\r\n}\r\n\r\n.comicDetails {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.leftResize, .rightResize {\r\n  width: 2%;\r\n  background: white;\r\n  border: 1px solid darkgray;\r\n  display: inline-block;\r\n  cursor: col-resize;\r\n  padding-bottom: 15px;\r\n\r\n  span {\r\n    float: left;\r\n    line-height: 1;\r\n    width: 100%;\r\n    display: inline-block;\r\n  }\r\n}\r\n.leftResize {\r\n  border-right: none;\r\n}\r\n.rightResize {\r\n  border-left: none;\r\n}\r\n\r\n.imgContainer, .imgContainer * {\r\n  user-select: none;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  margin: 0 20px;\r\n}\r\n\r\n.link,\r\n.link:active,\r\n.link:hover,\r\n.link:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.link:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.spacer {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n.inactive {\r\n  pointer-events: none;\r\n  color: gray;\r\n}\r\n.hidden {\r\n  display: none;\r\n}"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\nbody * {\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\r\n}\r\n\r\n.ComicDisplay_bold_79N {\r\n  font-weight: 600;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 85%;\r\n  margin: 0 auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 {\r\n  margin: 0 auto;\r\n  padding: 25px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 img {\r\n  width: 100%;\r\n  margin: 25px 0;\r\n  border: 2px solid black;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div {\r\n  border: 2px solid black;\r\n  background: white;\r\n  padding: 25px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div p {\r\n  margin: 0;\r\n  text-align: left;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY {\r\n  margin-bottom: 25px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_comicDetails_39f {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi {\r\n  width: 2%;\r\n  background: white;\r\n  border: 1px solid darkgray;\r\n  display: inline-block;\r\n  cursor: col-resize;\r\n  padding-bottom: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw span, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi span {\r\n  float: left;\r\n  line-height: 1;\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw {\r\n  border-right: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi {\r\n  border-left: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_imgContainer_3iu, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_imgContainer_3iu * {\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk a {\r\n  text-decoration: none;\r\n  margin: 0 20px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:active, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:hover, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_spacer_37l {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_inactive_3tB {\r\n  pointer-events: none;\r\n  color: gray;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_hidden_3DM {\r\n  display: none;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/ComicDisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,+BAAuB;UAAvB,uBAAuB;CACxB;;AAED;EACE,iBAAiB;CAClB;;AAED;EACE,oBAAoB;EACpB,YAAY;EACZ,wBAAwB;EACxB,WAAW;EACX,eAAe;CA0FhB;;AAxFC;EACE,eAAe;EACf,cAAc;EACd,kBAA8B;EAC9B,mBAAmB;EACnB,gBAAgB;CAkBjB;;AAhBC;EACE,YAAY;EACZ,eAAe;EACf,wBAAwB;CACzB;;AAED;EACE,wBAAwB;EACxB,kBAAkB;EAClB,cAAc;CAMf;;AAJC;EACE,UAAU;EACV,iBAAiB;CAClB;;AAIL;EACE,oBAAoB;CACrB;;AAED;EACE,kBAAkB;EAClB,eAAe;CAChB;;AAED;EACE,UAAU;EACV,kBAAkB;EAClB,2BAA2B;EAC3B,sBAAsB;EACtB,mBAAmB;EACnB,qBAAqB;CAQtB;;AANC;EACE,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,sBAAsB;CACvB;;AAEH;EACE,mBAAmB;CACpB;;AACD;EACE,kBAAkB;CACnB;;AAED;EACE,0BAAkB;KAAlB,uBAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;CACnB;;AAED;EACE,sBAAsB;EACtB,eAAe;CAChB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;EACrB,YAAY;CACb;;AACD;EACE,cAAc;CACf","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\nbody * {\r\n  box-sizing: border-box;\r\n}\r\n\r\n.bold {\r\n  font-weight: 600;\r\n}\r\n\r\n.cDisplayRoot {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 85%;\r\n  margin: 0 auto;\r\n\r\n  .container {\r\n    margin: 0 auto;\r\n    padding: 25px;\r\n    max-width: $max-content-width;\r\n    text-align: center;\r\n    font-size: 20px;\r\n\r\n    img {\r\n      width: 100%;\r\n      margin: 25px 0;\r\n      border: 2px solid black;\r\n    }\r\n\r\n    div {\r\n      border: 2px solid black;\r\n      background: white;\r\n      padding: 25px;\r\n\r\n      p {\r\n        margin: 0;\r\n        text-align: left;\r\n      }\r\n    }\r\n  }\r\n\r\n  .prevNext {\r\n    margin-bottom: 25px;\r\n  }\r\n\r\n  .comicDetails {\r\n    max-width: 1000px;\r\n    margin: 0 auto;\r\n  }\r\n\r\n  .leftResize, .rightResize {\r\n    width: 2%;\r\n    background: white;\r\n    border: 1px solid darkgray;\r\n    display: inline-block;\r\n    cursor: col-resize;\r\n    padding-bottom: 15px;\r\n\r\n    span {\r\n      float: left;\r\n      line-height: 1;\r\n      width: 100%;\r\n      display: inline-block;\r\n    }\r\n  }\r\n  .leftResize {\r\n    border-right: none;\r\n  }\r\n  .rightResize {\r\n    border-left: none;\r\n  }\r\n\r\n  .imgContainer, .imgContainer * {\r\n    user-select: none;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n    margin: 0 20px;\r\n  }\r\n\r\n  .link,\r\n  .link:active,\r\n  .link:hover,\r\n  .link:visited {\r\n    color: #333;\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link:hover {\r\n    text-decoration: underline;\r\n  }\r\n\r\n  .spacer {\r\n    padding-right: 15px;\r\n    padding-left: 15px;\r\n  }\r\n  .inactive {\r\n    pointer-events: none;\r\n    color: gray;\r\n  }\r\n  .hidden {\r\n    display: none;\r\n  }\r\n}"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
-  	"root": "ComicDisplay_root_3Y6",
+  	"bold": "ComicDisplay_bold_79N",
+  	"cDisplayRoot": "ComicDisplay_cDisplayRoot_3Uk",
   	"container": "ComicDisplay_container_2e4",
+  	"prevNext": "ComicDisplay_prevNext_2xY",
   	"comicDetails": "ComicDisplay_comicDetails_39f",
   	"leftResize": "ComicDisplay_leftResize_1tw",
   	"rightResize": "ComicDisplay_rightResize_2Hi",
@@ -6488,7 +6472,7 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.Header_root_1Mv {\r\n  background: #373277;\r\n  color: #fff;\r\n}\r\n\r\n.Header_container_1jj {\r\n  margin: 0 auto;\r\n  padding: 20px 0;\r\n  max-width: 1000px;\r\n}\r\n\r\n.Header_brand_3Km {\r\n  color: rgb(146, 229, 252);\r\n  text-decoration: none;\r\n  font-size: 1.75em; /* ~28px */\r\n}\r\n\r\n.Header_brandTxt_fin {\r\n  margin-left: 10px;\r\n}\r\n\r\n.Header_nav_3h2 {\r\n  float: right;\r\n  margin-top: 6px;\r\n}\r\n\r\n.Header_banner_3Ep {\r\n  text-align: center;\r\n}\r\n\r\n.Header_bannerTitle_313 {\r\n  margin: 0;\r\n  padding: 10px;\r\n  font-weight: normal;\r\n  font-size: 4em;\r\n  line-height: 1em;\r\n}\r\n\r\n.Header_bannerDesc_3Bf {\r\n  padding: 0;\r\n  color: rgba(255, 255, 255, .5);\r\n  font-size: 1.25em;\r\n  margin: 0;\r\n}\r\n", "", {"version":3,"sources":["/./src/components/Header/Header.scss","/./src/components/variables.scss"],"names":[],"mappings":"AAAA;;;;;;;GAOG;;ACPH;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;ADrBhF;EACE,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,eAAe;EACf,gBAAgB;EAChB,kBAA8B;CAC/B;;AAED;EACE,0BAA2C;EAC3C,sBAAsB;EACtB,kBAAkB,CAAC,WAAW;CAC/B;;AAED;EACE,kBAAkB;CACnB;;AAED;EACE,aAAa;EACb,gBAAgB;CACjB;;AAED;EACE,mBAAmB;CACpB;;AAED;EACE,UAAU;EACV,cAAc;EACd,oBAAoB;EACpB,eAAe;EACf,iBAAiB;CAClB;;AAED;EACE,WAAW;EACX,+BAA+B;EAC/B,kBAAkB;EAClB,UAAU;CACX","file":"Header.scss","sourcesContent":["/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n@import '../variables.scss';\r\n\r\n$brand-color: #61dafb;\r\n\r\n.root {\r\n  background: #373277;\r\n  color: #fff;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 0;\r\n  max-width: $max-content-width;\r\n}\r\n\r\n.brand {\r\n  color: color($brand-color lightness(+10%));\r\n  text-decoration: none;\r\n  font-size: 1.75em; /* ~28px */\r\n}\r\n\r\n.brandTxt {\r\n  margin-left: 10px;\r\n}\r\n\r\n.nav {\r\n  float: right;\r\n  margin-top: 6px;\r\n}\r\n\r\n.banner {\r\n  text-align: center;\r\n}\r\n\r\n.bannerTitle {\r\n  margin: 0;\r\n  padding: 10px;\r\n  font-weight: normal;\r\n  font-size: 4em;\r\n  line-height: 1em;\r\n}\r\n\r\n.bannerDesc {\r\n  padding: 0;\r\n  color: rgba(255, 255, 255, .5);\r\n  font-size: 1.25em;\r\n  margin: 0;\r\n}\r\n","/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.Header_root_1Mv {\r\n  background: #373277;\r\n  color: #fff;\r\n}\r\n\r\n.Header_container_1jj {\r\n  margin: 0 auto;\r\n  padding: 20px 0;\r\n  max-width: 1000px;\r\n  /* Clearfix */\r\n  overflow: auto;\r\n  zoom: 1;\r\n}\r\n\r\n.Header_brand_3Km {\r\n  color: rgb(146, 229, 252);\r\n  text-decoration: none;\r\n  font-size: 1.75em; /* ~28px */\r\n}\r\n\r\n.Header_brandTxt_fin {\r\n  margin-left: 10px;\r\n}\r\n\r\n.Header_nav_3h2 {\r\n  margin-top: 6px;\r\n}\r\n\r\n.Header_banner_3Ep {\r\n  text-align: center;\r\n  width: 50%;\r\n  float: right;\r\n  margin-right: 15px;\r\n}\r\n\r\n.Header_bannerTitle_313 {\r\n  margin: 0;\r\n  padding: 10px;\r\n  font-weight: normal;\r\n  font-size: 4em;\r\n  line-height: 1em;\r\n}\r\n\r\n.Header_bannerDesc_3Bf {\r\n  padding: 0;\r\n  color: rgba(255, 255, 255, .5);\r\n  font-size: 1.25em;\r\n  margin: 0;\r\n}\r\n", "", {"version":3,"sources":["/./src/components/Header/Header.scss","/./src/components/variables.scss"],"names":[],"mappings":"AAAA;;;;;;;GAOG;;ACPH;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;ADrBhF;EACE,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,eAAe;EACf,gBAAgB;EAChB,kBAA8B;EAC9B,cAAc;EACd,eAAe;EACf,QAAQ;CACT;;AAED;EACE,0BAA2C;EAC3C,sBAAsB;EACtB,kBAAkB,CAAC,WAAW;CAC/B;;AAED;EACE,kBAAkB;CACnB;;AAED;EACE,gBAAgB;CACjB;;AAED;EACE,mBAAmB;EACnB,WAAW;EACX,aAAa;EACb,mBAAmB;CACpB;;AAED;EACE,UAAU;EACV,cAAc;EACd,oBAAoB;EACpB,eAAe;EACf,iBAAiB;CAClB;;AAED;EACE,WAAW;EACX,+BAA+B;EAC/B,kBAAkB;EAClB,UAAU;CACX","file":"Header.scss","sourcesContent":["/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n@import '../variables.scss';\r\n\r\n$brand-color: #61dafb;\r\n\r\n.root {\r\n  background: #373277;\r\n  color: #fff;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 0;\r\n  max-width: $max-content-width;\r\n  /* Clearfix */\r\n  overflow: auto;\r\n  zoom: 1;\r\n}\r\n\r\n.brand {\r\n  color: color($brand-color lightness(+10%));\r\n  text-decoration: none;\r\n  font-size: 1.75em; /* ~28px */\r\n}\r\n\r\n.brandTxt {\r\n  margin-left: 10px;\r\n}\r\n\r\n.nav {\r\n  margin-top: 6px;\r\n}\r\n\r\n.banner {\r\n  text-align: center;\r\n  width: 50%;\r\n  float: right;\r\n  margin-right: 15px;\r\n}\r\n\r\n.bannerTitle {\r\n  margin: 0;\r\n  padding: 10px;\r\n  font-weight: normal;\r\n  font-size: 4em;\r\n  line-height: 1em;\r\n}\r\n\r\n.bannerDesc {\r\n  padding: 0;\r\n  color: rgba(255, 255, 255, .5);\r\n  font-size: 1.25em;\r\n  margin: 0;\r\n}\r\n","/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
@@ -6544,12 +6528,14 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\nbody * {\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\r\n}\r\n\r\n.ComicDisplay_root_33y {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.ComicDisplay_container_31L {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.ComicDisplay_container_31L img {\r\n  width: 96%;\r\n}\r\n\r\n.ComicDisplay_comicDetails_3MO {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.ComicDisplay_leftResize_2cl, .ComicDisplay_rightResize_7nO {\r\n  width: 2%;\r\n  background: white;\r\n  border: 1px solid darkgray;\r\n  display: inline-block;\r\n  cursor: col-resize;\r\n  padding-bottom: 15px;\r\n}\r\n\r\n.ComicDisplay_leftResize_2cl span, .ComicDisplay_rightResize_7nO span {\r\n  float: left;\r\n  line-height: 1;\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n.ComicDisplay_leftResize_2cl {\r\n  border-right: none;\r\n}\r\n\r\n.ComicDisplay_rightResize_7nO {\r\n  border-left: none;\r\n}\r\n\r\n.ComicDisplay_imgContainer_38X, .ComicDisplay_imgContainer_38X * {\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  margin: 0 20px;\r\n}\r\n\r\n.ComicDisplay_link_2K6, .ComicDisplay_link_2K6:active, .ComicDisplay_link_2K6:hover, .ComicDisplay_link_2K6:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_link_2K6:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_spacer_BXM {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_inactive_17r {\r\n  pointer-events: none;\r\n  color: gray;\r\n}\r\n\r\n.ComicDisplay_hidden_Zk2 {\r\n  display: none;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/comicdisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,+BAAuB;UAAvB,uBAAuB;CACxB;;AAED;EACE,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;EAC9B,mBAAmB;EACnB,gBAAgB;CAKjB;;AAHC;EACE,WAAW;CACZ;;AAGH;EACE,kBAAkB;EAClB,eAAe;CAChB;;AAED;EACE,UAAU;EACV,kBAAkB;EAClB,2BAA2B;EAC3B,sBAAsB;EACtB,mBAAmB;EACnB,qBAAqB;CAQtB;;AANC;EACE,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,sBAAsB;CACvB;;AAEH;EACE,mBAAmB;CACpB;;AACD;EACE,kBAAkB;CACnB;;AAED;EACE,0BAAkB;KAAlB,uBAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;CACnB;;AAED;EACE,sBAAsB;EACtB,eAAe;CAChB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;EACrB,YAAY;CACb;;AACD;EACE,cAAc;CACf","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\nbody * {\r\n  box-sizing: border-box;\r\n}\r\n\r\n.root {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: $max-content-width;\r\n  text-align: center;\r\n  font-size: 20px;\r\n\r\n  img {\r\n    width: 96%;\r\n  }\r\n}\r\n\r\n.comicDetails {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.leftResize, .rightResize {\r\n  width: 2%;\r\n  background: white;\r\n  border: 1px solid darkgray;\r\n  display: inline-block;\r\n  cursor: col-resize;\r\n  padding-bottom: 15px;\r\n\r\n  span {\r\n    float: left;\r\n    line-height: 1;\r\n    width: 100%;\r\n    display: inline-block;\r\n  }\r\n}\r\n.leftResize {\r\n  border-right: none;\r\n}\r\n.rightResize {\r\n  border-left: none;\r\n}\r\n\r\n.imgContainer, .imgContainer * {\r\n  user-select: none;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n  margin: 0 20px;\r\n}\r\n\r\n.link,\r\n.link:active,\r\n.link:hover,\r\n.link:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.link:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.spacer {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n.inactive {\r\n  pointer-events: none;\r\n  color: gray;\r\n}\r\n.hidden {\r\n  display: none;\r\n}"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\nbody * {\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\r\n}\r\n\r\n.ComicDisplay_bold_gi6 {\r\n  font-weight: 600;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 85%;\r\n  margin: 0 auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L {\r\n  margin: 0 auto;\r\n  padding: 25px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L img {\r\n  width: 100%;\r\n  margin: 25px 0;\r\n  border: 2px solid black;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div {\r\n  border: 2px solid black;\r\n  background: white;\r\n  padding: 25px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div p {\r\n  margin: 0;\r\n  text-align: left;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 {\r\n  margin-bottom: 25px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_comicDetails_3MO {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO {\r\n  width: 2%;\r\n  background: white;\r\n  border: 1px solid darkgray;\r\n  display: inline-block;\r\n  cursor: col-resize;\r\n  padding-bottom: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl span, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO span {\r\n  float: left;\r\n  line-height: 1;\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl {\r\n  border-right: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO {\r\n  border-left: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_imgContainer_38X, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_imgContainer_38X * {\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ a {\r\n  text-decoration: none;\r\n  margin: 0 20px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:active, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:hover, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_spacer_BXM {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_inactive_17r {\r\n  pointer-events: none;\r\n  color: gray;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_hidden_Zk2 {\r\n  display: none;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/comicdisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,+BAAuB;UAAvB,uBAAuB;CACxB;;AAED;EACE,iBAAiB;CAClB;;AAED;EACE,oBAAoB;EACpB,YAAY;EACZ,wBAAwB;EACxB,WAAW;EACX,eAAe;CA0FhB;;AAxFC;EACE,eAAe;EACf,cAAc;EACd,kBAA8B;EAC9B,mBAAmB;EACnB,gBAAgB;CAkBjB;;AAhBC;EACE,YAAY;EACZ,eAAe;EACf,wBAAwB;CACzB;;AAED;EACE,wBAAwB;EACxB,kBAAkB;EAClB,cAAc;CAMf;;AAJC;EACE,UAAU;EACV,iBAAiB;CAClB;;AAIL;EACE,oBAAoB;CACrB;;AAED;EACE,kBAAkB;EAClB,eAAe;CAChB;;AAED;EACE,UAAU;EACV,kBAAkB;EAClB,2BAA2B;EAC3B,sBAAsB;EACtB,mBAAmB;EACnB,qBAAqB;CAQtB;;AANC;EACE,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,sBAAsB;CACvB;;AAEH;EACE,mBAAmB;CACpB;;AACD;EACE,kBAAkB;CACnB;;AAED;EACE,0BAAkB;KAAlB,uBAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;CACnB;;AAED;EACE,sBAAsB;EACtB,eAAe;CAChB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;EACrB,YAAY;CACb;;AACD;EACE,cAAc;CACf","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\nbody * {\r\n  box-sizing: border-box;\r\n}\r\n\r\n.bold {\r\n  font-weight: 600;\r\n}\r\n\r\n.cDisplayRoot {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 85%;\r\n  margin: 0 auto;\r\n\r\n  .container {\r\n    margin: 0 auto;\r\n    padding: 25px;\r\n    max-width: $max-content-width;\r\n    text-align: center;\r\n    font-size: 20px;\r\n\r\n    img {\r\n      width: 100%;\r\n      margin: 25px 0;\r\n      border: 2px solid black;\r\n    }\r\n\r\n    div {\r\n      border: 2px solid black;\r\n      background: white;\r\n      padding: 25px;\r\n\r\n      p {\r\n        margin: 0;\r\n        text-align: left;\r\n      }\r\n    }\r\n  }\r\n\r\n  .prevNext {\r\n    margin-bottom: 25px;\r\n  }\r\n\r\n  .comicDetails {\r\n    max-width: 1000px;\r\n    margin: 0 auto;\r\n  }\r\n\r\n  .leftResize, .rightResize {\r\n    width: 2%;\r\n    background: white;\r\n    border: 1px solid darkgray;\r\n    display: inline-block;\r\n    cursor: col-resize;\r\n    padding-bottom: 15px;\r\n\r\n    span {\r\n      float: left;\r\n      line-height: 1;\r\n      width: 100%;\r\n      display: inline-block;\r\n    }\r\n  }\r\n  .leftResize {\r\n    border-right: none;\r\n  }\r\n  .rightResize {\r\n    border-left: none;\r\n  }\r\n\r\n  .imgContainer, .imgContainer * {\r\n    user-select: none;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n    margin: 0 20px;\r\n  }\r\n\r\n  .link,\r\n  .link:active,\r\n  .link:hover,\r\n  .link:visited {\r\n    color: #333;\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link:hover {\r\n    text-decoration: underline;\r\n  }\r\n\r\n  .spacer {\r\n    padding-right: 15px;\r\n    padding-left: 15px;\r\n  }\r\n  .inactive {\r\n    pointer-events: none;\r\n    color: gray;\r\n  }\r\n  .hidden {\r\n    display: none;\r\n  }\r\n}"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
-  	"root": "ComicDisplay_root_33y",
+  	"bold": "ComicDisplay_bold_gi6",
+  	"cDisplayRoot": "ComicDisplay_cDisplayRoot_2CZ",
   	"container": "ComicDisplay_container_31L",
+  	"prevNext": "ComicDisplay_prevNext_3W9",
   	"comicDetails": "ComicDisplay_comicDetails_3MO",
   	"leftResize": "ComicDisplay_leftResize_2cl",
   	"rightResize": "ComicDisplay_rightResize_7nO",
@@ -6673,7 +6659,7 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/**\n * React Starter Kit (https://www.reactstarterkit.com/)\n *\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE.txt file in the root directory of this source tree.\n */\n\n/*\r\n * Colors\r\n * ========================================================================== */\n\n/* #222 */\n\n/* #404040 */\n\n/* #555 */\n\n/* #777 */\n\n/* #eee */\n\n/*\r\n * Typography\r\n * ========================================================================== */\n\n/*\r\n * Layout\r\n * ========================================================================== */\n\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\n\n/* Extra small screen / phone */\n\n/* Small screen / tablet */\n\n/* Medium screen / desktop */\n\n/* Large screen / wide desktop */\n\n/*\r\n * Animations\r\n * ========================================================================== */\n\n.Home_root_2lG {\n  padding-left: 20px;\n  padding-right: 20px;\n}\n\n.Home_container_2tH {\n  margin: 0 auto;\n  padding: 0 0 40px;\n  max-width: 1000px;\n}\n\n.Home_news_R5l {\n  padding: 0;\n}\n\n.Home_newsItem_3sI {\n  list-style-type: none;\n  padding-bottom: 6px;\n}\n\n.Home_newsTitle_3Un {\n  font-size: 1.125em;\n}\n\n.Home_newsTitle_3Un, .Home_newsDesc_tSl {\n  display: block;\n}\n", "", {"version":3,"sources":["/./src/routes/home/Home.scss","/./src/components/variables.scss"],"names":[],"mappings":"AAAA;;;;;;;GAOG;;ACPH;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;ADvBhF;EACE,mBAAmB;EACnB,oBAAoB;CACrB;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;CAC/B;;AAED;EACE,WAAW;CACZ;;AAED;EACE,sBAAsB;EACtB,oBAAoB;CACrB;;AAED;EACE,mBAAmB;CACpB;;AAED;EACE,eAAe;CAChB","file":"Home.scss","sourcesContent":["/**\n * React Starter Kit (https://www.reactstarterkit.com/)\n *\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE.txt file in the root directory of this source tree.\n */\n\n@import '../../components/variables.scss';\n\n.root {\n  padding-left: 20px;\n  padding-right: 20px;\n}\n\n.container {\n  margin: 0 auto;\n  padding: 0 0 40px;\n  max-width: $max-content-width;\n}\n\n.news {\n  padding: 0;\n}\n\n.newsItem {\n  list-style-type: none;\n  padding-bottom: 6px;\n}\n\n.newsTitle {\n  font-size: 1.125em;\n}\n\n.newsTitle, .newsDesc {\n  display: block;\n}\n","/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/**\n * React Starter Kit (https://www.reactstarterkit.com/)\n *\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE.txt file in the root directory of this source tree.\n */\n\n/*\r\n * Colors\r\n * ========================================================================== */\n\n/* #222 */\n\n/* #404040 */\n\n/* #555 */\n\n/* #777 */\n\n/* #eee */\n\n/*\r\n * Typography\r\n * ========================================================================== */\n\n/*\r\n * Layout\r\n * ========================================================================== */\n\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\n\n/* Extra small screen / phone */\n\n/* Small screen / tablet */\n\n/* Medium screen / desktop */\n\n/* Large screen / wide desktop */\n\n/*\r\n * Animations\r\n * ========================================================================== */\n\n.Home_root_2lG {\n  background: #424242;\n}\n\n.Home_container_2tH {\n  margin: 0 auto;\n  padding: 40px 0;\n  max-width: 1000px;\n}\n\n.Home_news_R5l {\n  padding: 0;\n}\n\n.Home_newsItem_3sI {\n  list-style-type: none;\n  padding-bottom: 6px;\n}\n\n.Home_newsTitle_3Un {\n  font-size: 1.125em;\n}\n\n.Home_newsTitle_3Un, .Home_newsDesc_tSl {\n  display: block;\n}\n\n.Home_bold_28I {\n  font-weight: 600;\n}", "", {"version":3,"sources":["/./src/routes/home/Home.scss","/./src/components/variables.scss"],"names":[],"mappings":"AAAA;;;;;;;GAOG;;ACPH;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;ADvBhF;EACE,oBAAoB;CACrB;;AAED;EACE,eAAe;EACf,gBAAgB;EAChB,kBAA8B;CAC/B;;AAED;EACE,WAAW;CACZ;;AAED;EACE,sBAAsB;EACtB,oBAAoB;CACrB;;AAED;EACE,mBAAmB;CACpB;;AAED;EACE,eAAe;CAChB;;AAED;EACE,iBAAiB;CAClB","file":"Home.scss","sourcesContent":["/**\n * React Starter Kit (https://www.reactstarterkit.com/)\n *\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\n *\n * This source code is licensed under the MIT license found in the\n * LICENSE.txt file in the root directory of this source tree.\n */\n\n@import '../../components/variables.scss';\n\n.root {\n  background: #424242;\n}\n\n.container {\n  margin: 0 auto;\n  padding: 40px 0;\n  max-width: $max-content-width;\n}\n\n.news {\n  padding: 0;\n}\n\n.newsItem {\n  list-style-type: none;\n  padding-bottom: 6px;\n}\n\n.newsTitle {\n  font-size: 1.125em;\n}\n\n.newsTitle, .newsDesc {\n  display: block;\n}\n\n.bold {\n  font-weight: 600;\n}","/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
@@ -6682,7 +6668,8 @@ module.exports =
   	"news": "Home_news_R5l",
   	"newsItem": "Home_newsItem_3sI",
   	"newsTitle": "Home_newsTitle_3Un",
-  	"newsDesc": "Home_newsDesc_tSl"
+  	"newsDesc": "Home_newsDesc_tSl",
+  	"bold": "Home_bold_28I"
   };
 
 /***/ },

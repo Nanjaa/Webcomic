@@ -18,12 +18,12 @@ class Header extends React.Component {
     return (
       <div className={s.root}>
         <div className={s.container}>
-          <Navigation className={s.nav} />
           <Link className={s.brand} to="/">
             <img src={require('./logo-small.png')} width="38" height="38" alt="React" />
           </Link>
           <div className={s.banner}>
-            <h1 className={s.bannerTitle}>Hubris Comic</h1>
+            <h1 className={s.bannerTitle}>Forged Divinity</h1>
+            <Navigation className={s.nav} />
           </div>
         </div>
       </div>

@@ -215,11 +215,10 @@ class ComicDisplay extends React.Component {
 
 	render(props) {
 		return(
-			<div className={s.root}>
+			<div className={s.cDisplayRoot}>
 				<div className={s.container}>
 					<div className={this.hidden('loading')}>
-						<p>#{this.state.currentPg}</p>
-						<p>Arc {this.state.arc}, Page {this.state.pg}</p>
+						<p><span className={s.bold}>Page {this.state.currentPg}</span></p>
 						<p>{this.state.date}</p>
 					</div>
 					<img src={this.state.img}/>
@@ -227,24 +226,23 @@ class ComicDisplay extends React.Component {
 						<h2>Empty Treasure Room!</h2>
 						<p>We're sorry, but your URL currently leads nowhere. Looking for a page in particular? check out our <Link to="/archives">archives</Link></p>
 					</div>
-				</div>
+					<div className={s.prevNext}>
+						<Link className={this.isInactive('first')} to="/page/1">First</Link>
+						
+						<Link className={this.isInactive('first')} to={this.previousPage()}>Previous</Link>
 
-				<div className={s.container}>
-					<Link className={this.isInactive('first')} to="/page/1">First</Link>
-					
-					<Link className={this.isInactive('first')} to={this.previousPage()}>Previous</Link>
+						<Link className={this.isInactive('last')} to={this.nextPage()}>Next</Link>
 
-					<Link className={this.isInactive('last')} to={this.nextPage()}>Next</Link>
+						<Link className={this.isInactive('last')} to={this.lastPage()}>Last</Link>
+					</div>
 
-					<Link className={this.isInactive('last')} to={this.lastPage()}>Last</Link>
-				</div>
-
-				<div className={s.container}>
-					<a href="#">Expand Archives List</a>
-					<ArchivesTable/>
+					<div className={s.expandArchives}>
+						<a href="#">Expand Archives List</a>
+						<ArchivesTable/>
+					</div>
 				</div>
 			</div>
-		)		
+		)
 	}
 
 }

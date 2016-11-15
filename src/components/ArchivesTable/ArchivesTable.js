@@ -60,25 +60,21 @@ class ArchivesTable extends React.Component {
 
 	render() {
 		return(
-			<div className={s.root}>
-				<div className={s.container}>
-					<ul>
-						{this.state.pages.map((page) => {
-							var arcTitle = this.checkIfArcstart(page.Page);
-							if (arcTitle === null) {
-								return <li key={page.Page}><Link to={this.pageLink(page.Page)}>[ {page.Page} ]</Link></li>
-							}
-							else {
-								return ([
-									<li key={page.Page} className={s.arcTitle}>{arcTitle}</li>,
-									<li><Link to={this.pageLink(page.Page)}>[ {page.Page} ]</Link></li>
-								]);
-							}
-						})}
-						
-					</ul>
-				</div>
-			</div>
+			<ul>
+				{this.state.pages.map((page) => {
+					var arcTitle = this.checkIfArcstart(page.Page);
+					if (arcTitle === null) {
+						return <li key={page.Page}><Link to={this.pageLink(page.Page)}>[ {page.Page} ]</Link></li>
+					}
+					else {
+						return ([
+							<li key={page.Page} className={s.arcTitle}>{arcTitle}</li>,
+							<li><Link to={this.pageLink(page.Page)}>[ {page.Page} ]</Link></li>
+						]);
+					}
+				})}
+				
+			</ul>
 		)
 	}
 }

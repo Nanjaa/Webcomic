@@ -10,13 +10,12 @@
 @import '../../components/variables.scss';
 
 .root {
-  padding-left: 20px;
-  padding-right: 20px;
+  background: #424242;
 }
 
 .container {
   margin: 0 auto;
-  padding: 0 0 40px;
+  padding: 40px 0;
   max-width: $max-content-width;
 }
 
@@ -35,4 +34,8 @@
 
 .newsTitle, .newsDesc {
   display: block;
+}
+
+.bold {
+  font-weight: 600;
 }

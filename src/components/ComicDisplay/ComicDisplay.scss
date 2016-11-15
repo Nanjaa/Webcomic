@@ -4,79 +4,103 @@ body * {
   box-sizing: border-box;
 }
 
-.root {
+.bold {
+  font-weight: 600;
+}
+
+.cDisplayRoot {
   background: #f5f5f5;
   color: #333;
-}
-
-.container {
+  border: 3px solid black;
+  width: 85%;
   margin: 0 auto;
-  padding: 20px 8px;
-  max-width: $max-content-width;
-  text-align: center;
-  font-size: 20px;
 
-  img {
-    width: 96%;
+  .container {
+    margin: 0 auto;
+    padding: 25px;
+    max-width: $max-content-width;
+    text-align: center;
+    font-size: 20px;
+
+    img {
+      width: 100%;
+      margin: 25px 0;
+      border: 2px solid black;
+    }
+
+    div {
+      border: 2px solid black;
+      background: white;
+      padding: 25px;
+
+      p {
+        margin: 0;
+        text-align: left;
+      }
+    }
   }
-}
 
-.comicDetails {
-  max-width: 1000px;
-  margin: 0 auto;
-}
+  .prevNext {
+    margin-bottom: 25px;
+  }
 
-.leftResize, .rightResize {
-  width: 2%;
-  background: white;
-  border: 1px solid darkgray;
-  display: inline-block;
-  cursor: col-resize;
-  padding-bottom: 15px;
+  .comicDetails {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 
-  span {
-    float: left;
-    line-height: 1;
-    width: 100%;
+  .leftResize, .rightResize {
+    width: 2%;
+    background: white;
+    border: 1px solid darkgray;
     display: inline-block;
+    cursor: col-resize;
+    padding-bottom: 15px;
+
+    span {
+      float: left;
+      line-height: 1;
+      width: 100%;
+      display: inline-block;
+    }
   }
-}
-.leftResize {
-  border-right: none;
-}
-.rightResize {
-  border-left: none;
-}
+  .leftResize {
+    border-right: none;
+  }
+  .rightResize {
+    border-left: none;
+  }
 
-.imgContainer, .imgContainer * {
-  user-select: none;
-}
+  .imgContainer, .imgContainer * {
+    user-select: none;
+  }
 
-a {
-  text-decoration: none;
-  margin: 0 20px;
-}
+  a {
+    text-decoration: none;
+    margin: 0 20px;
+  }
 
-.link,
-.link:active,
-.link:hover,
-.link:visited {
-  color: #333;
-  text-decoration: none;
-}
+  .link,
+  .link:active,
+  .link:hover,
+  .link:visited {
+    color: #333;
+    text-decoration: none;
+  }
 
-.link:hover {
-  text-decoration: underline;
-}
+  .link:hover {
+    text-decoration: underline;
+  }
 
-.spacer {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.inactive {
-  pointer-events: none;
-  color: gray;
-}
-.hidden {
-  display: none;
+  .spacer {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .inactive {
+    pointer-events: none;
+    color: gray;
+  }
+  .hidden {
+    display: none;
+  }
 }

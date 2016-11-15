@@ -20,6 +20,9 @@ $brand-color: #61dafb;
   margin: 0 auto;
   padding: 20px 0;
   max-width: $max-content-width;
+  /* Clearfix */
+  overflow: auto;
+  zoom: 1;
 }
 
 .brand {
@@ -33,12 +36,14 @@ $brand-color: #61dafb;
 }
 
 .nav {
-  float: right;
   margin-top: 6px;
 }
 
 .banner {
   text-align: center;
+  width: 50%;
+  float: right;
+  margin-right: 15px;
 }
 
 .bannerTitle {
