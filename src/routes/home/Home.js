@@ -16,9 +16,9 @@ import ComicDisplay from '../../components/comicdisplay';
 function Home({ news }) {
   return (
     <div className={s.root}>
-      <div className={s.container}>
-        <ComicDisplay/>
-      </div>
+    	<div className={s.wrapper}>
+	      <ComicDisplay/>
+	    </div>
     </div>
   );
 }

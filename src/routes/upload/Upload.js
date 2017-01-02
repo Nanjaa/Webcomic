@@ -11,7 +11,7 @@ class Upload extends React.Component {
 	render() {
 		return(
 			<div className={s.root}>
-				<div className={s.container}>
+				<div className={s.wrapper}>
 					<h2>Upload</h2>
 					<UploadComic/>
 				</div>

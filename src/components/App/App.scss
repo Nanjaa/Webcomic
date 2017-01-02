@@ -17,6 +17,30 @@
  * Base styles
  * ========================================================================== */
 
+.wrapper {
+  background: pink;
+}
+
+body {
+  background: #424242;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 
+}
+
+p, a {
+  font-size: 15px;
+
+  @media screen and (min-width: 500px) {
+    font-size: 18px;
+  }
+}
+
 html {
   color: #222;
   font-weight: 100;
@@ -173,5 +197,13 @@ textarea {
   h2,
   h3 {
     page-break-after: avoid;
+  }
+}
+
+h3 {
+  font-size: 18px;
+
+  @media screen and (min-width: 500px) {
+    font-size: 20px;
   }
 }

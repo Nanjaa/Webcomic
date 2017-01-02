@@ -12,13 +12,13 @@
 $brand-color: #61dafb;
 
 .root {
-  background: #373277;
+  background: #232323;
   color: #fff;
 }
 
 .container {
+  position: relative;
   margin: 0 auto;
-  padding: 20px 0;
   max-width: $max-content-width;
   /* Clearfix */
   overflow: auto;
@@ -29,6 +29,20 @@ $brand-color: #61dafb;
   color: color($brand-color lightness(+10%));
   text-decoration: none;
   font-size: 1.75em; /* ~28px */
+
+  img {
+    width: 50%;
+    padding: 4%;
+
+    @media screen and (min-width: 600px) {
+      width: 35%;
+      padding: 2%;
+      max-width: 250px;
+    }
+    @media scren and (min-width: 1080px) {
+      padding: 1%;
+    }
+  }
 }
 
 .brandTxt {
@@ -42,16 +56,32 @@ $brand-color: #61dafb;
 .banner {
   text-align: center;
   width: 50%;
-  float: right;
-  margin-right: 15px;
+  padding-right: 15px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  h2 {
+    font-weight: 400;
+    margin: 0;
+    font-size: 15px;
+  }
 }
 
 .bannerTitle {
   margin: 0;
   padding: 10px;
   font-weight: normal;
-  font-size: 4em;
+  font-size: 30px;
   line-height: 1em;
+  @media screen and (min-width: 500px) {
+    font-size: 40px;
+  }
 }
 
 .bannerDesc {

@@ -224,7 +224,7 @@ class ComicDisplay extends React.Component {
 					<img src={this.state.img}/>
 					<div className={this.hidden('missing')}>
 						<h2>Empty Treasure Room!</h2>
-						<p>We're sorry, but your URL currently leads nowhere. Looking for a page in particular? check out our <Link to="/archives">archives</Link></p>
+						<p>We're sorry, but your URL currently leads nowhere. Looking for a page in particular? check out our <Link to="/archives">archives</Link>!</p>
 					</div>
 					<div className={s.prevNext}>
 						<Link className={this.isInactive('first')} to="/page/1">First</Link>

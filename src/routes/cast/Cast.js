@@ -6,7 +6,7 @@ import CastTable from '../../components/CastTable';
 function Cast({ title }) {
 	return(
 		<div className={s.root}>
-			<div className={s.container}>
+			<div className={s.wrapper}>
 				<h2>{title}</h2>
 				<CastTable/>
 			</div>

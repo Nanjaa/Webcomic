@@ -7,10 +7,10 @@ import ArchivesTable from '../../components/ArchivesTable';
 function Archives({ title }) {
   return (
     <div className={s.root}>
-      <div className={s.container}>
-        <h2>{title}</h2>
-        <ArchivesTable/>
-      </div>
+    	<div className={s.wrapper}>
+		    <h2>{title}</h2>
+		    <ArchivesTable/>
+		</div>
     </div>
   );
 }

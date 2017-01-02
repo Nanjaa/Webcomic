@@ -7,9 +7,7 @@ import ComicDisplay from '../../components/comicdisplay';
 function Page({ news }) {
   return (
     <div className={s.root}>
-      <div className={s.container}>
         <ComicDisplay/>
-      </div>
     </div>
   );
 }

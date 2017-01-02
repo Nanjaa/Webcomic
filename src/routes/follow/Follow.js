@@ -14,7 +14,7 @@ import s from './Follow.scss';
 function Follow({ title }) {
   return (
     <div className={s.root}>
-      <div className={s.container}>
+      <div className={s.wrapper}>
         <h2>{title}</h2>
       </div>
     </div>

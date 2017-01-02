@@ -19,10 +19,11 @@ class Header extends React.Component {
       <div className={s.root}>
         <div className={s.container}>
           <Link className={s.brand} to="/">
-            <img src={require('./logo-small.png')} width="38" height="38" alt="React" />
+            <img src={require('./cover.png')} alt="Archaic Rebirth cover image" />
           </Link>
           <div className={s.banner}>
-            <h1 className={s.bannerTitle}>Forged Divinity</h1>
+            <h1 className={s.bannerTitle}>Archaic Rebirth</h1>
+            <h2>by Stephanie Piper</h2>
             <Navigation className={s.nav} />
           </div>
         </div>

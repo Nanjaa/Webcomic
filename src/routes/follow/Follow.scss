@@ -19,3 +19,23 @@
   padding: 0 0 40px;
   max-width: $max-content-width;
 }
+
+.wrapper {
+  background: white;
+  color: #333;
+  border: 3px solid black;
+  width: 90%;
+  max-width: 1000px;
+  margin: 5% auto;
+  padding: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin: 5% auto;
+    width: 85%;
+  }
+  @media screen and (min-width: 1080px) {
+    margin: 40px auto;
+    min-width: 750px;
+    width: 50%;
+  }
+}
