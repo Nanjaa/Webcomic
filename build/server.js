@@ -1210,6 +1210,30 @@ module.exports =
   					{ className: _ComicDisplay2.default.container },
   					_react2.default.createElement(
   						'div',
+  						{ className: _ComicDisplay2.default.prevNext },
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('first'), to: '/page/1' },
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(157), alt: 'Go to first page' })
+  						),
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('first'), to: this.previousPage() },
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(163), alt: 'Go to previous page' })
+  						),
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('last'), to: this.nextPage() },
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(160), alt: 'Go to next page' })
+  						),
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('last'), to: this.lastPage() },
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(159), alt: 'Go to last page' })
+  						)
+  					),
+  					_react2.default.createElement(
+  						'div',
   						{ className: this.hidden('loading') },
   						_react2.default.createElement(
   							'p',
@@ -1254,22 +1278,22 @@ module.exports =
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('first'), to: '/page/1' },
-  							'First'
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(157), alt: 'Go to first page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('first'), to: this.previousPage() },
-  							'Previous'
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(163), alt: 'Go to previous page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('last'), to: this.nextPage() },
-  							'Next'
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(160), alt: 'Go to next page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('last'), to: this.lastPage() },
-  							'Last'
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(159), alt: 'Go to last page' })
   						)
   					),
   					_react2.default.createElement(
@@ -1838,6 +1862,30 @@ module.exports =
   					{ className: _ComicDisplay2.default.container },
   					_react2.default.createElement(
   						'div',
+  						{ className: _ComicDisplay2.default.prevNext },
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('first'), to: '/page/1' },
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(158), alt: 'Go to first page' })
+  						),
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('first'), to: this.previousPage() },
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(164), alt: 'Go to previous page' })
+  						),
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('last'), to: this.nextPage() },
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(162), alt: 'Go to next page' })
+  						),
+  						_react2.default.createElement(
+  							_Link2.default,
+  							{ className: this.isInactive('last'), to: this.lastPage() },
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(161), alt: 'Go to last page' })
+  						)
+  					),
+  					_react2.default.createElement(
+  						'div',
   						{ className: this.hidden('loading') },
   						_react2.default.createElement(
   							'p',
@@ -1882,22 +1930,22 @@ module.exports =
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('first'), to: '/page/1' },
-  							'First'
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(158), alt: 'Go to first page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('first'), to: this.previousPage() },
-  							'Previous'
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(164), alt: 'Go to previous page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('last'), to: this.nextPage() },
-  							'Next'
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(162), alt: 'Go to next page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('last'), to: this.lastPage() },
-  							'Last'
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(161), alt: 'Go to last page' })
   						)
   					),
   					_react2.default.createElement(
@@ -3381,7 +3429,7 @@ module.exports =
               _react2.default.createElement(
                 'h1',
                 { className: _Header2.default.bannerTitle },
-                'Archaic Rebirth'
+                _react2.default.createElement('img', { src: __webpack_require__(165), alt: 'Archaic Rebirth logo' })
               ),
               _react2.default.createElement(
                 'h2',
@@ -4783,9 +4831,29 @@ module.exports =
   			'div',
   			{ className: _about2.default.wrapper },
   			_react2.default.createElement(
-  				'h2',
+  				'h3',
   				null,
-  				title
+  				'About Archaic Rebirth'
+  			),
+  			_react2.default.createElement(
+  				'p',
+  				null,
+  				'Vala has a passion for all things ancient. Since she was young, she\'s been enthralled by artifacts and stories of the past. In her ship that she inherited from her father, Vala travels the universe and explores forgotten ruins, bringing back items that she either adds to her gallery or sells to the researchers of the planet Tellean.'
+  			),
+  			_react2.default.createElement(
+  				'p',
+  				null,
+  				'Our story begins as Vala has discovered the previously lost domain of an ancient "God of the Underworld." This expedition will prove life-changing, as she\'ll soon learn that there\'s more to the stories than just myth.'
+  			),
+  			_react2.default.createElement(
+  				'h3',
+  				null,
+  				'About the Author'
+  			),
+  			_react2.default.createElement(
+  				'p',
+  				null,
+  				'My name is Stephanie Piper, and I\'m happy to welcome you to my first comic! During the day, I am a web developer from Seattle. Every evening, you\'ll find me writing and drawing this series, while also learning the fundamentals of art and improving my skill. On the weekends, I love to go camping and fishing, and I have always enjoyed theatre.'
   			)
   		)
   	);
@@ -6397,7 +6465,7 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ComicDisplay_bold_79N {\r\n  font-weight: 600;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 {\r\n  margin: 0 auto;\r\n  padding: 15px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 img {\r\n  width: 100%;\r\n  margin: 25px 0;\r\n  border: 2px solid black;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div {\r\n  border: 2px solid black;\r\n  background: white;\r\n  padding: 5%;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div p {\r\n  margin: 0;\r\n  text-align: left;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY {\r\n  margin-bottom: 25px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_comicDetails_39f {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi {\r\n  width: 2%;\r\n  background: white;\r\n  border: 1px solid darkgray;\r\n  display: inline-block;\r\n  cursor: col-resize;\r\n  padding-bottom: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw span, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi span {\r\n  float: left;\r\n  line-height: 1;\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw {\r\n  border-right: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi {\r\n  border-left: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_imgContainer_3iu, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_imgContainer_3iu * {\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk a {\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:active, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:hover, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_spacer_37l {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_inactive_3tB {\r\n  pointer-events: none;\r\n  color: gray;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_hidden_3DM {\r\n  display: none;\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 1080px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 {\r\n    padding: 25px;\r\n  }\r\n    }\r\n\r\n@media screen and (min-width: 500px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div {\r\n    padding: 3%;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div {\r\n    padding: 25px;\r\n  }\r\n      }", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/ComicDisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,iBAAiB;CAClB;;AAED;EACE,oBAAoB;EACpB,YAAY;EACZ,wBAAwB;EACxB,WAAW;EACX,kBAAkB;EAClB,gBAAgB;CA6GjB;;AAjGC;EACE,eAAe;EACf,cAAc;EACd,mBAAmB;EACnB,gBAAgB;CA6BjB;;AAvBC;EACE,YAAY;EACZ,eAAe;EACf,wBAAwB;CACzB;;AAED;EACE,wBAAwB;EACxB,kBAAkB;EAClB,YAAY;CAab;;AAJC;EACE,UAAU;EACV,iBAAiB;CAClB;;AAIL;EACE,oBAAoB;CACrB;;AAED;EACE,kBAAkB;EAClB,eAAe;CAChB;;AAED;EACE,UAAU;EACV,kBAAkB;EAClB,2BAA2B;EAC3B,sBAAsB;EACtB,mBAAmB;EACnB,qBAAqB;CAQtB;;AANC;EACE,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,sBAAsB;CACvB;;AAEH;EACE,mBAAmB;CACpB;;AACD;EACE,kBAAkB;CACnB;;AAED;EACE,0BAAkB;KAAlB,uBAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;CACnB;;AAED;EACE,sBAAsB;CACvB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;EACrB,YAAY;CACb;;AACD;EACE,cAAc;CACf;;AA1GD;;EAAA;IACE,gBAAgB;IAChB,WAAW;GACZ;GAAA;;AACD;;EAAA;IACE,kBAAkB;IAClB,iBAAiB;IACjB,WAAW;GACZ;GAAA;;AAQC;;EAAA;IACE,cAAc;GACf;KAAA;;AAaC;;EAAA;IACE,YAAY;GACb;OAAA;;AACD;;EAAA;IACE,cAAc;GACf;OAAA","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.bold {\r\n  font-weight: 600;\r\n}\r\n\r\n.cDisplayRoot {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n\r\n  @media screen and (min-width: 768px) {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  @media screen and (min-width: 1080px) {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n\r\n  .container {\r\n    margin: 0 auto;\r\n    padding: 15px;\r\n    text-align: center;\r\n    font-size: 20px;\r\n\r\n    @media screen and (min-width: 768px) {\r\n      padding: 25px;\r\n    }\r\n\r\n    img {\r\n      width: 100%;\r\n      margin: 25px 0;\r\n      border: 2px solid black;\r\n    }\r\n\r\n    div {\r\n      border: 2px solid black;\r\n      background: white;\r\n      padding: 5%;\r\n\r\n      @media screen and (min-width: 500px) {\r\n        padding: 3%;\r\n      }\r\n      @media screen and (min-width: 768px) {\r\n        padding: 25px;\r\n      }\r\n\r\n      p {\r\n        margin: 0;\r\n        text-align: left;\r\n      }\r\n    }\r\n  }\r\n\r\n  .prevNext {\r\n    margin-bottom: 25px;\r\n  }\r\n\r\n  .comicDetails {\r\n    max-width: 1000px;\r\n    margin: 0 auto;\r\n  }\r\n\r\n  .leftResize, .rightResize {\r\n    width: 2%;\r\n    background: white;\r\n    border: 1px solid darkgray;\r\n    display: inline-block;\r\n    cursor: col-resize;\r\n    padding-bottom: 15px;\r\n\r\n    span {\r\n      float: left;\r\n      line-height: 1;\r\n      width: 100%;\r\n      display: inline-block;\r\n    }\r\n  }\r\n  .leftResize {\r\n    border-right: none;\r\n  }\r\n  .rightResize {\r\n    border-left: none;\r\n  }\r\n\r\n  .imgContainer, .imgContainer * {\r\n    user-select: none;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link,\r\n  .link:active,\r\n  .link:hover,\r\n  .link:visited {\r\n    color: #333;\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link:hover {\r\n    text-decoration: underline;\r\n  }\r\n\r\n  .spacer {\r\n    padding-right: 15px;\r\n    padding-left: 15px;\r\n  }\r\n  .inactive {\r\n    pointer-events: none;\r\n    color: gray;\r\n  }\r\n  .hidden {\r\n    display: none;\r\n  }\r\n}"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ComicDisplay_bold_79N {\r\n  font-weight: 600;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 {\r\n  margin: 0 auto;\r\n  padding: 15px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 img {\r\n  width: 100%;\r\n  margin: 25px 0;\r\n  border: 2px solid black;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div:not(.ComicDisplay_prevNext_2xY) {\r\n  border: 2px solid black;\r\n  background: white;\r\n  padding: 5%;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div:not(.ComicDisplay_prevNext_2xY) p {\r\n  margin: 0;\r\n  text-align: left;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY {\r\n  margin-bottom: 25px;\r\n  border: none;\r\n  background: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY a {\r\n  display: inline-block;\r\n  width: 25%;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY img {\r\n  max-height: 75px;\r\n  width: auto;\r\n  border: none;\r\n  margin: 0;\r\n  -webkit-filter: grayscale();\r\n          filter: grayscale();\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY img:hover {\r\n  -webkit-filter: none;\r\n          filter: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_comicDetails_39f {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi {\r\n  width: 2%;\r\n  background: white;\r\n  border: 1px solid darkgray;\r\n  display: inline-block;\r\n  cursor: col-resize;\r\n  padding-bottom: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw span, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi span {\r\n  float: left;\r\n  line-height: 1;\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw {\r\n  border-right: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi {\r\n  border-left: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_imgContainer_3iu, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_imgContainer_3iu * {\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk a {\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:active, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:hover, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_spacer_37l {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_inactive_3tB {\r\n  pointer-events: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_inactive_3tB img {\r\n  display: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_hidden_3DM {\r\n  display: none;\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 1080px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 {\r\n    padding: 25px;\r\n  }\r\n    }\r\n\r\n@media screen and (min-width: 500px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div:not(.ComicDisplay_prevNext_2xY) {\r\n    padding: 3%;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div:not(.ComicDisplay_prevNext_2xY) {\r\n    padding: 25px;\r\n  }\r\n      }", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/ComicDisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,iBAAiB;CAClB;;AAED;EACE,oBAAoB;EACpB,YAAY;EACZ,wBAAwB;EACxB,WAAW;EACX,kBAAkB;EAClB,gBAAgB;CAgIjB;;AApHC;EACE,eAAe;EACf,cAAc;EACd,mBAAmB;EACnB,gBAAgB;CA6BjB;;AAvBC;EACE,YAAY;EACZ,eAAe;EACf,wBAAwB;CACzB;;AAED;EACE,wBAAwB;EACxB,kBAAkB;EAClB,YAAY;CAab;;AAJC;EACE,UAAU;EACV,iBAAiB;CAClB;;AAIL;EACE,oBAAoB;EACpB,aAAa;EACb,iBAAiB;CAgBlB;;AAdC;EACE,sBAAsB;EACtB,WAAW;CACZ;;AACD;EACE,iBAAiB;EACjB,YAAY;EACZ,aAAa;EACb,UAAU;EACV,4BAAoB;UAApB,oBAAoB;CACrB;;AACD;EACE,qBAAa;UAAb,aAAa;CACd;;AAGH;EACE,kBAAkB;EAClB,eAAe;CAChB;;AAED;EACE,UAAU;EACV,kBAAkB;EAClB,2BAA2B;EAC3B,sBAAsB;EACtB,mBAAmB;EACnB,qBAAqB;CAQtB;;AANC;EACE,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,sBAAsB;CACvB;;AAEH;EACE,mBAAmB;CACpB;;AACD;EACE,kBAAkB;CACnB;;AAED;EACE,0BAAkB;KAAlB,uBAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;CACnB;;AAED;EACE,sBAAsB;CACvB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;CAItB;;AAHC;EACE,cAAc;CACf;;AAEH;EACE,cAAc;CACf;;AA7HD;;EAAA;IACE,gBAAgB;IAChB,WAAW;GACZ;GAAA;;AACD;;EAAA;IACE,kBAAkB;IAClB,iBAAiB;IACjB,WAAW;GACZ;GAAA;;AAQC;;EAAA;IACE,cAAc;GACf;KAAA;;AAaC;;EAAA;IACE,YAAY;GACb;OAAA;;AACD;;EAAA;IACE,cAAc;GACf;OAAA","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.bold {\r\n  font-weight: 600;\r\n}\r\n\r\n.cDisplayRoot {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n\r\n  @media screen and (min-width: 768px) {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  @media screen and (min-width: 1080px) {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n\r\n  .container {\r\n    margin: 0 auto;\r\n    padding: 15px;\r\n    text-align: center;\r\n    font-size: 20px;\r\n\r\n    @media screen and (min-width: 768px) {\r\n      padding: 25px;\r\n    }\r\n\r\n    img {\r\n      width: 100%;\r\n      margin: 25px 0;\r\n      border: 2px solid black;\r\n    }\r\n\r\n    div:not(.prevNext) {\r\n      border: 2px solid black;\r\n      background: white;\r\n      padding: 5%;\r\n\r\n      @media screen and (min-width: 500px) {\r\n        padding: 3%;\r\n      }\r\n      @media screen and (min-width: 768px) {\r\n        padding: 25px;\r\n      }\r\n\r\n      p {\r\n        margin: 0;\r\n        text-align: left;\r\n      }\r\n    }\r\n  }\r\n\r\n  .prevNext {\r\n    margin-bottom: 25px;\r\n    border: none;\r\n    background: none;\r\n\r\n    a {\r\n      display: inline-block;\r\n      width: 25%;\r\n    }\r\n    img {\r\n      max-height: 75px;\r\n      width: auto;\r\n      border: none;\r\n      margin: 0;\r\n      filter: grayscale();\r\n    }\r\n    img:hover {\r\n      filter: none;\r\n    }\r\n  }\r\n\r\n  .comicDetails {\r\n    max-width: 1000px;\r\n    margin: 0 auto;\r\n  }\r\n\r\n  .leftResize, .rightResize {\r\n    width: 2%;\r\n    background: white;\r\n    border: 1px solid darkgray;\r\n    display: inline-block;\r\n    cursor: col-resize;\r\n    padding-bottom: 15px;\r\n\r\n    span {\r\n      float: left;\r\n      line-height: 1;\r\n      width: 100%;\r\n      display: inline-block;\r\n    }\r\n  }\r\n  .leftResize {\r\n    border-right: none;\r\n  }\r\n  .rightResize {\r\n    border-left: none;\r\n  }\r\n\r\n  .imgContainer, .imgContainer * {\r\n    user-select: none;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link,\r\n  .link:active,\r\n  .link:hover,\r\n  .link:visited {\r\n    color: #333;\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link:hover {\r\n    text-decoration: underline;\r\n  }\r\n\r\n  .spacer {\r\n    padding-right: 15px;\r\n    padding-left: 15px;\r\n  }\r\n  .inactive {\r\n    pointer-events: none;\r\n    img {\r\n      display: none;\r\n    }\r\n  }\r\n  .hidden {\r\n    display: none;\r\n  }\r\n}"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
@@ -6534,7 +6602,7 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ComicDisplay_bold_gi6 {\r\n  font-weight: 600;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L {\r\n  margin: 0 auto;\r\n  padding: 15px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L img {\r\n  width: 100%;\r\n  margin: 25px 0;\r\n  border: 2px solid black;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div {\r\n  border: 2px solid black;\r\n  background: white;\r\n  padding: 5%;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div p {\r\n  margin: 0;\r\n  text-align: left;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 {\r\n  margin-bottom: 25px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_comicDetails_3MO {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO {\r\n  width: 2%;\r\n  background: white;\r\n  border: 1px solid darkgray;\r\n  display: inline-block;\r\n  cursor: col-resize;\r\n  padding-bottom: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl span, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO span {\r\n  float: left;\r\n  line-height: 1;\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl {\r\n  border-right: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO {\r\n  border-left: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_imgContainer_38X, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_imgContainer_38X * {\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ a {\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:active, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:hover, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_spacer_BXM {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_inactive_17r {\r\n  pointer-events: none;\r\n  color: gray;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_hidden_Zk2 {\r\n  display: none;\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 1080px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L {\r\n    padding: 25px;\r\n  }\r\n    }\r\n\r\n@media screen and (min-width: 500px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div {\r\n    padding: 3%;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div {\r\n    padding: 25px;\r\n  }\r\n      }", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/comicdisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,iBAAiB;CAClB;;AAED;EACE,oBAAoB;EACpB,YAAY;EACZ,wBAAwB;EACxB,WAAW;EACX,kBAAkB;EAClB,gBAAgB;CA6GjB;;AAjGC;EACE,eAAe;EACf,cAAc;EACd,mBAAmB;EACnB,gBAAgB;CA6BjB;;AAvBC;EACE,YAAY;EACZ,eAAe;EACf,wBAAwB;CACzB;;AAED;EACE,wBAAwB;EACxB,kBAAkB;EAClB,YAAY;CAab;;AAJC;EACE,UAAU;EACV,iBAAiB;CAClB;;AAIL;EACE,oBAAoB;CACrB;;AAED;EACE,kBAAkB;EAClB,eAAe;CAChB;;AAED;EACE,UAAU;EACV,kBAAkB;EAClB,2BAA2B;EAC3B,sBAAsB;EACtB,mBAAmB;EACnB,qBAAqB;CAQtB;;AANC;EACE,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,sBAAsB;CACvB;;AAEH;EACE,mBAAmB;CACpB;;AACD;EACE,kBAAkB;CACnB;;AAED;EACE,0BAAkB;KAAlB,uBAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;CACnB;;AAED;EACE,sBAAsB;CACvB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;EACrB,YAAY;CACb;;AACD;EACE,cAAc;CACf;;AA1GD;;EAAA;IACE,gBAAgB;IAChB,WAAW;GACZ;GAAA;;AACD;;EAAA;IACE,kBAAkB;IAClB,iBAAiB;IACjB,WAAW;GACZ;GAAA;;AAQC;;EAAA;IACE,cAAc;GACf;KAAA;;AAaC;;EAAA;IACE,YAAY;GACb;OAAA;;AACD;;EAAA;IACE,cAAc;GACf;OAAA","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.bold {\r\n  font-weight: 600;\r\n}\r\n\r\n.cDisplayRoot {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n\r\n  @media screen and (min-width: 768px) {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  @media screen and (min-width: 1080px) {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n\r\n  .container {\r\n    margin: 0 auto;\r\n    padding: 15px;\r\n    text-align: center;\r\n    font-size: 20px;\r\n\r\n    @media screen and (min-width: 768px) {\r\n      padding: 25px;\r\n    }\r\n\r\n    img {\r\n      width: 100%;\r\n      margin: 25px 0;\r\n      border: 2px solid black;\r\n    }\r\n\r\n    div {\r\n      border: 2px solid black;\r\n      background: white;\r\n      padding: 5%;\r\n\r\n      @media screen and (min-width: 500px) {\r\n        padding: 3%;\r\n      }\r\n      @media screen and (min-width: 768px) {\r\n        padding: 25px;\r\n      }\r\n\r\n      p {\r\n        margin: 0;\r\n        text-align: left;\r\n      }\r\n    }\r\n  }\r\n\r\n  .prevNext {\r\n    margin-bottom: 25px;\r\n  }\r\n\r\n  .comicDetails {\r\n    max-width: 1000px;\r\n    margin: 0 auto;\r\n  }\r\n\r\n  .leftResize, .rightResize {\r\n    width: 2%;\r\n    background: white;\r\n    border: 1px solid darkgray;\r\n    display: inline-block;\r\n    cursor: col-resize;\r\n    padding-bottom: 15px;\r\n\r\n    span {\r\n      float: left;\r\n      line-height: 1;\r\n      width: 100%;\r\n      display: inline-block;\r\n    }\r\n  }\r\n  .leftResize {\r\n    border-right: none;\r\n  }\r\n  .rightResize {\r\n    border-left: none;\r\n  }\r\n\r\n  .imgContainer, .imgContainer * {\r\n    user-select: none;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link,\r\n  .link:active,\r\n  .link:hover,\r\n  .link:visited {\r\n    color: #333;\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link:hover {\r\n    text-decoration: underline;\r\n  }\r\n\r\n  .spacer {\r\n    padding-right: 15px;\r\n    padding-left: 15px;\r\n  }\r\n  .inactive {\r\n    pointer-events: none;\r\n    color: gray;\r\n  }\r\n  .hidden {\r\n    display: none;\r\n  }\r\n}"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ComicDisplay_bold_gi6 {\r\n  font-weight: 600;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L {\r\n  margin: 0 auto;\r\n  padding: 15px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L img {\r\n  width: 100%;\r\n  margin: 25px 0;\r\n  border: 2px solid black;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div:not(.ComicDisplay_prevNext_3W9) {\r\n  border: 2px solid black;\r\n  background: white;\r\n  padding: 5%;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div:not(.ComicDisplay_prevNext_3W9) p {\r\n  margin: 0;\r\n  text-align: left;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 {\r\n  margin-bottom: 25px;\r\n  border: none;\r\n  background: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 a {\r\n  display: inline-block;\r\n  width: 25%;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 img {\r\n  max-height: 75px;\r\n  width: auto;\r\n  border: none;\r\n  margin: 0;\r\n  -webkit-filter: grayscale();\r\n          filter: grayscale();\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 img:hover {\r\n  -webkit-filter: none;\r\n          filter: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_comicDetails_3MO {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO {\r\n  width: 2%;\r\n  background: white;\r\n  border: 1px solid darkgray;\r\n  display: inline-block;\r\n  cursor: col-resize;\r\n  padding-bottom: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl span, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO span {\r\n  float: left;\r\n  line-height: 1;\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl {\r\n  border-right: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO {\r\n  border-left: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_imgContainer_38X, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_imgContainer_38X * {\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ a {\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:active, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:hover, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_spacer_BXM {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_inactive_17r {\r\n  pointer-events: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_inactive_17r img {\r\n  display: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_hidden_Zk2 {\r\n  display: none;\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 1080px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L {\r\n    padding: 25px;\r\n  }\r\n    }\r\n\r\n@media screen and (min-width: 500px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div:not(.ComicDisplay_prevNext_3W9) {\r\n    padding: 3%;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div:not(.ComicDisplay_prevNext_3W9) {\r\n    padding: 25px;\r\n  }\r\n      }", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/comicdisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,iBAAiB;CAClB;;AAED;EACE,oBAAoB;EACpB,YAAY;EACZ,wBAAwB;EACxB,WAAW;EACX,kBAAkB;EAClB,gBAAgB;CAgIjB;;AApHC;EACE,eAAe;EACf,cAAc;EACd,mBAAmB;EACnB,gBAAgB;CA6BjB;;AAvBC;EACE,YAAY;EACZ,eAAe;EACf,wBAAwB;CACzB;;AAED;EACE,wBAAwB;EACxB,kBAAkB;EAClB,YAAY;CAab;;AAJC;EACE,UAAU;EACV,iBAAiB;CAClB;;AAIL;EACE,oBAAoB;EACpB,aAAa;EACb,iBAAiB;CAgBlB;;AAdC;EACE,sBAAsB;EACtB,WAAW;CACZ;;AACD;EACE,iBAAiB;EACjB,YAAY;EACZ,aAAa;EACb,UAAU;EACV,4BAAoB;UAApB,oBAAoB;CACrB;;AACD;EACE,qBAAa;UAAb,aAAa;CACd;;AAGH;EACE,kBAAkB;EAClB,eAAe;CAChB;;AAED;EACE,UAAU;EACV,kBAAkB;EAClB,2BAA2B;EAC3B,sBAAsB;EACtB,mBAAmB;EACnB,qBAAqB;CAQtB;;AANC;EACE,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,sBAAsB;CACvB;;AAEH;EACE,mBAAmB;CACpB;;AACD;EACE,kBAAkB;CACnB;;AAED;EACE,0BAAkB;KAAlB,uBAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;CACnB;;AAED;EACE,sBAAsB;CACvB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;CAItB;;AAHC;EACE,cAAc;CACf;;AAEH;EACE,cAAc;CACf;;AA7HD;;EAAA;IACE,gBAAgB;IAChB,WAAW;GACZ;GAAA;;AACD;;EAAA;IACE,kBAAkB;IAClB,iBAAiB;IACjB,WAAW;GACZ;GAAA;;AAQC;;EAAA;IACE,cAAc;GACf;KAAA;;AAaC;;EAAA;IACE,YAAY;GACb;OAAA;;AACD;;EAAA;IACE,cAAc;GACf;OAAA","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.bold {\r\n  font-weight: 600;\r\n}\r\n\r\n.cDisplayRoot {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n\r\n  @media screen and (min-width: 768px) {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  @media screen and (min-width: 1080px) {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n\r\n  .container {\r\n    margin: 0 auto;\r\n    padding: 15px;\r\n    text-align: center;\r\n    font-size: 20px;\r\n\r\n    @media screen and (min-width: 768px) {\r\n      padding: 25px;\r\n    }\r\n\r\n    img {\r\n      width: 100%;\r\n      margin: 25px 0;\r\n      border: 2px solid black;\r\n    }\r\n\r\n    div:not(.prevNext) {\r\n      border: 2px solid black;\r\n      background: white;\r\n      padding: 5%;\r\n\r\n      @media screen and (min-width: 500px) {\r\n        padding: 3%;\r\n      }\r\n      @media screen and (min-width: 768px) {\r\n        padding: 25px;\r\n      }\r\n\r\n      p {\r\n        margin: 0;\r\n        text-align: left;\r\n      }\r\n    }\r\n  }\r\n\r\n  .prevNext {\r\n    margin-bottom: 25px;\r\n    border: none;\r\n    background: none;\r\n\r\n    a {\r\n      display: inline-block;\r\n      width: 25%;\r\n    }\r\n    img {\r\n      max-height: 75px;\r\n      width: auto;\r\n      border: none;\r\n      margin: 0;\r\n      filter: grayscale();\r\n    }\r\n    img:hover {\r\n      filter: none;\r\n    }\r\n  }\r\n\r\n  .comicDetails {\r\n    max-width: 1000px;\r\n    margin: 0 auto;\r\n  }\r\n\r\n  .leftResize, .rightResize {\r\n    width: 2%;\r\n    background: white;\r\n    border: 1px solid darkgray;\r\n    display: inline-block;\r\n    cursor: col-resize;\r\n    padding-bottom: 15px;\r\n\r\n    span {\r\n      float: left;\r\n      line-height: 1;\r\n      width: 100%;\r\n      display: inline-block;\r\n    }\r\n  }\r\n  .leftResize {\r\n    border-right: none;\r\n  }\r\n  .rightResize {\r\n    border-left: none;\r\n  }\r\n\r\n  .imgContainer, .imgContainer * {\r\n    user-select: none;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link,\r\n  .link:active,\r\n  .link:hover,\r\n  .link:visited {\r\n    color: #333;\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link:hover {\r\n    text-decoration: underline;\r\n  }\r\n\r\n  .spacer {\r\n    padding-right: 15px;\r\n    padding-left: 15px;\r\n  }\r\n  .inactive {\r\n    pointer-events: none;\r\n    img {\r\n      display: none;\r\n    }\r\n  }\r\n  .hidden {\r\n    display: none;\r\n  }\r\n}"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
@@ -8219,14 +8287,14 @@ module.exports =
 /* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = __webpack_require__.p + "52533552584f2c81e63ee15a2f4ee468.gif";
+  module.exports = __webpack_require__.p + "df8d15fe468a2c3bc211e00b7992e282.gif";
 
 /***/ },
 /* 118 */,
 /* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = __webpack_require__.p + "52533552584f2c81e63ee15a2f4ee468.gif";
+  module.exports = __webpack_require__.p + "df8d15fe468a2c3bc211e00b7992e282.gif";
 
 /***/ },
 /* 120 */
@@ -8459,6 +8527,60 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   module.exports = __webpack_require__.p + "93eaeb13419881fdb33e076e86057fae.png";
+
+/***/ },
+/* 157 */
+/***/ function(module, exports, __webpack_require__) {
+
+  module.exports = __webpack_require__.p + "46099f18881d4f00e26c0294e356d011.png";
+
+/***/ },
+/* 158 */
+/***/ function(module, exports, __webpack_require__) {
+
+  module.exports = __webpack_require__.p + "46099f18881d4f00e26c0294e356d011.png";
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+  module.exports = __webpack_require__.p + "460d02af679605904a3fcedb3becae27.png";
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+  module.exports = __webpack_require__.p + "deef6149f1a50003139fd063bf8bba3a.png";
+
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+  module.exports = __webpack_require__.p + "460d02af679605904a3fcedb3becae27.png";
+
+/***/ },
+/* 162 */
+/***/ function(module, exports, __webpack_require__) {
+
+  module.exports = __webpack_require__.p + "deef6149f1a50003139fd063bf8bba3a.png";
+
+/***/ },
+/* 163 */
+/***/ function(module, exports, __webpack_require__) {
+
+  module.exports = __webpack_require__.p + "62819184b726fab080ac7f05872fdd52.png";
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+  module.exports = __webpack_require__.p + "62819184b726fab080ac7f05872fdd52.png";
+
+/***/ },
+/* 165 */
+/***/ function(module, exports, __webpack_require__) {
+
+  module.exports = __webpack_require__.p + "6fa686d39f2c82491538587fa8a6a9e2.png";
 
 /***/ }
 /******/ ]);

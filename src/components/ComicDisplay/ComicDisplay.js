@@ -217,6 +217,16 @@ class ComicDisplay extends React.Component {
 		return(
 			<div className={s.cDisplayRoot}>
 				<div className={s.container}>
+					<div className={s.prevNext}>
+						<Link className={this.isInactive('first')} to="/page/1"><img className="grayscale" src={require('./first.png')} alt="Go to first page" /></Link>
+						
+						<Link className={this.isInactive('first')} to={this.previousPage()}><img className="grayscale" src={require('./prev.png')} alt="Go to previous page" /></Link>
+
+						<Link className={this.isInactive('last')} to={this.nextPage()}><img className="grayscale" src={require('./next.png')} alt="Go to next page" /></Link>
+
+						<Link className={this.isInactive('last')} to={this.lastPage()}><img className="grayscale" src={require('./last.png')} alt="Go to last page" /></Link>
+					</div>
+					
 					<div className={this.hidden('loading')}>
 						<p><span className={s.bold}>Page {this.state.currentPg}</span></p>
 						<p>{this.state.date}</p>
@@ -227,13 +237,13 @@ class ComicDisplay extends React.Component {
 						<p>We're sorry, but your URL currently leads nowhere. Looking for a page in particular? check out our <Link to="/archives">archives</Link>!</p>
 					</div>
 					<div className={s.prevNext}>
-						<Link className={this.isInactive('first')} to="/page/1">First</Link>
+						<Link className={this.isInactive('first')} to="/page/1"><img className="grayscale" src={require('./first.png')} alt="Go to first page" /></Link>
 						
-						<Link className={this.isInactive('first')} to={this.previousPage()}>Previous</Link>
+						<Link className={this.isInactive('first')} to={this.previousPage()}><img className="grayscale" src={require('./prev.png')} alt="Go to previous page" /></Link>
 
-						<Link className={this.isInactive('last')} to={this.nextPage()}>Next</Link>
+						<Link className={this.isInactive('last')} to={this.nextPage()}><img className="grayscale" src={require('./next.png')} alt="Go to next page" /></Link>
 
-						<Link className={this.isInactive('last')} to={this.lastPage()}>Last</Link>
+						<Link className={this.isInactive('last')} to={this.lastPage()}><img className="grayscale" src={require('./last.png')} alt="Go to last page" /></Link>
 					</div>
 
 					<div className={s.expandArchives}>

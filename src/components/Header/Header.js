@@ -22,7 +22,7 @@ class Header extends React.Component {
             <img src={require('./cover.png')} alt="Archaic Rebirth cover image" />
           </Link>
           <div className={s.banner}>
-            <h1 className={s.bannerTitle}>Archaic Rebirth</h1>
+            <h1 className={s.bannerTitle}><img src={require('./logo.png')} alt="Archaic Rebirth logo" /></h1>
             <h2>by Stephanie Piper</h2>
             <Navigation className={s.nav} />
           </div>
