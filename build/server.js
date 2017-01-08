@@ -3427,9 +3427,13 @@ module.exports =
               'div',
               { className: _Header2.default.banner },
               _react2.default.createElement(
-                'h1',
-                { className: _Header2.default.bannerTitle },
-                _react2.default.createElement('img', { src: __webpack_require__(165), alt: 'Archaic Rebirth logo' })
+                _Link2.default,
+                { to: '/' },
+                _react2.default.createElement(
+                  'h1',
+                  { className: _Header2.default.bannerTitle },
+                  _react2.default.createElement('img', { src: __webpack_require__(165), alt: 'Archaic Rebirth logo' })
+                )
               ),
               _react2.default.createElement(
                 'h2',
