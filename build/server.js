@@ -3098,24 +3098,33 @@ module.exports =
   		value: function characterCard(character) {
   			var characterImg = 'http://nanja.space/Hubris/Cast/' + character.Img;
   			return _react2.default.createElement(
-  				'ul',
-  				null,
+  				'div',
+  				{ className: _CastTable2.default.characterCard },
   				_react2.default.createElement(
   					'h4',
-  					null,
+  					{ className: _CastTable2.default.mobileOnly },
   					character.Name
   				),
   				_react2.default.createElement('img', { src: characterImg }),
   				_react2.default.createElement(
-  					'li',
-  					null,
-  					character.Desc
-  				),
-  				_react2.default.createElement(
-  					_Link2.default,
-  					{ to: this.pageLink(character.FirstPage) },
-  					'First Appearance: Page ',
-  					character.FirstPage
+  					'div',
+  					{ className: _CastTable2.default.characterText },
+  					_react2.default.createElement(
+  						'h4',
+  						{ className: _CastTable2.default.mobileHidden },
+  						character.Name
+  					),
+  					_react2.default.createElement(
+  						'p',
+  						null,
+  						character.Desc
+  					),
+  					_react2.default.createElement(
+  						_Link2.default,
+  						{ to: this.pageLink(character.FirstPage) },
+  						'First Appearance: Page ',
+  						character.FirstPage
+  					)
   				)
   			);
   		}
@@ -3131,53 +3140,41 @@ module.exports =
   					'div',
   					{ className: _CastTable2.default.container },
   					_react2.default.createElement(
-  						'h2',
+  						'h3',
   						null,
   						'Main Characters'
   					),
+  					this.state.mainCharacters.map(function (character) {
+  						return _react2.default.createElement(
+  							'div',
+  							{ className: _CastTable2.default.charactersList, key: character.Name },
+  							_this2.characterCard(character)
+  						);
+  					}),
   					_react2.default.createElement(
-  						'ul',
-  						null,
-  						this.state.mainCharacters.map(function (character) {
-  							return _react2.default.createElement(
-  								'div',
-  								{ className: _CastTable2.default.charactersList, key: character.Name },
-  								_this2.characterCard(character)
-  							);
-  						})
-  					),
-  					_react2.default.createElement(
-  						'h2',
+  						'h3',
   						null,
   						'Secondary Characters'
   					),
+  					this.state.secondaryCharacters.map(function (character) {
+  						return _react2.default.createElement(
+  							'div',
+  							{ className: _CastTable2.default.charactersList, key: character.Name },
+  							_this2.characterCard(character)
+  						);
+  					}),
   					_react2.default.createElement(
-  						'ul',
-  						null,
-  						this.state.secondaryCharacters.map(function (character) {
-  							return _react2.default.createElement(
-  								'div',
-  								{ className: _CastTable2.default.charactersList, key: character.Name },
-  								_this2.characterCard(character)
-  							);
-  						})
-  					),
-  					_react2.default.createElement(
-  						'h2',
+  						'h3',
   						null,
   						'Other Characters'
   					),
-  					_react2.default.createElement(
-  						'ul',
-  						null,
-  						this.state.otherCharacters.map(function (character) {
-  							return _react2.default.createElement(
-  								'div',
-  								{ className: _CastTable2.default.charactersList, key: character.Name },
-  								_this2.characterCard(character)
-  							);
-  						})
-  					)
+  					this.state.otherCharacters.map(function (character) {
+  						return _react2.default.createElement(
+  							'div',
+  							{ className: _CastTable2.default.charactersList, key: character.Name },
+  							_this2.characterCard(character)
+  						);
+  					})
   				)
   			);
   		}
@@ -6601,13 +6598,17 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.CastTable_root_3sF {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.CastTable_container_1Zs {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.CastTable_charactersList_1e_ {\r\n  width: 25%;\r\n  display: inline-block;\r\n  border: 1px solid black;\r\n  vertical-align: top;\r\n  padding-bottom: 15px;\r\n  margin: 5px;\r\n}\r\n\r\n.CastTable_charactersList_1e_ ul img {\r\n  width: 100%;\r\n}\r\n\r\n.CastTable_charactersList_1e_ ul li {\r\n  text-align: left;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/CastTable/CastTable.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,eAAe;EACf,kBAAkB;EAClB,kBAA8B;EAC9B,mBAAmB;EACnB,gBAAgB;CACjB;;AAED;EACE,WAAW;EACX,sBAAsB;EACtB,wBAAwB;EACxB,oBAAoB;EACpB,qBAAqB;EACrB,YAAY;CAUb;;AAPG;EACE,YAAY;CACb;;AACD;EACE,iBAAiB;CAClB","file":"CastTable.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.root {\r\n  background: #f5f5f5;\r\n  color: #333;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 8px;\r\n  max-width: $max-content-width;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.charactersList {\r\n  width: 25%;\r\n  display: inline-block;\r\n  border: 1px solid black;\r\n  vertical-align: top;\r\n  padding-bottom: 15px;\r\n  margin: 5px;\r\n\r\n  ul {\r\n    img {\r\n      width: 100%;\r\n    }\r\n    li {\r\n      text-align: left;\r\n    }\r\n  }\r\n}"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.CastTable_root_3sF {\r\n  color: #333;\r\n}\r\n\r\n.CastTable_container_1Zs {\r\n  text-align: center;\r\n  padding: 0;\r\n  font-size: 20px;\r\n}\r\n\r\nh3 {\r\n  text-decoration: underline;\r\n}\r\n\r\n.CastTable_charactersList_1e_ {\r\n  width: 100%;\r\n  display: block;\r\n  border: 1px solid black;\r\n  padding: 5%;\r\n  margin-bottom: 15px;\r\n}\r\n\r\n.CastTable_charactersList_1e_ .CastTable_characterCard_2HZ {\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n\r\n.CastTable_charactersList_1e_ .CastTable_characterCard_2HZ h4 {\r\n  margin: 0 0 5% 0;\r\n  color: #659ca7;\r\n}\r\n\r\n.CastTable_charactersList_1e_ .CastTable_characterCard_2HZ img {\r\n  width: 100%;\r\n}\r\n\r\n@media screen and (min-width: 600px) {\r\n\r\n  .CastTable_charactersList_1e_ .CastTable_characterCard_2HZ img, .CastTable_charactersList_1e_ .CastTable_characterCard_2HZ .CastTable_characterText_3EV {\r\n    width: 50%;\r\n    display: inline-block;\r\n    vertical-align: top;\r\n  }\r\n\r\n  .CastTable_charactersList_1e_ .CastTable_characterCard_2HZ img {\r\n    padding-right: 2%;\r\n  }\r\n\r\n  .CastTable_charactersList_1e_ .CastTable_characterCard_2HZ .CastTable_characterText_3EV {\r\n    padding-left: 2%;\r\n  }\r\n    }\r\n\r\n@media screen and (min-width: 1024px) {\r\n\r\n  .CastTable_charactersList_1e_ .CastTable_characterCard_2HZ img {\r\n    width: 33%;\r\n  }\r\n\r\n  .CastTable_charactersList_1e_ .CastTable_characterCard_2HZ .CastTable_characterText_3EV {\r\n    width: 66%;\r\n  }\r\n    }\r\n\r\n.CastTable_mobileHidden_8J5 {\r\n  display: none;\r\n}\r\n\r\n@media screen and (min-width: 600px) {\r\n  .CastTable_mobileOnly_1gt {\r\n    display: none;\r\n  }\r\n  .CastTable_mobileHidden_8J5 {\r\n    display: block;\r\n  }\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/CastTable/CastTable.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,YAAY;CACb;;AAED;EACE,mBAAmB;EACnB,WAAW;EACX,gBAAgB;CACjB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,YAAY;EACZ,eAAe;EACf,wBAAwB;EACxB,YAAY;EACZ,oBAAoB;CAqCrB;;AAnCC;EACE,WAAW;EACX,UAAU;CAgCX;;AA9BC;EACE,iBAAiB;EACjB,eAAe;CAChB;;AAED;EACE,YAAY;CACb;;AAED;;EACE;IACE,WAAW;IACX,sBAAsB;IACtB,oBAAoB;GACrB;;EACD;IACE,kBAAkB;GACnB;;EACD;IACE,iBAAiB;GAClB;KACF;;AACD;;EACE;IACE,WAAW;GACZ;;EACD;IACE,WAAW;GACZ;KACF;;AAIL;EACE,cAAc;CACf;;AACD;EACE;IACE,cAAc;GACf;EACD;IACE,eAAe;GAChB;CACF","file":"CastTable.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.root {\r\n  color: #333;\r\n}\r\n\r\n.container {\r\n  text-align: center;\r\n  padding: 0;\r\n  font-size: 20px;\r\n}\r\n\r\nh3 {\r\n  text-decoration: underline;\r\n}\r\n\r\n.charactersList {\r\n  width: 100%;\r\n  display: block;\r\n  border: 1px solid black;\r\n  padding: 5%;\r\n  margin-bottom: 15px;\r\n\r\n  .characterCard {\r\n    padding: 0;\r\n    margin: 0;\r\n\r\n    h4 {\r\n      margin: 0 0 5% 0;\r\n      color: #659ca7;\r\n    }\r\n\r\n    img {\r\n      width: 100%;\r\n    }\r\n\r\n    @media screen and (min-width: 600px) {\r\n      img, .characterText {\r\n        width: 50%;\r\n        display: inline-block;\r\n        vertical-align: top;\r\n      }\r\n      img {\r\n        padding-right: 2%;\r\n      }\r\n      .characterText {\r\n        padding-left: 2%;\r\n      }\r\n    }\r\n    @media screen and (min-width: 1024px) {\r\n      img {\r\n        width: 33%;\r\n      }\r\n      .characterText {\r\n        width: 66%;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.mobileHidden {\r\n  display: none;\r\n}\r\n@media screen and (min-width: 600px) {\r\n  .mobileOnly {\r\n    display: none;\r\n  }\r\n  .mobileHidden {\r\n    display: block;\r\n  }\r\n}"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
   	"root": "CastTable_root_3sF",
   	"container": "CastTable_container_1Zs",
-  	"charactersList": "CastTable_charactersList_1e_"
+  	"charactersList": "CastTable_charactersList_1e_",
+  	"characterCard": "CastTable_characterCard_2HZ",
+  	"characterText": "CastTable_characterText_3EV",
+  	"mobileHidden": "CastTable_mobileHidden_8J5",
+  	"mobileOnly": "CastTable_mobileOnly_1gt"
   };
 
 /***/ },

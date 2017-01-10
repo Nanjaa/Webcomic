@@ -1,32 +1,71 @@
 @import '../variables.scss';
 
 .root {
-  background: #f5f5f5;
   color: #333;
 }
 
 .container {
-  margin: 0 auto;
-  padding: 20px 8px;
-  max-width: $max-content-width;
   text-align: center;
+  padding: 0;
   font-size: 20px;
 }
 
-.charactersList {
-  width: 25%;
-  display: inline-block;
-  border: 1px solid black;
-  vertical-align: top;
-  padding-bottom: 15px;
-  margin: 5px;
+h3 {
+  text-decoration: underline;
+}
 
-  ul {
+.charactersList {
+  width: 100%;
+  display: block;
+  border: 1px solid black;
+  padding: 5%;
+  margin-bottom: 15px;
+
+  .characterCard {
+    padding: 0;
+    margin: 0;
+
+    h4 {
+      margin: 0 0 5% 0;
+      color: #659ca7;
+    }
+
     img {
       width: 100%;
     }
-    li {
-      text-align: left;
+
+    @media screen and (min-width: 600px) {
+      img, .characterText {
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+      }
+      img {
+        padding-right: 2%;
+      }
+      .characterText {
+        padding-left: 2%;
+      }
     }
+    @media screen and (min-width: 1024px) {
+      img {
+        width: 33%;
+      }
+      .characterText {
+        width: 66%;
+      }
+    }
+  }
+}
+
+.mobileHidden {
+  display: none;
+}
+@media screen and (min-width: 600px) {
+  .mobileOnly {
+    display: none;
+  }
+  .mobileHidden {
+    display: block;
   }
 }
