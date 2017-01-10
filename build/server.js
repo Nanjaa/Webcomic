@@ -3320,6 +3320,11 @@ module.exports =
       _react2.default.createElement(
         'div',
         { className: _Footer2.default.container },
+        _react2.default.createElement(
+          'p',
+          null,
+          'This site will keep track of your reading progress as you enjoy Archaic Rebirth, but be aware that if you clear your history, you\'ll need to find what page you were on again! If you encounter any problems, please contact me at EMAIL HERE'
+        ),
         _react2.default.createElement(_Navigation2.default, null),
         _react2.default.createElement(
           _Link2.default,
