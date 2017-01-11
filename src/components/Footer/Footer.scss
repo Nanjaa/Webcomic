@@ -9,9 +9,13 @@
 
 @import '../variables.scss';
 
-.root {
+.footer {
   background: #333;
   color: #fff;
+
+  svg {
+    margin: 0 1%;
+  }
 }
 
 .container {

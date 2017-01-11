@@ -12,6 +12,7 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Header.scss';
 import Link from '../Link';
 import Navigation from '../Navigation';
+import Social from '../Social';
 
 class Header extends React.Component {
   render() {
@@ -27,6 +28,7 @@ class Header extends React.Component {
             </Link>
             <h2>by Stephanie Piper</h2>
             <Navigation className={s.nav} />
+            <Social className={s.social}/>
           </div>
         </div>
       </div>

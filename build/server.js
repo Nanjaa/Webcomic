@@ -3310,12 +3310,25 @@ module.exports =
   
   var _Navigation2 = _interopRequireDefault(_Navigation);
   
+  var _Social = __webpack_require__(166);
+  
+  var _Social2 = _interopRequireDefault(_Social);
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  /**
+   * React Starter Kit (https://www.reactstarterkit.com/)
+   *
+   * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE.txt file in the root directory of this source tree.
+   */
   
   function Footer() {
     return _react2.default.createElement(
       'div',
-      { className: _Footer2.default.root },
+      { className: _Footer2.default.footer },
       _react2.default.createElement(
         'div',
         { className: _Footer2.default.container },
@@ -3325,6 +3338,7 @@ module.exports =
           'This site will keep track of your reading progress as you enjoy Archaic Rebirth, but be aware that if you clear your history, you\'ll need to find what page you were on again! If you encounter any problems, please contact me at EMAIL HERE'
         ),
         _react2.default.createElement(_Navigation2.default, null),
+        _react2.default.createElement(_Social2.default, null),
         _react2.default.createElement(
           _Link2.default,
           { className: _Footer2.default.link, to: '/' },
@@ -3342,14 +3356,7 @@ module.exports =
         )
       )
     );
-  } /**
-     * React Starter Kit (https://www.reactstarterkit.com/)
-     *
-     * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
-     *
-     * This source code is licensed under the MIT license found in the
-     * LICENSE.txt file in the root directory of this source tree.
-     */
+  }
   
   exports.default = (0, _withStyles2.default)(Footer, _Footer2.default);
 
@@ -3403,7 +3410,20 @@ module.exports =
   
   var _Navigation2 = _interopRequireDefault(_Navigation);
   
+  var _Social = __webpack_require__(166);
+  
+  var _Social2 = _interopRequireDefault(_Social);
+  
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  /**
+   * React Starter Kit (https://www.reactstarterkit.com/)
+   *
+   * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE.txt file in the root directory of this source tree.
+   */
   
   var Header = function (_React$Component) {
     (0, _inherits3.default)(Header, _React$Component);
@@ -3444,21 +3464,15 @@ module.exports =
                 null,
                 'by Stephanie Piper'
               ),
-              _react2.default.createElement(_Navigation2.default, { className: _Header2.default.nav })
+              _react2.default.createElement(_Navigation2.default, { className: _Header2.default.nav }),
+              _react2.default.createElement(_Social2.default, { className: _Header2.default.social })
             )
           )
         );
       }
     }]);
     return Header;
-  }(_react2.default.Component); /**
-                                 * React Starter Kit (https://www.reactstarterkit.com/)
-                                 *
-                                 * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
-                                 *
-                                 * This source code is licensed under the MIT license found in the
-                                 * LICENSE.txt file in the root directory of this source tree.
-                                 */
+  }(_react2.default.Component);
   
   exports.default = (0, _withStyles2.default)(Header, _Header2.default);
 
@@ -6682,11 +6696,11 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.Footer_root_2bW {\r\n  background: #333;\r\n  color: #fff;\r\n}\r\n\r\n.Footer_container_2UR {\r\n  margin: 0 auto;\r\n  padding: 20px 15px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n}\r\n\r\n.Footer_text_3NI {\r\n  color: rgba(255, 255, 255, .5);\r\n}\r\n\r\n.Footer_textMuted_1Me {\r\n  color: rgba(255, 255, 255, .3);\r\n}\r\n\r\n.Footer_spacer_22t {\r\n  color: rgba(255, 255, 255, .3);\r\n}\r\n\r\n.Footer_text_3NI, .Footer_link_wim {\r\n  padding: 2px 5px;\r\n  font-size: 1em;\r\n}\r\n\r\n.Footer_link_wim, .Footer_link_wim:active, .Footer_link_wim:visited {\r\n  color: rgba(255, 255, 255, .6);\r\n  text-decoration: none;\r\n}\r\n\r\n.Footer_link_wim:hover {\r\n  color: rgba(255, 255, 255, 1);\r\n}\r\n", "", {"version":3,"sources":["/./src/components/Footer/Footer.scss","/./src/components/variables.scss"],"names":[],"mappings":"AAAA;;;;;;;GAOG;;ACPH;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;ADvBhF;EACE,iBAAiB;EACjB,YAAY;CACb;;AAED;EACE,eAAe;EACf,mBAAmB;EACnB,kBAA8B;EAC9B,mBAAmB;CACpB;;AAED;EACE,+BAA+B;CAChC;;AAED;EAEE,+BAA+B;CAChC;;AAED;EACE,+BAA+B;CAChC;;AAED;EAEE,iBAAiB;EACjB,eAAe;CAChB;;AAED;EAGE,+BAA+B;EAC/B,sBAAsB;CACvB;;AAED;EACE,8BAA8B;CAC/B","file":"Footer.scss","sourcesContent":["/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n@import '../variables.scss';\r\n\r\n.root {\r\n  background: #333;\r\n  color: #fff;\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 15px;\r\n  max-width: $max-content-width;\r\n  text-align: center;\r\n}\r\n\r\n.text {\r\n  color: rgba(255, 255, 255, .5);\r\n}\r\n\r\n.textMuted {\r\n  composes: text;\r\n  color: rgba(255, 255, 255, .3);\r\n}\r\n\r\n.spacer {\r\n  color: rgba(255, 255, 255, .3);\r\n}\r\n\r\n.text,\r\n.link {\r\n  padding: 2px 5px;\r\n  font-size: 1em;\r\n}\r\n\r\n.link,\r\n.link:active,\r\n.link:visited {\r\n  color: rgba(255, 255, 255, .6);\r\n  text-decoration: none;\r\n}\r\n\r\n.link:hover {\r\n  color: rgba(255, 255, 255, 1);\r\n}\r\n","/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.Footer_footer_2Pp {\r\n  background: #333;\r\n  color: #fff;\r\n}\r\n\r\n.Footer_footer_2Pp svg {\r\n  margin: 0 1%;\r\n}\r\n\r\n.Footer_container_2UR {\r\n  margin: 0 auto;\r\n  padding: 20px 15px;\r\n  max-width: 1000px;\r\n  text-align: center;\r\n}\r\n\r\n.Footer_text_3NI {\r\n  color: rgba(255, 255, 255, .5);\r\n}\r\n\r\n.Footer_textMuted_1Me {\r\n  color: rgba(255, 255, 255, .3);\r\n}\r\n\r\n.Footer_spacer_22t {\r\n  color: rgba(255, 255, 255, .3);\r\n}\r\n\r\n.Footer_text_3NI, .Footer_link_wim {\r\n  padding: 2px 5px;\r\n  font-size: 1em;\r\n}\r\n\r\n.Footer_link_wim, .Footer_link_wim:active, .Footer_link_wim:visited {\r\n  color: rgba(255, 255, 255, .6);\r\n  text-decoration: none;\r\n}\r\n\r\n.Footer_link_wim:hover {\r\n  color: rgba(255, 255, 255, 1);\r\n}\r\n", "", {"version":3,"sources":["/./src/components/Footer/Footer.scss","/./src/components/variables.scss"],"names":[],"mappings":"AAAA;;;;;;;GAOG;;ACPH;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;ADvBhF;EACE,iBAAiB;EACjB,YAAY;CAKb;;AAHC;EACE,aAAa;CACd;;AAGH;EACE,eAAe;EACf,mBAAmB;EACnB,kBAA8B;EAC9B,mBAAmB;CACpB;;AAED;EACE,+BAA+B;CAChC;;AAED;EAEE,+BAA+B;CAChC;;AAED;EACE,+BAA+B;CAChC;;AAED;EAEE,iBAAiB;EACjB,eAAe;CAChB;;AAED;EAGE,+BAA+B;EAC/B,sBAAsB;CACvB;;AAED;EACE,8BAA8B;CAC/B","file":"Footer.scss","sourcesContent":["/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n@import '../variables.scss';\r\n\r\n.footer {\r\n  background: #333;\r\n  color: #fff;\r\n\r\n  svg {\r\n    margin: 0 1%;\r\n  }\r\n}\r\n\r\n.container {\r\n  margin: 0 auto;\r\n  padding: 20px 15px;\r\n  max-width: $max-content-width;\r\n  text-align: center;\r\n}\r\n\r\n.text {\r\n  color: rgba(255, 255, 255, .5);\r\n}\r\n\r\n.textMuted {\r\n  composes: text;\r\n  color: rgba(255, 255, 255, .3);\r\n}\r\n\r\n.spacer {\r\n  color: rgba(255, 255, 255, .3);\r\n}\r\n\r\n.text,\r\n.link {\r\n  padding: 2px 5px;\r\n  font-size: 1em;\r\n}\r\n\r\n.link,\r\n.link:active,\r\n.link:visited {\r\n  color: rgba(255, 255, 255, .6);\r\n  text-decoration: none;\r\n}\r\n\r\n.link:hover {\r\n  color: rgba(255, 255, 255, 1);\r\n}\r\n","/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
-  	"root": "Footer_root_2bW",
+  	"footer": "Footer_footer_2Pp",
   	"container": "Footer_container_2UR",
   	"text": "Footer_text_3NI",
   	"textMuted": "Footer_textMuted_1Me Footer_text_3NI",
@@ -8740,6 +8754,226 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   module.exports = __webpack_require__.p + "6fa686d39f2c82491538587fa8a6a9e2.png";
+
+/***/ },
+/* 166 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _getPrototypeOf = __webpack_require__(5);
+  
+  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+  
+  var _classCallCheck2 = __webpack_require__(7);
+  
+  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+  
+  var _createClass2 = __webpack_require__(8);
+  
+  var _createClass3 = _interopRequireDefault(_createClass2);
+  
+  var _possibleConstructorReturn2 = __webpack_require__(10);
+  
+  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+  
+  var _inherits2 = __webpack_require__(9);
+  
+  var _inherits3 = _interopRequireDefault(_inherits2);
+  
+  var _react = __webpack_require__(1);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _withStyles = __webpack_require__(4);
+  
+  var _withStyles2 = _interopRequireDefault(_withStyles);
+  
+  var _Social = __webpack_require__(168);
+  
+  var _Social2 = _interopRequireDefault(_Social);
+  
+  var _Link = __webpack_require__(12);
+  
+  var _Link2 = _interopRequireDefault(_Link);
+  
+  var _fa = __webpack_require__(169);
+  
+  var _fa2 = _interopRequireDefault(_fa);
+  
+  var _twitter = __webpack_require__(170);
+  
+  var _twitter2 = _interopRequireDefault(_twitter);
+  
+  var _instagram = __webpack_require__(172);
+  
+  var _instagram2 = _interopRequireDefault(_instagram);
+  
+  var _tumblr = __webpack_require__(173);
+  
+  var _tumblr2 = _interopRequireDefault(_tumblr);
+  
+  var _facebook = __webpack_require__(171);
+  
+  var _facebook2 = _interopRequireDefault(_facebook);
+  
+  var _envelope = __webpack_require__(176);
+  
+  var _envelope2 = _interopRequireDefault(_envelope);
+  
+  var _rssSquare = __webpack_require__(175);
+  
+  var _rssSquare2 = _interopRequireDefault(_rssSquare);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var Social = function (_React$Component) {
+    (0, _inherits3.default)(Social, _React$Component);
+  
+    function Social() {
+      (0, _classCallCheck3.default)(this, Social);
+      return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Social).apply(this, arguments));
+    }
+  
+    (0, _createClass3.default)(Social, [{
+      key: 'render',
+      value: function render() {
+        return _react2.default.createElement(
+          'div',
+          { className: _Social2.default.social },
+          _react2.default.createElement(
+            'a',
+            { className: _Social2.default.twitter, href: 'https://twitter.com/stephanierpiper', target: '_blank' },
+            _react2.default.createElement(_twitter2.default, null)
+          ),
+          _react2.default.createElement(
+            'a',
+            { className: _Social2.default.insta, href: 'https://www.instagram.com/stephanierpiper/', target: '_blank' },
+            _react2.default.createElement(_instagram2.default, null)
+          ),
+          _react2.default.createElement(
+            'a',
+            { className: _Social2.default.tumblr, href: 'https://stephanierpiper.tumblr.com/', target: '_blank' },
+            _react2.default.createElement(_tumblr2.default, null)
+          ),
+          _react2.default.createElement(
+            'a',
+            { className: _Social2.default.email, href: '#', target: '_blank' },
+            _react2.default.createElement(_envelope2.default, null)
+          ),
+          _react2.default.createElement(
+            'a',
+            { className: _Social2.default.rss, href: '#', target: '_blank' },
+            _react2.default.createElement(_rssSquare2.default, null)
+          )
+        );
+      }
+    }]);
+    return Social;
+  }(_react2.default.Component);
+  
+  exports.default = (0, _withStyles2.default)(Social, _Social2.default);
+
+/***/ },
+/* 167 */
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(2)();
+  // imports
+  
+  
+  // module
+  exports.push([module.id, ".Social_social_2Ee a {\n    color: rgba(255, 255, 255, .6);\n}\n.Social_social_2Ee .Social_twitter_1Sw:hover {\n    color: #5a4c6f;\n}\n.Social_social_2Ee .Social_insta_6b3:hover {\n    color: #659ca7;\n}\n.Social_social_2Ee .Social_tumblr_2ES:hover {\n    color: #fffdb5;\n}\n.Social_social_2Ee .Social_email_ZYZ:hover {\n    color: #f7df9e;\n}\n.Social_social_2Ee .Social_rss_1zx:hover {\n    color: #4d704e;\n}\n.Social_social_2Ee svg {\n    margin: 0 3%;\n}", "", {"version":3,"sources":["/./src/components/Social/Social.scss"],"names":[],"mappings":"AACC;IACC,+BAA+B;CAC/B;AACD;IACC,eAAe;CACf;AACD;IACC,eAAe;CACf;AACD;IACC,eAAe;CACf;AACD;IACC,eAAe;CACf;AACD;IACC,eAAe;CACf;AACD;IACC,aAAa;CACb","file":"Social.scss","sourcesContent":[".social {\r\n\ta {\r\n\t\tcolor: rgba(255, 255, 255, .6);\r\n\t}\r\n\t.twitter:hover {\r\n\t\tcolor: #5a4c6f;\r\n\t}\r\n\t.insta:hover {\r\n\t\tcolor: #659ca7;\r\n\t}\r\n\t.tumblr:hover {\r\n\t\tcolor: #fffdb5;\r\n\t}\r\n\t.email:hover {\r\n\t\tcolor: #f7df9e;\r\n\t}\r\n\t.rss:hover {\r\n\t\tcolor: #4d704e;\r\n\t}\r\n\tsvg {\r\n\t\tmargin: 0 3%;\r\n\t}\r\n}"],"sourceRoot":"webpack://"}]);
+  
+  // exports
+  exports.locals = {
+  	"social": "Social_social_2Ee",
+  	"twitter": "Social_twitter_1Sw",
+  	"insta": "Social_insta_6b3",
+  	"tumblr": "Social_tumblr_2ES",
+  	"email": "Social_email_ZYZ",
+  	"rss": "Social_rss_1zx"
+  };
+
+/***/ },
+/* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+  
+      var content = __webpack_require__(167);
+      var insertCss = __webpack_require__(3);
+  
+      if (typeof content === 'string') {
+        content = [[module.id, content, '']];
+      }
+  
+      module.exports = content.locals || {};
+      module.exports._getCss = function() { return content.toString(); };
+      module.exports._insertCss = insertCss.bind(null, content);
+    
+      var removeCss = function() {};
+  
+      // Hot Module Replacement
+      // https://webpack.github.io/docs/hot-module-replacement
+      // Only activated in browser context
+      if (false) {
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Social.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Social.scss");
+          if (typeof newContent === 'string') {
+            newContent = [[module.id, content, '']];
+          }
+          removeCss = insertCss(newContent, { replace: true });
+        });
+        module.hot.dispose(function() { removeCss(); });
+      }
+    
+
+/***/ },
+/* 169 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-icons/lib/fa");
+
+/***/ },
+/* 170 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-icons/lib/fa/twitter");
+
+/***/ },
+/* 171 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-icons/lib/fa/facebook");
+
+/***/ },
+/* 172 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-icons/lib/fa/instagram");
+
+/***/ },
+/* 173 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-icons/lib/fa/tumblr");
+
+/***/ },
+/* 174 */,
+/* 175 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-icons/lib/fa/rss-square");
+
+/***/ },
+/* 176 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-icons/lib/fa/envelope");
 
 /***/ }
 /******/ ]);

@@ -1,0 +1,23 @@
+.social {
+	a {
+		color: rgba(255, 255, 255, .6);
+	}
+	.twitter:hover {
+		color: #5a4c6f;
+	}
+	.insta:hover {
+		color: #659ca7;
+	}
+	.tumblr:hover {
+		color: #fffdb5;
+	}
+	.email:hover {
+		color: #f7df9e;
+	}
+	.rss:hover {
+		color: #4d704e;
+	}
+	svg {
+		margin: 0 3%;
+	}
+}
