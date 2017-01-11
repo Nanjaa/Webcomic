@@ -174,7 +174,7 @@ class ComicDisplay extends React.Component {
 				// Make sure you're not on page 1
 				if(parseInt(this.state.currentPg) !== 1) {
 					var prevUrl = this.previousPage();
-					location.href = prevUrl;
+					// location.href = prevUrl;
 				}
 			}
 			// Right arrow
@@ -182,7 +182,8 @@ class ComicDisplay extends React.Component {
 				// Make sure you're not on the latest page
 				if(parseInt(this.state.currentPg) !== parseInt(this.state.latestPg)) {
 					var nextUrl = this.nextPage();
-					location.href = nextUrl;
+					// location.href = nextUrl;
+					console.log(this.refs.nextPg)
 				}
 			}
 		}.bind(this));
@@ -239,9 +240,9 @@ class ComicDisplay extends React.Component {
 					<div className={s.prevNext}>
 						<Link className={this.isInactive('first')} to="/page/1"><img className="grayscale" src={require('./first.png')} alt="Go to first page" /></Link>
 						
-						<Link className={this.isInactive('first')} to={this.previousPage()}><img className="grayscale" src={require('./prev.png')} alt="Go to previous page" /></Link>
+						<Link ref={this.prevPg} className={this.isInactive('first')} to={this.previousPage()}><img className="grayscale" src={require('./prev.png')} alt="Go to previous page" /></Link>
 
-						<Link className={this.isInactive('last')} to={this.nextPage()}><img className="grayscale" src={require('./next.png')} alt="Go to next page" /></Link>
+						<Link ref="nextPg" className={this.isInactive('last')} to={this.nextPage()}><img className="grayscale" src={require('./next.png')} alt="Go to next page" /></Link>
 
 						<Link className={this.isInactive('last')} to={this.lastPage()}><img className="grayscale" src={require('./last.png')} alt="Go to last page" /></Link>
 					</div>

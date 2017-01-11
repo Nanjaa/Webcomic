@@ -1160,7 +1160,7 @@ module.exports =
   					// Make sure you're not on page 1
   					if (parseInt(this.state.currentPg) !== 1) {
   						var prevUrl = this.previousPage();
-  						location.href = prevUrl;
+  						// location.href = prevUrl;
   					}
   				}
   				// Right arrow
@@ -1168,7 +1168,8 @@ module.exports =
   						// Make sure you're not on the latest page
   						if (parseInt(this.state.currentPg) !== parseInt(this.state.latestPg)) {
   							var nextUrl = this.nextPage();
-  							location.href = nextUrl;
+  							// location.href = nextUrl;
+  							console.log(this.refs.nextPg);
   						}
   					}
   			}.bind(this));
@@ -1282,12 +1283,12 @@ module.exports =
   						),
   						_react2.default.createElement(
   							_Link2.default,
-  							{ className: this.isInactive('first'), to: this.previousPage() },
+  							{ ref: this.prevPg, className: this.isInactive('first'), to: this.previousPage() },
   							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(163), alt: 'Go to previous page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
-  							{ className: this.isInactive('last'), to: this.nextPage() },
+  							{ ref: 'nextPg', className: this.isInactive('last'), to: this.nextPage() },
   							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(160), alt: 'Go to next page' })
   						),
   						_react2.default.createElement(
@@ -1812,7 +1813,7 @@ module.exports =
   					// Make sure you're not on page 1
   					if (parseInt(this.state.currentPg) !== 1) {
   						var prevUrl = this.previousPage();
-  						location.href = prevUrl;
+  						// location.href = prevUrl;
   					}
   				}
   				// Right arrow
@@ -1820,7 +1821,8 @@ module.exports =
   						// Make sure you're not on the latest page
   						if (parseInt(this.state.currentPg) !== parseInt(this.state.latestPg)) {
   							var nextUrl = this.nextPage();
-  							location.href = nextUrl;
+  							// location.href = nextUrl;
+  							console.log(this.refs.nextPg);
   						}
   					}
   			}.bind(this));
@@ -1934,12 +1936,12 @@ module.exports =
   						),
   						_react2.default.createElement(
   							_Link2.default,
-  							{ className: this.isInactive('first'), to: this.previousPage() },
+  							{ ref: this.prevPg, className: this.isInactive('first'), to: this.previousPage() },
   							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(164), alt: 'Go to previous page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
-  							{ className: this.isInactive('last'), to: this.nextPage() },
+  							{ ref: 'nextPg', className: this.isInactive('last'), to: this.nextPage() },
   							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(162), alt: 'Go to next page' })
   						),
   						_react2.default.createElement(
