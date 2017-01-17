@@ -20,16 +20,22 @@ class Header extends React.Component {
       <div className={s.root}>
         <div className={s.container}>
           <Link className={s.brand} to="/">
-            <img src={require('./cover.png')} alt="Archaic Rebirth cover image" />
+            <img className={s.headerCover} src={require('./cover.png')} alt="Archaic Rebirth cover image" />
           </Link>
           <div className={s.banner}>
             <Link to="/">
               <h1 className={s.bannerTitle}><img src={require('./logo.png')} alt="Archaic Rebirth logo" /></h1>
             </Link>
             <h2>by Stephanie Piper</h2>
-            <Navigation className={s.nav} />
-            <Social className={s.social}/>
+            <div className={s.navDesktop}>
+              <Navigation/>
+              <Social/>
+            </div>
           </div>
+        </div>
+        <div className={s.mobileBar}>
+          <Navigation className={s.navMobile}/>
+          <Social className={s.socialMobile}/>
         </div>
       </div>
     );

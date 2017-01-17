@@ -72,6 +72,14 @@
       border: none;
       margin: 0;
       filter: grayscale();
+
+      height: 50px;
+      @media screen and (min-width: 425px) {
+        height: 60px;
+      }
+      @media screen and (min-width: 1024px) {
+        height: 75px;
+      }
     }
     img:hover {
       filter: none;
