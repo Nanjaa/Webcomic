@@ -6,6 +6,8 @@ import Firebase from 'firebase';
 import ArchivesTable from '../ArchivesTable';
 import Link from '../Link';
 import Loading from './loading.gif';
+import Location from '../../core/Location';
+
 
 class ComicDisplay extends React.Component {
 	constructor(props) {
@@ -168,13 +170,14 @@ class ComicDisplay extends React.Component {
 
 	// Watch for keypress
 	componentDidMount() {
-		document.addEventListener("keydown", function(e) {
+		document.addEventListener("keyup", function(e) {
 			// Left arrow
 			if(e.keyCode == 37) {
 				// Make sure you're not on page 1
 				if(parseInt(this.state.currentPg) !== 1) {
 					var prevUrl = this.previousPage();
-					// location.href = prevUrl;
+					// this.props.history.push('/some/path');
+					Location.push(prevUrl)
 				}
 			}
 			// Right arrow
@@ -182,8 +185,8 @@ class ComicDisplay extends React.Component {
 				// Make sure you're not on the latest page
 				if(parseInt(this.state.currentPg) !== parseInt(this.state.latestPg)) {
 					var nextUrl = this.nextPage();
-					// location.href = nextUrl;
-					console.log(this.refs.nextPg)
+					// this.props.history.push('/some/path');
+					Location.push(nextUrl)
 				}
 			}
 		}.bind(this));
