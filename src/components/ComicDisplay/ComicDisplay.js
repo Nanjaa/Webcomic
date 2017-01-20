@@ -21,7 +21,8 @@ class ComicDisplay extends React.Component {
 			img: Loading,
 			pg: '',
 			loadingHidden: true,
-			missingHidden: true
+			missingHidden: true,
+			expanded: false
 		}
 
 		this.componentWillMount = this.componentWillMount.bind(this);
@@ -33,6 +34,8 @@ class ComicDisplay extends React.Component {
 		this.updatePage = this.updatePage.bind(this);
 		this.checkIfPage = this.checkIfPage.bind(this);
 		this.hidden = this.hidden.bind(this);
+		this.expand = this.expand.bind(this);
+		this.expandClass = this.expandClass.bind(this);
 	}
 
 	// Navigation functions
@@ -214,7 +217,21 @@ class ComicDisplay extends React.Component {
 				return s.hidden;
 			}
 		}
+	}
 
+	expandClass() {
+		if(this.state.expanded === true) {
+			return s.expandedArchives;
+		}
+		else {
+			return s.hiddenArchives;
+		}
+	}
+
+	expand() {
+		this.setState({
+			expanded: !this.state.expanded
+		})
 	}
 
 	render(props) {
@@ -251,8 +268,10 @@ class ComicDisplay extends React.Component {
 					</div>
 
 					<div className={s.expandArchives}>
-						<a href="#">Expand Archives List</a>
-						<ArchivesTable/>
+						<p onClick={this.expand}>Expand Archives List</p>
+						<div id={s.test} className={this.expandClass()}>
+							<ArchivesTable/>
+						</div>
 					</div>
 				</div>
 			</div>
