@@ -7,6 +7,7 @@ import ArchivesTable from '../ArchivesTable';
 import Link from '../Link';
 import Loading from './loading.gif';
 import Location from '../../core/Location';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 class ComicDisplay extends React.Component {
@@ -180,7 +181,8 @@ class ComicDisplay extends React.Component {
 				if(parseInt(this.state.currentPg) !== 1) {
 					var prevUrl = this.previousPage();
 					// this.props.history.push('/some/path');
-					Location.push(prevUrl)
+					Location.push(prevUrl);
+					console.log(prevUrl);
 				}
 			}
 			// Right arrow
@@ -189,7 +191,8 @@ class ComicDisplay extends React.Component {
 				if(parseInt(this.state.currentPg) !== parseInt(this.state.latestPg)) {
 					var nextUrl = this.nextPage();
 					// this.props.history.push('/some/path');
-					Location.push(nextUrl)
+					Location.push(nextUrl);
+					console.log(nextUrl);
 				}
 			}
 		}.bind(this));

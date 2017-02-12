@@ -56,57 +56,57 @@ module.exports =
   
   var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
   
-  __webpack_require__(134);
+  __webpack_require__(135);
   
-  var _path = __webpack_require__(41);
+  var _path = __webpack_require__(42);
   
   var _path2 = _interopRequireDefault(_path);
   
-  var _express = __webpack_require__(151);
+  var _express = __webpack_require__(152);
   
   var _express2 = _interopRequireDefault(_express);
   
-  var _cookieParser = __webpack_require__(148);
+  var _cookieParser = __webpack_require__(149);
   
   var _cookieParser2 = _interopRequireDefault(_cookieParser);
   
-  var _bodyParser = __webpack_require__(146);
+  var _bodyParser = __webpack_require__(147);
   
   var _bodyParser2 = _interopRequireDefault(_bodyParser);
   
-  var _expressJwt = __webpack_require__(153);
+  var _expressJwt = __webpack_require__(154);
   
   var _expressJwt2 = _interopRequireDefault(_expressJwt);
   
-  var _expressGraphql = __webpack_require__(152);
+  var _expressGraphql = __webpack_require__(153);
   
   var _expressGraphql2 = _interopRequireDefault(_expressGraphql);
   
-  var _jsonwebtoken = __webpack_require__(160);
+  var _jsonwebtoken = __webpack_require__(161);
   
   var _jsonwebtoken2 = _interopRequireDefault(_jsonwebtoken);
   
-  var _server = __webpack_require__(167);
+  var _server = __webpack_require__(168);
   
   var _server2 = _interopRequireDefault(_server);
   
-  var _prettyError = __webpack_require__(166);
+  var _prettyError = __webpack_require__(167);
   
   var _prettyError2 = _interopRequireDefault(_prettyError);
   
-  var _passport = __webpack_require__(54);
+  var _passport = __webpack_require__(55);
   
   var _passport2 = _interopRequireDefault(_passport);
   
-  var _schema = __webpack_require__(58);
+  var _schema = __webpack_require__(59);
   
   var _schema2 = _interopRequireDefault(_schema);
   
-  var _routes = __webpack_require__(62);
+  var _routes = __webpack_require__(63);
   
   var _routes2 = _interopRequireDefault(_routes);
   
-  var _assets = __webpack_require__(133);
+  var _assets = __webpack_require__(134);
   
   var _assets2 = _interopRequireDefault(_assets);
   
@@ -190,7 +190,7 @@ module.exports =
                     switch (_context.prev = _context.next) {
                       case 0:
                         statusCode = 200;
-                        template = __webpack_require__(126);
+                        template = __webpack_require__(127);
                         data = { title: '', description: '', css: '', body: '', entry: _assets2.default.main.js };
   
   
@@ -265,7 +265,7 @@ module.exports =
   server.use(function (err, req, res, next) {
     // eslint-disable-line no-unused-vars
     console.log(pe.render(err)); // eslint-disable-line no-console
-    var template = __webpack_require__(125);
+    var template = __webpack_require__(126);
     var statusCode = err.status || 500;
     res.status(statusCode);
     res.send(template({
@@ -350,19 +350,19 @@ module.exports =
 
   'use strict';
   
-  var _assign = __webpack_require__(38);
+  var _assign = __webpack_require__(39);
   
   var _assign2 = _interopRequireDefault(_assign);
   
-  var _stringify = __webpack_require__(136);
+  var _stringify = __webpack_require__(137);
   
   var _stringify2 = _interopRequireDefault(_stringify);
   
-  var _slicedToArray2 = __webpack_require__(144);
+  var _slicedToArray2 = __webpack_require__(145);
   
   var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
   
-  var _getIterator2 = __webpack_require__(21);
+  var _getIterator2 = __webpack_require__(22);
   
   var _getIterator3 = _interopRequireDefault(_getIterator2);
   
@@ -563,11 +563,11 @@ module.exports =
     value: true
   });
   
-  var _extends2 = __webpack_require__(142);
+  var _extends2 = __webpack_require__(143);
   
   var _extends3 = _interopRequireDefault(_extends2);
   
-  var _objectWithoutProperties2 = __webpack_require__(143);
+  var _objectWithoutProperties2 = __webpack_require__(144);
   
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
   
@@ -595,7 +595,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Location = __webpack_require__(52);
+  var _Location = __webpack_require__(19);
   
   var _Location2 = _interopRequireDefault(_Location);
   
@@ -788,7 +788,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _ArchivesTable = __webpack_require__(105);
+  var _ArchivesTable = __webpack_require__(106);
   
   var _ArchivesTable2 = _interopRequireDefault(_ArchivesTable);
   
@@ -950,7 +950,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _ComicDisplay = __webpack_require__(107);
+  var _ComicDisplay = __webpack_require__(108);
   
   var _ComicDisplay2 = _interopRequireDefault(_ComicDisplay);
   
@@ -970,13 +970,17 @@ module.exports =
   
   var _Link2 = _interopRequireDefault(_Link);
   
-  var _loading = __webpack_require__(128);
+  var _loading = __webpack_require__(129);
   
   var _loading2 = _interopRequireDefault(_loading);
   
-  var _Location = __webpack_require__(52);
+  var _Location = __webpack_require__(19);
   
   var _Location2 = _interopRequireDefault(_Location);
+  
+  var _reactAddonsCssTransitionGroup = __webpack_require__(43);
+  
+  var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
@@ -1169,6 +1173,7 @@ module.exports =
   						var prevUrl = this.previousPage();
   						// this.props.history.push('/some/path');
   						_Location2.default.push(prevUrl);
+  						console.log(prevUrl);
   					}
   				}
   				// Right arrow
@@ -1178,6 +1183,7 @@ module.exports =
   							var nextUrl = this.nextPage();
   							// this.props.history.push('/some/path');
   							_Location2.default.push(nextUrl);
+  							console.log(nextUrl);
   						}
   					}
   			}.bind(this));
@@ -1239,22 +1245,22 @@ module.exports =
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('first'), to: '/page/1' },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(30), alt: 'Go to first page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(31), alt: 'Go to first page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('first'), to: this.previousPage() },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(33), alt: 'Go to previous page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(34), alt: 'Go to previous page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('last'), to: this.nextPage() },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(32), alt: 'Go to next page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(33), alt: 'Go to next page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('last'), to: this.lastPage() },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(31), alt: 'Go to last page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(32), alt: 'Go to last page' })
   						)
   					),
   					_react2.default.createElement(
@@ -1303,22 +1309,22 @@ module.exports =
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('first'), to: '/page/1' },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(30), alt: 'Go to first page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(31), alt: 'Go to first page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ ref: this.prevPg, className: this.isInactive('first'), to: this.previousPage() },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(33), alt: 'Go to previous page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(34), alt: 'Go to previous page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ ref: 'nextPg', className: this.isInactive('last'), to: this.nextPage() },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(32), alt: 'Go to next page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(33), alt: 'Go to next page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('last'), to: this.lastPage() },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(31), alt: 'Go to last page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(32), alt: 'Go to last page' })
   						)
   					),
   					_react2.default.createElement(
@@ -1362,7 +1368,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _ComicNavigation = __webpack_require__(108);
+  var _ComicNavigation = __webpack_require__(109);
   
   var _ComicNavigation2 = _interopRequireDefault(_ComicNavigation);
   
@@ -1447,13 +1453,48 @@ module.exports =
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
+  
+  var _createBrowserHistory = __webpack_require__(157);
+  
+  var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
+  
+  var _createMemoryHistory = __webpack_require__(158);
+  
+  var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
+  
+  var _useQueries = __webpack_require__(159);
+  
+  var _useQueries2 = _interopRequireDefault(_useQueries);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  var location = (0, _useQueries2.default)( false ? _createBrowserHistory2.default : _createMemoryHistory2.default)(); /**
+                                                                                                                                     * React Starter Kit (https://www.reactstarterkit.com/)
+                                                                                                                                     *
+                                                                                                                                     * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
+                                                                                                                                     *
+                                                                                                                                     * This source code is licensed under the MIT license found in the
+                                                                                                                                     * LICENSE.txt file in the root directory of this source tree.
+                                                                                                                                     */
+  
+  exports.default = location;
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
   exports.Response = exports.Headers = exports.Request = exports.default = undefined;
   
-  var _bluebird = __webpack_require__(22);
+  var _bluebird = __webpack_require__(23);
   
   var _bluebird2 = _interopRequireDefault(_bluebird);
   
-  var _nodeFetch = __webpack_require__(162);
+  var _nodeFetch = __webpack_require__(163);
   
   var _nodeFetch2 = _interopRequireDefault(_nodeFetch);
   
@@ -1494,7 +1535,7 @@ module.exports =
   exports.Response = _nodeFetch.Response;
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports) {
 
   "use strict";
@@ -1508,19 +1549,19 @@ module.exports =
   };
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-runtime/core-js/get-iterator");
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports) {
 
   module.exports = require("bluebird");
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1533,7 +1574,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _classnames = __webpack_require__(147);
+  var _classnames = __webpack_require__(148);
   
   var _classnames2 = _interopRequireDefault(_classnames);
   
@@ -1541,7 +1582,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _Navigation = __webpack_require__(112);
+  var _Navigation = __webpack_require__(113);
   
   var _Navigation2 = _interopRequireDefault(_Navigation);
   
@@ -1594,7 +1635,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(Navigation, _Navigation2.default);
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1631,7 +1672,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _Social = __webpack_require__(114);
+  var _Social = __webpack_require__(115);
   
   var _Social2 = _interopRequireDefault(_Social);
   
@@ -1639,31 +1680,31 @@ module.exports =
   
   var _Link2 = _interopRequireDefault(_Link);
   
-  var _fa = __webpack_require__(168);
+  var _fa = __webpack_require__(169);
   
   var _fa2 = _interopRequireDefault(_fa);
   
-  var _twitter = __webpack_require__(174);
+  var _twitter = __webpack_require__(175);
   
   var _twitter2 = _interopRequireDefault(_twitter);
   
-  var _instagram = __webpack_require__(171);
+  var _instagram = __webpack_require__(172);
   
   var _instagram2 = _interopRequireDefault(_instagram);
   
-  var _tumblr = __webpack_require__(173);
+  var _tumblr = __webpack_require__(174);
   
   var _tumblr2 = _interopRequireDefault(_tumblr);
   
-  var _facebook = __webpack_require__(170);
+  var _facebook = __webpack_require__(171);
   
   var _facebook2 = _interopRequireDefault(_facebook);
   
-  var _envelope = __webpack_require__(169);
+  var _envelope = __webpack_require__(170);
   
   var _envelope2 = _interopRequireDefault(_envelope);
   
-  var _rssSquare = __webpack_require__(172);
+  var _rssSquare = __webpack_require__(173);
   
   var _rssSquare2 = _interopRequireDefault(_rssSquare);
   
@@ -1717,7 +1758,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(Social, _Social2.default);
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1754,7 +1795,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _ComicDisplay = __webpack_require__(115);
+  var _ComicDisplay = __webpack_require__(116);
   
   var _ComicDisplay2 = _interopRequireDefault(_ComicDisplay);
   
@@ -1774,13 +1815,17 @@ module.exports =
   
   var _Link2 = _interopRequireDefault(_Link);
   
-  var _loading = __webpack_require__(131);
+  var _loading = __webpack_require__(132);
   
   var _loading2 = _interopRequireDefault(_loading);
   
-  var _Location = __webpack_require__(52);
+  var _Location = __webpack_require__(19);
   
   var _Location2 = _interopRequireDefault(_Location);
+  
+  var _reactAddonsCssTransitionGroup = __webpack_require__(43);
+  
+  var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
@@ -1973,6 +2018,7 @@ module.exports =
   						var prevUrl = this.previousPage();
   						// this.props.history.push('/some/path');
   						_Location2.default.push(prevUrl);
+  						console.log(prevUrl);
   					}
   				}
   				// Right arrow
@@ -1982,6 +2028,7 @@ module.exports =
   							var nextUrl = this.nextPage();
   							// this.props.history.push('/some/path');
   							_Location2.default.push(nextUrl);
+  							console.log(nextUrl);
   						}
   					}
   			}.bind(this));
@@ -2043,22 +2090,22 @@ module.exports =
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('first'), to: '/page/1' },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(34), alt: 'Go to first page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(35), alt: 'Go to first page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('first'), to: this.previousPage() },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(37), alt: 'Go to previous page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(38), alt: 'Go to previous page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('last'), to: this.nextPage() },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(36), alt: 'Go to next page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(37), alt: 'Go to next page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('last'), to: this.lastPage() },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(35), alt: 'Go to last page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(36), alt: 'Go to last page' })
   						)
   					),
   					_react2.default.createElement(
@@ -2107,22 +2154,22 @@ module.exports =
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('first'), to: '/page/1' },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(34), alt: 'Go to first page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(35), alt: 'Go to first page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ ref: this.prevPg, className: this.isInactive('first'), to: this.previousPage() },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(37), alt: 'Go to previous page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(38), alt: 'Go to previous page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ ref: 'nextPg', className: this.isInactive('last'), to: this.nextPage() },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(36), alt: 'Go to next page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(37), alt: 'Go to next page' })
   						),
   						_react2.default.createElement(
   							_Link2.default,
   							{ className: this.isInactive('last'), to: this.lastPage() },
-  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(35), alt: 'Go to last page' })
+  							_react2.default.createElement('img', { className: 'grayscale', src: __webpack_require__(36), alt: 'Go to last page' })
   						)
   					),
   					_react2.default.createElement(
@@ -2149,7 +2196,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(ComicDisplay, _ComicDisplay2.default);
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2166,7 +2213,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _ComicNavigation = __webpack_require__(116);
+  var _ComicNavigation = __webpack_require__(117);
   
   var _ComicNavigation2 = _interopRequireDefault(_ComicNavigation);
   
@@ -2243,20 +2290,20 @@ module.exports =
   exports.default = (0, _withStyles2.default)(ComicNavigation, _ComicNavigation2.default);
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = { "default": __webpack_require__(150), __esModule: true };
+  module.exports = { "default": __webpack_require__(151), __esModule: true };
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
   
   exports.__esModule = true;
   
-  var _defineProperty = __webpack_require__(138);
+  var _defineProperty = __webpack_require__(139);
   
   var _defineProperty2 = _interopRequireDefault(_defineProperty);
   
@@ -2281,7 +2328,7 @@ module.exports =
   }();
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2501,7 +2548,7 @@ module.exports =
       throw err;
     }
     try {
-      str = str || __webpack_require__(40).readFileSync(filename, 'utf8')
+      str = str || __webpack_require__(41).readFileSync(filename, 'utf8')
     } catch (ex) {
       rethrow(err, null, lineno)
     }
@@ -2533,79 +2580,85 @@ module.exports =
 
 
 /***/ },
-/* 30 */
-/***/ function(module, exports, __webpack_require__) {
-
-  module.exports = __webpack_require__.p + "46099f18881d4f00e26c0294e356d011.png";
-
-/***/ },
 /* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = __webpack_require__.p + "460d02af679605904a3fcedb3becae27.png";
+  module.exports = __webpack_require__.p + "46099f18881d4f00e26c0294e356d011.png";
 
 /***/ },
 /* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = __webpack_require__.p + "deef6149f1a50003139fd063bf8bba3a.png";
+  module.exports = __webpack_require__.p + "460d02af679605904a3fcedb3becae27.png";
 
 /***/ },
 /* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = __webpack_require__.p + "62819184b726fab080ac7f05872fdd52.png";
+  module.exports = __webpack_require__.p + "deef6149f1a50003139fd063bf8bba3a.png";
 
 /***/ },
 /* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = __webpack_require__.p + "46099f18881d4f00e26c0294e356d011.png";
+  module.exports = __webpack_require__.p + "62819184b726fab080ac7f05872fdd52.png";
 
 /***/ },
 /* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = __webpack_require__.p + "460d02af679605904a3fcedb3becae27.png";
+  module.exports = __webpack_require__.p + "46099f18881d4f00e26c0294e356d011.png";
 
 /***/ },
 /* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = __webpack_require__.p + "deef6149f1a50003139fd063bf8bba3a.png";
+  module.exports = __webpack_require__.p + "460d02af679605904a3fcedb3becae27.png";
 
 /***/ },
 /* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = __webpack_require__.p + "62819184b726fab080ac7f05872fdd52.png";
+  module.exports = __webpack_require__.p + "deef6149f1a50003139fd063bf8bba3a.png";
 
 /***/ },
 /* 38 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-  module.exports = require("babel-runtime/core-js/object/assign");
+  module.exports = __webpack_require__.p + "62819184b726fab080ac7f05872fdd52.png";
 
 /***/ },
 /* 39 */
 /***/ function(module, exports) {
 
-  module.exports = require("babel-runtime/core-js/promise");
+  module.exports = require("babel-runtime/core-js/object/assign");
 
 /***/ },
 /* 40 */
 /***/ function(module, exports) {
 
-  module.exports = require("fs");
+  module.exports = require("babel-runtime/core-js/promise");
 
 /***/ },
 /* 41 */
 /***/ function(module, exports) {
 
-  module.exports = require("path");
+  module.exports = require("fs");
 
 /***/ },
 /* 42 */
+/***/ function(module, exports) {
+
+  module.exports = require("path");
+
+/***/ },
+/* 43 */
+/***/ function(module, exports) {
+
+  module.exports = require("react-addons-css-transition-group");
+
+/***/ },
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2614,11 +2667,11 @@ module.exports =
     value: true
   });
   
-  var _create = __webpack_require__(27);
+  var _create = __webpack_require__(28);
   
   var _create2 = _interopRequireDefault(_create);
   
-  var _classCallCheck2 = __webpack_require__(20);
+  var _classCallCheck2 = __webpack_require__(21);
   
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
   
@@ -2657,7 +2710,7 @@ module.exports =
   exports.default = Match;
 
 /***/ },
-/* 43 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2666,19 +2719,19 @@ module.exports =
     value: true
   });
   
-  var _classCallCheck2 = __webpack_require__(20);
+  var _classCallCheck2 = __webpack_require__(21);
   
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
   
-  var _createClass2 = __webpack_require__(28);
+  var _createClass2 = __webpack_require__(29);
   
   var _createClass3 = _interopRequireDefault(_createClass2);
   
-  var _pathToRegexp = __webpack_require__(127);
+  var _pathToRegexp = __webpack_require__(128);
   
   var _pathToRegexp2 = _interopRequireDefault(_pathToRegexp);
   
-  var _Match = __webpack_require__(42);
+  var _Match = __webpack_require__(44);
   
   var _Match2 = _interopRequireDefault(_Match);
   
@@ -2711,7 +2764,7 @@ module.exports =
   exports.default = Route;
 
 /***/ },
-/* 44 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2720,35 +2773,35 @@ module.exports =
     value: true
   });
   
-  var _slicedToArray2 = __webpack_require__(79);
+  var _slicedToArray2 = __webpack_require__(80);
   
   var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
   
-  var _regenerator = __webpack_require__(80);
+  var _regenerator = __webpack_require__(81);
   
   var _regenerator2 = _interopRequireDefault(_regenerator);
   
-  var _getIterator2 = __webpack_require__(77);
+  var _getIterator2 = __webpack_require__(78);
   
   var _getIterator3 = _interopRequireDefault(_getIterator2);
   
-  var _asyncToGenerator2 = __webpack_require__(78);
+  var _asyncToGenerator2 = __webpack_require__(79);
   
   var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
   
-  var _create = __webpack_require__(27);
+  var _create = __webpack_require__(28);
   
   var _create2 = _interopRequireDefault(_create);
   
-  var _classCallCheck2 = __webpack_require__(20);
+  var _classCallCheck2 = __webpack_require__(21);
   
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
   
-  var _createClass2 = __webpack_require__(28);
+  var _createClass2 = __webpack_require__(29);
   
   var _createClass3 = _interopRequireDefault(_createClass2);
   
-  var _Route = __webpack_require__(43);
+  var _Route = __webpack_require__(45);
   
   var _Route2 = _interopRequireDefault(_Route);
   
@@ -3076,7 +3129,7 @@ module.exports =
   exports.default = Router;
 
 /***/ },
-/* 45 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -3109,15 +3162,15 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _emptyFunction = __webpack_require__(154);
+  var _emptyFunction = __webpack_require__(155);
   
   var _emptyFunction2 = _interopRequireDefault(_emptyFunction);
   
-  var _App = __webpack_require__(104);
+  var _App = __webpack_require__(105);
   
   var _App2 = _interopRequireDefault(_App);
   
-  var _Header = __webpack_require__(49);
+  var _Header = __webpack_require__(51);
   
   var _Header2 = _interopRequireDefault(_Header);
   
@@ -3125,7 +3178,7 @@ module.exports =
   
   var _ComicNavigation2 = _interopRequireDefault(_ComicNavigation);
   
-  var _Footer = __webpack_require__(48);
+  var _Footer = __webpack_require__(50);
   
   var _Footer2 = _interopRequireDefault(_Footer);
   
@@ -3219,7 +3272,7 @@ module.exports =
   exports.default = App;
 
 /***/ },
-/* 46 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -3256,7 +3309,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _CastTable = __webpack_require__(106);
+  var _CastTable = __webpack_require__(107);
   
   var _CastTable2 = _interopRequireDefault(_CastTable);
   
@@ -3414,7 +3467,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(CastTable, _CastTable2.default);
 
 /***/ },
-/* 47 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -3451,7 +3504,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _ErrorPage = __webpack_require__(109);
+  var _ErrorPage = __webpack_require__(110);
   
   var _ErrorPage2 = _interopRequireDefault(_ErrorPage);
   
@@ -3508,7 +3561,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(ErrorPage, _ErrorPage2.default);
 
 /***/ },
-/* 48 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -3525,7 +3578,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _Footer = __webpack_require__(110);
+  var _Footer = __webpack_require__(111);
   
   var _Footer2 = _interopRequireDefault(_Footer);
   
@@ -3533,11 +3586,11 @@ module.exports =
   
   var _Link2 = _interopRequireDefault(_Link);
   
-  var _Navigation = __webpack_require__(23);
+  var _Navigation = __webpack_require__(24);
   
   var _Navigation2 = _interopRequireDefault(_Navigation);
   
-  var _Social = __webpack_require__(24);
+  var _Social = __webpack_require__(25);
   
   var _Social2 = _interopRequireDefault(_Social);
   
@@ -3588,7 +3641,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(Footer, _Footer2.default);
 
 /***/ },
-/* 49 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -3625,7 +3678,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _Header = __webpack_require__(111);
+  var _Header = __webpack_require__(112);
   
   var _Header2 = _interopRequireDefault(_Header);
   
@@ -3633,11 +3686,11 @@ module.exports =
   
   var _Link2 = _interopRequireDefault(_Link);
   
-  var _Navigation = __webpack_require__(23);
+  var _Navigation = __webpack_require__(24);
   
   var _Navigation2 = _interopRequireDefault(_Navigation);
   
-  var _Social = __webpack_require__(24);
+  var _Social = __webpack_require__(25);
   
   var _Social2 = _interopRequireDefault(_Social);
   
@@ -3672,7 +3725,7 @@ module.exports =
             _react2.default.createElement(
               _Link2.default,
               { className: _Header2.default.brand, to: '/' },
-              _react2.default.createElement('img', { className: _Header2.default.headerCover, src: __webpack_require__(129), alt: 'Archaic Rebirth cover image' })
+              _react2.default.createElement('img', { className: _Header2.default.headerCover, src: __webpack_require__(130), alt: 'Archaic Rebirth cover image' })
             ),
             _react2.default.createElement(
               'div',
@@ -3683,7 +3736,7 @@ module.exports =
                 _react2.default.createElement(
                   'h1',
                   { className: _Header2.default.bannerTitle },
-                  _react2.default.createElement('img', { src: __webpack_require__(130), alt: 'Archaic Rebirth logo' })
+                  _react2.default.createElement('img', { src: __webpack_require__(131), alt: 'Archaic Rebirth logo' })
                 )
               ),
               _react2.default.createElement(
@@ -3714,7 +3767,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(Header, _Header2.default);
 
 /***/ },
-/* 50 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -3751,7 +3804,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _NotFoundPage = __webpack_require__(113);
+  var _NotFoundPage = __webpack_require__(114);
   
   var _NotFoundPage2 = _interopRequireDefault(_NotFoundPage);
   
@@ -3820,7 +3873,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(NotFoundPage, _NotFoundPage2.default);
 
 /***/ },
-/* 51 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -3857,7 +3910,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _UploadComic = __webpack_require__(117);
+  var _UploadComic = __webpack_require__(118);
   
   var _UploadComic2 = _interopRequireDefault(_UploadComic);
   
@@ -4001,7 +4054,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(UploadComic, _UploadComic2.default);
 
 /***/ },
-/* 52 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4010,46 +4063,11 @@ module.exports =
     value: true
   });
   
-  var _createBrowserHistory = __webpack_require__(156);
-  
-  var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
-  
-  var _createMemoryHistory = __webpack_require__(157);
-  
-  var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
-  
-  var _useQueries = __webpack_require__(158);
-  
-  var _useQueries2 = _interopRequireDefault(_useQueries);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  var location = (0, _useQueries2.default)( false ? _createBrowserHistory2.default : _createMemoryHistory2.default)(); /**
-                                                                                                                                     * React Starter Kit (https://www.reactstarterkit.com/)
-                                                                                                                                     *
-                                                                                                                                     * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
-                                                                                                                                     *
-                                                                                                                                     * This source code is licensed under the MIT license found in the
-                                                                                                                                     * LICENSE.txt file in the root directory of this source tree.
-                                                                                                                                     */
-  
-  exports.default = location;
-
-/***/ },
-/* 53 */
-/***/ function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  
-  var _pg = __webpack_require__(165);
+  var _pg = __webpack_require__(166);
   
   var _pg2 = _interopRequireDefault(_pg);
   
-  var _bluebird = __webpack_require__(22);
+  var _bluebird = __webpack_require__(23);
   
   var _bluebird2 = _interopRequireDefault(_bluebird);
   
@@ -4145,7 +4163,7 @@ module.exports =
   exports.default = _pg2.default;
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4162,13 +4180,13 @@ module.exports =
   
   var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
   
-  var _passport = __webpack_require__(163);
+  var _passport = __webpack_require__(164);
   
   var _passport2 = _interopRequireDefault(_passport);
   
-  var _passportFacebook = __webpack_require__(164);
+  var _passportFacebook = __webpack_require__(165);
   
-  var _db = __webpack_require__(53);
+  var _db = __webpack_require__(54);
   
   var _db2 = _interopRequireDefault(_db);
   
@@ -4345,7 +4363,7 @@ module.exports =
   exports.default = _passport2.default;
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4354,7 +4372,7 @@ module.exports =
     value: true
   });
   
-  var _getIterator2 = __webpack_require__(21);
+  var _getIterator2 = __webpack_require__(22);
   
   var _getIterator3 = _interopRequireDefault(_getIterator2);
   
@@ -4366,7 +4384,7 @@ module.exports =
   
   var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
   
-  var _assign = __webpack_require__(38);
+  var _assign = __webpack_require__(39);
   
   var _assign2 = _interopRequireDefault(_assign);
   
@@ -4515,31 +4533,31 @@ module.exports =
     };
   }();
   
-  var _fs = __webpack_require__(40);
+  var _fs = __webpack_require__(41);
   
   var _fs2 = _interopRequireDefault(_fs);
   
-  var _path = __webpack_require__(41);
+  var _path = __webpack_require__(42);
   
-  var _bluebird = __webpack_require__(22);
+  var _bluebird = __webpack_require__(23);
   
   var _bluebird2 = _interopRequireDefault(_bluebird);
   
-  var _jade = __webpack_require__(159);
+  var _jade = __webpack_require__(160);
   
   var _jade2 = _interopRequireDefault(_jade);
   
-  var _frontMatter = __webpack_require__(155);
+  var _frontMatter = __webpack_require__(156);
   
   var _frontMatter2 = _interopRequireDefault(_frontMatter);
   
-  var _markdownIt = __webpack_require__(161);
+  var _markdownIt = __webpack_require__(162);
   
   var _markdownIt2 = _interopRequireDefault(_markdownIt);
   
   var _graphql = __webpack_require__(14);
   
-  var _ContentType = __webpack_require__(59);
+  var _ContentType = __webpack_require__(60);
   
   var _ContentType2 = _interopRequireDefault(_ContentType);
   
@@ -4641,7 +4659,7 @@ module.exports =
   exports.default = content;
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4650,7 +4668,7 @@ module.exports =
     value: true
   });
   
-  var _UserType = __webpack_require__(61);
+  var _UserType = __webpack_require__(62);
   
   var _UserType2 = _interopRequireDefault(_UserType);
   
@@ -4678,7 +4696,7 @@ module.exports =
   exports.default = me;
 
 /***/ },
-/* 57 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4689,11 +4707,11 @@ module.exports =
   
   var _graphql = __webpack_require__(14);
   
-  var _fetch = __webpack_require__(19);
+  var _fetch = __webpack_require__(20);
   
   var _fetch2 = _interopRequireDefault(_fetch);
   
-  var _NewsItemType = __webpack_require__(60);
+  var _NewsItemType = __webpack_require__(61);
   
   var _NewsItemType2 = _interopRequireDefault(_NewsItemType);
   
@@ -4748,7 +4766,7 @@ module.exports =
   exports.default = news;
 
 /***/ },
-/* 58 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4759,15 +4777,15 @@ module.exports =
   
   var _graphql = __webpack_require__(14);
   
-  var _me = __webpack_require__(56);
+  var _me = __webpack_require__(57);
   
   var _me2 = _interopRequireDefault(_me);
   
-  var _content = __webpack_require__(55);
+  var _content = __webpack_require__(56);
   
   var _content2 = _interopRequireDefault(_content);
   
-  var _news = __webpack_require__(57);
+  var _news = __webpack_require__(58);
   
   var _news2 = _interopRequireDefault(_news);
   
@@ -4796,7 +4814,7 @@ module.exports =
   exports.default = schema;
 
 /***/ },
-/* 59 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4827,7 +4845,7 @@ module.exports =
   exports.default = ContentType;
 
 /***/ },
-/* 60 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4859,7 +4877,7 @@ module.exports =
   exports.default = NewsItemType;
 
 /***/ },
-/* 61 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4888,7 +4906,7 @@ module.exports =
   exports.default = UserType;
 
 /***/ },
-/* 62 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4909,23 +4927,23 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Router = __webpack_require__(44);
+  var _Router = __webpack_require__(46);
   
   var _Router2 = _interopRequireDefault(_Router);
   
-  var _fetch = __webpack_require__(19);
+  var _fetch = __webpack_require__(20);
   
   var _fetch2 = _interopRequireDefault(_fetch);
   
-  var _App = __webpack_require__(45);
+  var _App = __webpack_require__(47);
   
   var _App2 = _interopRequireDefault(_App);
   
-  var _NotFoundPage = __webpack_require__(50);
+  var _NotFoundPage = __webpack_require__(52);
   
   var _NotFoundPage2 = _interopRequireDefault(_NotFoundPage);
   
-  var _ErrorPage = __webpack_require__(47);
+  var _ErrorPage = __webpack_require__(49);
   
   var _ErrorPage2 = _interopRequireDefault(_ErrorPage);
   
@@ -4935,7 +4953,7 @@ module.exports =
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  var routes = [__webpack_require__(72), __webpack_require__(70), __webpack_require__(66), __webpack_require__(64), __webpack_require__(68), __webpack_require__(75), __webpack_require__(74)]; /**
+  var routes = [__webpack_require__(73), __webpack_require__(71), __webpack_require__(67), __webpack_require__(65), __webpack_require__(69), __webpack_require__(76), __webpack_require__(75)]; /**
                                                                                                                                                                                                                  * React Starter Kit (https://www.reactstarterkit.com/)
                                                                                                                                                                                                                  *
                                                                                                                                                                                                                  * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
@@ -5057,7 +5075,7 @@ module.exports =
   exports.default = router;
 
 /***/ },
-/* 63 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5074,7 +5092,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _about = __webpack_require__(118);
+  var _about = __webpack_require__(119);
   
   var _about2 = _interopRequireDefault(_about);
   
@@ -5268,7 +5286,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(About, _about2.default);
 
 /***/ },
-/* 64 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5290,7 +5308,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _About = __webpack_require__(63);
+  var _About = __webpack_require__(64);
   
   var _About2 = _interopRequireDefault(_About);
   
@@ -5323,7 +5341,7 @@ module.exports =
   }();
 
 /***/ },
-/* 65 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5340,7 +5358,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _Archives = __webpack_require__(119);
+  var _Archives = __webpack_require__(120);
   
   var _Archives2 = _interopRequireDefault(_Archives);
   
@@ -5374,7 +5392,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(Archives, _Archives2.default);
 
 /***/ },
-/* 66 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5396,7 +5414,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _archives = __webpack_require__(65);
+  var _archives = __webpack_require__(66);
   
   var _archives2 = _interopRequireDefault(_archives);
   
@@ -5429,7 +5447,7 @@ module.exports =
   }();
 
 /***/ },
-/* 67 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5446,11 +5464,11 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _cast = __webpack_require__(120);
+  var _cast = __webpack_require__(121);
   
   var _cast2 = _interopRequireDefault(_cast);
   
-  var _CastTable = __webpack_require__(46);
+  var _CastTable = __webpack_require__(48);
   
   var _CastTable2 = _interopRequireDefault(_CastTable);
   
@@ -5480,7 +5498,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(Cast, _cast2.default);
 
 /***/ },
-/* 68 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5502,7 +5520,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Cast = __webpack_require__(67);
+  var _Cast = __webpack_require__(68);
   
   var _Cast2 = _interopRequireDefault(_Cast);
   
@@ -5535,7 +5553,7 @@ module.exports =
   }();
 
 /***/ },
-/* 69 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5552,7 +5570,7 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _Follow = __webpack_require__(121);
+  var _Follow = __webpack_require__(122);
   
   var _Follow2 = _interopRequireDefault(_Follow);
   
@@ -5588,7 +5606,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(Follow, _Follow2.default);
 
 /***/ },
-/* 70 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5610,7 +5628,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Follow = __webpack_require__(69);
+  var _Follow = __webpack_require__(70);
   
   var _Follow2 = _interopRequireDefault(_Follow);
   
@@ -5652,7 +5670,7 @@ module.exports =
   }();
 
 /***/ },
-/* 71 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5669,15 +5687,15 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _Home = __webpack_require__(122);
+  var _Home = __webpack_require__(123);
   
   var _Home2 = _interopRequireDefault(_Home);
   
-  var _comicnavigation = __webpack_require__(26);
+  var _comicnavigation = __webpack_require__(27);
   
   var _comicnavigation2 = _interopRequireDefault(_comicnavigation);
   
-  var _comicdisplay = __webpack_require__(25);
+  var _comicdisplay = __webpack_require__(26);
   
   var _comicdisplay2 = _interopRequireDefault(_comicdisplay);
   
@@ -5707,7 +5725,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(Home, _Home2.default);
 
 /***/ },
-/* 72 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5729,11 +5747,11 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Home = __webpack_require__(71);
+  var _Home = __webpack_require__(72);
   
   var _Home2 = _interopRequireDefault(_Home);
   
-  var _fetch = __webpack_require__(19);
+  var _fetch = __webpack_require__(20);
   
   var _fetch2 = _interopRequireDefault(_fetch);
   
@@ -5774,7 +5792,7 @@ module.exports =
   }();
 
 /***/ },
-/* 73 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5791,15 +5809,15 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _Page = __webpack_require__(123);
+  var _Page = __webpack_require__(124);
   
   var _Page2 = _interopRequireDefault(_Page);
   
-  var _comicnavigation = __webpack_require__(26);
+  var _comicnavigation = __webpack_require__(27);
   
   var _comicnavigation2 = _interopRequireDefault(_comicnavigation);
   
-  var _comicdisplay = __webpack_require__(25);
+  var _comicdisplay = __webpack_require__(26);
   
   var _comicdisplay2 = _interopRequireDefault(_comicdisplay);
   
@@ -5818,7 +5836,7 @@ module.exports =
   exports.default = (0, _withStyles2.default)(Page, _Page2.default);
 
 /***/ },
-/* 74 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5840,7 +5858,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Page = __webpack_require__(73);
+  var _Page = __webpack_require__(74);
   
   var _Page2 = _interopRequireDefault(_Page);
   
@@ -5873,7 +5891,7 @@ module.exports =
   }();
 
 /***/ },
-/* 75 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5895,7 +5913,7 @@ module.exports =
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _upload = __webpack_require__(76);
+  var _upload = __webpack_require__(77);
   
   var _upload2 = _interopRequireDefault(_upload);
   
@@ -5928,7 +5946,7 @@ module.exports =
   }();
 
 /***/ },
-/* 76 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5965,11 +5983,11 @@ module.exports =
   
   var _withStyles2 = _interopRequireDefault(_withStyles);
   
-  var _Upload = __webpack_require__(124);
+  var _Upload = __webpack_require__(125);
   
   var _Upload2 = _interopRequireDefault(_Upload);
   
-  var _uploadcomic = __webpack_require__(51);
+  var _uploadcomic = __webpack_require__(53);
   
   var _uploadcomic2 = _interopRequireDefault(_uploadcomic);
   
@@ -6008,20 +6026,20 @@ module.exports =
   exports.default = (0, _withStyles2.default)(Upload, _Upload2.default);
 
 /***/ },
-/* 77 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = { "default": __webpack_require__(149), __esModule: true };
+  module.exports = { "default": __webpack_require__(150), __esModule: true };
 
 /***/ },
-/* 78 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
   
   exports.__esModule = true;
   
-  var _promise = __webpack_require__(39);
+  var _promise = __webpack_require__(40);
   
   var _promise2 = _interopRequireDefault(_promise);
   
@@ -6057,18 +6075,18 @@ module.exports =
   };
 
 /***/ },
-/* 79 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
   
   exports.__esModule = true;
   
-  var _isIterable2 = __webpack_require__(135);
+  var _isIterable2 = __webpack_require__(136);
   
   var _isIterable3 = _interopRequireDefault(_isIterable2);
   
-  var _getIterator2 = __webpack_require__(21);
+  var _getIterator2 = __webpack_require__(22);
   
   var _getIterator3 = _interopRequireDefault(_getIterator2);
   
@@ -6113,7 +6131,7 @@ module.exports =
   }();
 
 /***/ },
-/* 80 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
   // This method of obtaining a reference to the global object needs to be
@@ -6134,7 +6152,7 @@ module.exports =
   // Force reevalutation of runtime.js.
   g.regeneratorRuntime = undefined;
   
-  module.exports = __webpack_require__(81);
+  module.exports = __webpack_require__(82);
   
   if (hadRuntime) {
     // Restore the original runtime.
@@ -6152,32 +6170,32 @@ module.exports =
 
 
 /***/ },
-/* 81 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
   /* WEBPACK VAR INJECTION */(function(module) {"use strict";
   
-  var _promise = __webpack_require__(39);
+  var _promise = __webpack_require__(40);
   
   var _promise2 = _interopRequireDefault(_promise);
   
-  var _setPrototypeOf = __webpack_require__(139);
+  var _setPrototypeOf = __webpack_require__(140);
   
   var _setPrototypeOf2 = _interopRequireDefault(_setPrototypeOf);
   
-  var _create = __webpack_require__(137);
+  var _create = __webpack_require__(138);
   
   var _create2 = _interopRequireDefault(_create);
   
-  var _typeof2 = __webpack_require__(145);
+  var _typeof2 = __webpack_require__(146);
   
   var _typeof3 = _interopRequireDefault(_typeof2);
   
-  var _iterator = __webpack_require__(141);
+  var _iterator = __webpack_require__(142);
   
   var _iterator2 = _interopRequireDefault(_iterator);
   
-  var _symbol = __webpack_require__(140);
+  var _symbol = __webpack_require__(141);
   
   var _symbol2 = _interopRequireDefault(_symbol);
   
@@ -6807,10 +6825,10 @@ module.exports =
   // object, this seems to be the most reliable technique that does not
   // use indirect eval (which violates Content Security Policy).
   (typeof global === "undefined" ? "undefined" : (0, _typeof3.default)(global)) === "object" ? global : (typeof window === "undefined" ? "undefined" : (0, _typeof3.default)(window)) === "object" ? window : (typeof self === "undefined" ? "undefined" : (0, _typeof3.default)(self)) === "object" ? self : undefined);
-  /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(132)(module)))
+  /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(133)(module)))
 
 /***/ },
-/* 82 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -6827,7 +6845,7 @@ module.exports =
   };
 
 /***/ },
-/* 83 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -6843,7 +6861,7 @@ module.exports =
   };
 
 /***/ },
-/* 84 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -6865,7 +6883,7 @@ module.exports =
   };
 
 /***/ },
-/* 85 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -6873,7 +6891,7 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ComicDisplay_bold_79N {\r\n  font-weight: 600;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 {\r\n  margin: 0 auto;\r\n  padding: 15px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 img {\r\n  width: 100%;\r\n  margin: 25px 0;\r\n  border: 2px solid black;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div:not(.ComicDisplay_prevNext_2xY):not(.ComicDisplay_expandedArchives_1xN):not(.ComicDisplay_hiddenArchives_1DR) {\r\n  border: 2px solid black;\r\n  background: white;\r\n  padding: 5%;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div:not(.ComicDisplay_prevNext_2xY):not(.ComicDisplay_expandedArchives_1xN):not(.ComicDisplay_hiddenArchives_1DR) p {\r\n  margin: 0;\r\n  text-align: left;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY {\r\n  margin-bottom: 25px;\r\n  border: none;\r\n  background: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY a {\r\n  display: inline-block;\r\n  width: 25%;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY img {\r\n  max-height: 75px;\r\n  width: auto;\r\n  border: none;\r\n  margin: 0;\r\n  -webkit-filter: grayscale();\r\n          filter: grayscale();\r\n  height: 50px\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY img:hover {\r\n  -webkit-filter: none;\r\n          filter: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_comicDetails_39f {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi {\r\n  width: 2%;\r\n  background: white;\r\n  border: 1px solid darkgray;\r\n  display: inline-block;\r\n  cursor: col-resize;\r\n  padding-bottom: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw span, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi span {\r\n  float: left;\r\n  line-height: 1;\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw {\r\n  border-right: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi {\r\n  border-left: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_imgContainer_3iu, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_imgContainer_3iu * {\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk a {\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:active, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:hover, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_spacer_37l {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_inactive_3tB {\r\n  pointer-events: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_inactive_3tB img {\r\n  display: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_hidden_3DM {\r\n  display: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_expandArchives_30q {\r\n  -webkit-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_expandArchives_30q p {\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_expandArchives_30q .ComicDisplay_expandedArchives_1xN {\r\n  max-height: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_expandArchives_30q .ComicDisplay_hiddenArchives_1DR {\r\n  max-height: 0px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_expandArchives_30q .ComicDisplay_expandedArchives_1xN, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_expandArchives_30q .ComicDisplay_hiddenArchives_1DR {\r\n  border: none;\r\n  overflow: hidden;\r\n  -webkit-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 1080px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 {\r\n    padding: 25px;\r\n  }\r\n    }\r\n\r\n@media screen and (min-width: 500px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div:not(.ComicDisplay_prevNext_2xY):not(.ComicDisplay_expandedArchives_1xN):not(.ComicDisplay_hiddenArchives_1DR) {\r\n    padding: 3%;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div:not(.ComicDisplay_prevNext_2xY):not(.ComicDisplay_expandedArchives_1xN):not(.ComicDisplay_hiddenArchives_1DR) {\r\n    padding: 25px;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 425px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY img {\r\n    height: 60px;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 1024px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY img {\r\n    height: 75px;\r\n  }\r\n      }\r\n\r\n#ComicDisplay_test_3c4 {\r\n  -webkit-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/ComicDisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,iBAAiB;CAClB;;AAED;EACE,oBAAoB;EACpB,YAAY;EACZ,wBAAwB;EACxB,WAAW;EACX,kBAAkB;EAClB,gBAAgB;CAqKjB;;AAzJC;EACE,eAAe;EACf,cAAc;EACd,mBAAmB;EACnB,gBAAgB;CA6BjB;;AAvBC;EACE,YAAY;EACZ,eAAe;EACf,wBAAwB;CACzB;;AAED;EACE,wBAAwB;EACxB,kBAAkB;EAClB,YAAY;CAab;;AAJC;EACE,UAAU;EACV,iBAAiB;CAClB;;AAIL;EACE,oBAAoB;EACpB,aAAa;EACb,iBAAiB;CAwBlB;;AAtBC;EACE,sBAAsB;EACtB,WAAW;CACZ;;AACD;EACE,iBAAiB;EACjB,YAAY;EACZ,aAAa;EACb,UAAU;EACV,4BAAoB;UAApB,oBAAoB;EAEpB,YAAa;CAOd;;AACD;EACE,qBAAa;UAAb,aAAa;CACd;;AAGH;EACE,kBAAkB;EAClB,eAAe;CAChB;;AAED;EACE,UAAU;EACV,kBAAkB;EAClB,2BAA2B;EAC3B,sBAAsB;EACtB,mBAAmB;EACnB,qBAAqB;CAQtB;;AANC;EACE,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,sBAAsB;CACvB;;AAEH;EACE,mBAAmB;CACpB;;AACD;EACE,kBAAkB;CACnB;;AAED;EACE,0BAAkB;KAAlB,uBAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;CACnB;;AAED;EACE,sBAAsB;CACvB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;CAItB;;AAHC;EACE,cAAc;CACf;;AAEH;EACE,cAAc;CACf;;AAED;EACE,oCAAoC;EAEpC,+BAA+B;EAC/B,4BAA4B;CAuB7B;;AArBC;EACE,gBAAgB;EAChB,0BAA0B;EAC1B,uBAAuB;EACvB,sBAAsB;EACtB,kBAAkB;CACnB;;AACD;EACE,iBAAiB;CAClB;;AACD;EACE,gBAAgB;CACjB;;AACD;EACE,aAAa;EACb,iBAAiB;EACjB,oCAAoC;EAEpC,+BAA+B;EAC/B,4BAA4B;CAC7B;;AAjKH;;EAAA;IACE,gBAAgB;IAChB,WAAW;GACZ;GAAA;;AACD;;EAAA;IACE,kBAAkB;IAClB,iBAAiB;IACjB,WAAW;GACZ;GAAA;;AAQC;;EAAA;IACE,cAAc;GACf;KAAA;;AAaC;;EAAA;IACE,YAAY;GACb;OAAA;;AACD;;EAAA;IACE,cAAc;GACf;OAAA;;AA0BD;;EAAA;IACE,aAAa;GACd;OAAA;;AACD;;EAAA;IACE,aAAa;GACd;OAAA;;AAkGP;EACE,oCAAoC;EAEpC,+BAA+B;EAC/B,4BAA4B;CAC7B","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.bold {\r\n  font-weight: 600;\r\n}\r\n\r\n.cDisplayRoot {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n\r\n  @media screen and (min-width: 768px) {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  @media screen and (min-width: 1080px) {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n\r\n  .container {\r\n    margin: 0 auto;\r\n    padding: 15px;\r\n    text-align: center;\r\n    font-size: 20px;\r\n\r\n    @media screen and (min-width: 768px) {\r\n      padding: 25px;\r\n    }\r\n\r\n    img {\r\n      width: 100%;\r\n      margin: 25px 0;\r\n      border: 2px solid black;\r\n    }\r\n\r\n    div:not(.prevNext, .expandedArchives, .hiddenArchives) {\r\n      border: 2px solid black;\r\n      background: white;\r\n      padding: 5%;\r\n\r\n      @media screen and (min-width: 500px) {\r\n        padding: 3%;\r\n      }\r\n      @media screen and (min-width: 768px) {\r\n        padding: 25px;\r\n      }\r\n\r\n      p {\r\n        margin: 0;\r\n        text-align: left;\r\n      }\r\n    }\r\n  }\r\n\r\n  .prevNext {\r\n    margin-bottom: 25px;\r\n    border: none;\r\n    background: none;\r\n\r\n    a {\r\n      display: inline-block;\r\n      width: 25%;\r\n    }\r\n    img {\r\n      max-height: 75px;\r\n      width: auto;\r\n      border: none;\r\n      margin: 0;\r\n      filter: grayscale();\r\n\r\n      height: 50px;\r\n      @media screen and (min-width: 425px) {\r\n        height: 60px;\r\n      }\r\n      @media screen and (min-width: 1024px) {\r\n        height: 75px;\r\n      }\r\n    }\r\n    img:hover {\r\n      filter: none;\r\n    }\r\n  }\r\n\r\n  .comicDetails {\r\n    max-width: 1000px;\r\n    margin: 0 auto;\r\n  }\r\n\r\n  .leftResize, .rightResize {\r\n    width: 2%;\r\n    background: white;\r\n    border: 1px solid darkgray;\r\n    display: inline-block;\r\n    cursor: col-resize;\r\n    padding-bottom: 15px;\r\n\r\n    span {\r\n      float: left;\r\n      line-height: 1;\r\n      width: 100%;\r\n      display: inline-block;\r\n    }\r\n  }\r\n  .leftResize {\r\n    border-right: none;\r\n  }\r\n  .rightResize {\r\n    border-left: none;\r\n  }\r\n\r\n  .imgContainer, .imgContainer * {\r\n    user-select: none;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link,\r\n  .link:active,\r\n  .link:hover,\r\n  .link:visited {\r\n    color: #333;\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link:hover {\r\n    text-decoration: underline;\r\n  }\r\n\r\n  .spacer {\r\n    padding-right: 15px;\r\n    padding-left: 15px;\r\n  }\r\n  .inactive {\r\n    pointer-events: none;\r\n    img {\r\n      display: none;\r\n    }\r\n  }\r\n  .hidden {\r\n    display: none;\r\n  }\r\n\r\n  .expandArchives {\r\n    -webkit-transition: all 2s ease-out;\r\n    -moz-transition: all 2s ease-out;\r\n    -o-transition: all 2s ease-out;\r\n    transition: all 2s ease-out;\r\n\r\n    p {\r\n      cursor: pointer;\r\n      -webkit-user-select: none;\r\n      -moz-user-select: none;\r\n      -ms-user-select: none;\r\n      user-select: none;\r\n    }\r\n    .expandedArchives {\r\n      max-height: none;\r\n    }\r\n    .hiddenArchives {\r\n      max-height: 0px;\r\n    }\r\n    .expandedArchives, .hiddenArchives {\r\n      border: none;\r\n      overflow: hidden;\r\n      -webkit-transition: all 2s ease-out;\r\n      -moz-transition: all 2s ease-out;\r\n      -o-transition: all 2s ease-out;\r\n      transition: all 2s ease-out;\r\n    }\r\n  }\r\n}\r\n\r\n#test {\r\n  -webkit-transition: all 2s ease-out;\r\n  -moz-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ComicDisplay_bold_79N {\r\n  font-weight: 600;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 {\r\n  margin: 0 auto;\r\n  padding: 15px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n  -webkit-touch-callout: none;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 img {\r\n  width: 100%;\r\n  margin: 25px 0;\r\n  border: 2px solid black;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div:not(.ComicDisplay_prevNext_2xY):not(.ComicDisplay_expandedArchives_1xN):not(.ComicDisplay_hiddenArchives_1DR) {\r\n  border: 2px solid black;\r\n  background: white;\r\n  padding: 5%;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div:not(.ComicDisplay_prevNext_2xY):not(.ComicDisplay_expandedArchives_1xN):not(.ComicDisplay_hiddenArchives_1DR) p {\r\n  margin: 0;\r\n  text-align: left;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY {\r\n  margin-bottom: 25px;\r\n  border: none;\r\n  background: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY a {\r\n  display: inline-block;\r\n  width: 25%;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY img {\r\n  max-height: 75px;\r\n  width: auto;\r\n  border: none;\r\n  margin: 0;\r\n  -webkit-filter: grayscale();\r\n          filter: grayscale();\r\n  height: 50px\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY img:hover {\r\n  -webkit-filter: none;\r\n          filter: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_comicDetails_39f {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi {\r\n  width: 2%;\r\n  background: white;\r\n  border: 1px solid darkgray;\r\n  display: inline-block;\r\n  cursor: col-resize;\r\n  padding-bottom: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw span, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi span {\r\n  float: left;\r\n  line-height: 1;\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_leftResize_1tw {\r\n  border-right: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_rightResize_2Hi {\r\n  border-left: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_imgContainer_3iu, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_imgContainer_3iu * {\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk a {\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:active, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:hover, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_link_i-9:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_spacer_37l {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_inactive_3tB {\r\n  pointer-events: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_inactive_3tB img {\r\n  display: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_hidden_3DM {\r\n  display: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_expandArchives_30q {\r\n  -webkit-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_expandArchives_30q p {\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_expandArchives_30q .ComicDisplay_expandedArchives_1xN {\r\n  max-height: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_expandArchives_30q .ComicDisplay_hiddenArchives_1DR {\r\n  max-height: 0px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_expandArchives_30q .ComicDisplay_expandedArchives_1xN, .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_expandArchives_30q .ComicDisplay_hiddenArchives_1DR {\r\n  border: none;\r\n  overflow: hidden;\r\n  -webkit-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 1080px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 {\r\n    padding: 25px;\r\n  }\r\n    }\r\n\r\n@media screen and (min-width: 500px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div:not(.ComicDisplay_prevNext_2xY):not(.ComicDisplay_expandedArchives_1xN):not(.ComicDisplay_hiddenArchives_1DR) {\r\n    padding: 3%;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_container_2e4 div:not(.ComicDisplay_prevNext_2xY):not(.ComicDisplay_expandedArchives_1xN):not(.ComicDisplay_hiddenArchives_1DR) {\r\n    padding: 25px;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 425px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY img {\r\n    height: 60px;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 1024px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_3Uk .ComicDisplay_prevNext_2xY img {\r\n    height: 75px;\r\n  }\r\n      }\r\n\r\n#ComicDisplay_test_3c4 {\r\n  -webkit-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/ComicDisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,iBAAiB;CAClB;;AAED;EACE,oBAAoB;EACpB,YAAY;EACZ,wBAAwB;EACxB,WAAW;EACX,kBAAkB;EAClB,gBAAgB;CA2KjB;;AA/JC;EACE,eAAe;EACf,cAAc;EACd,mBAAmB;EACnB,gBAAgB;EAChB,4BAA4B;EAC5B,0BAA0B;EAE1B,uBAAuB;EACvB,sBAAsB;EACtB,kBAAkB;CA6BnB;;AAvBC;EACE,YAAY;EACZ,eAAe;EACf,wBAAwB;CACzB;;AAED;EACE,wBAAwB;EACxB,kBAAkB;EAClB,YAAY;CAab;;AAJC;EACE,UAAU;EACV,iBAAiB;CAClB;;AAIL;EACE,oBAAoB;EACpB,aAAa;EACb,iBAAiB;CAwBlB;;AAtBC;EACE,sBAAsB;EACtB,WAAW;CACZ;;AACD;EACE,iBAAiB;EACjB,YAAY;EACZ,aAAa;EACb,UAAU;EACV,4BAAoB;UAApB,oBAAoB;EAEpB,YAAa;CAOd;;AACD;EACE,qBAAa;UAAb,aAAa;CACd;;AAGH;EACE,kBAAkB;EAClB,eAAe;CAChB;;AAED;EACE,UAAU;EACV,kBAAkB;EAClB,2BAA2B;EAC3B,sBAAsB;EACtB,mBAAmB;EACnB,qBAAqB;CAQtB;;AANC;EACE,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,sBAAsB;CACvB;;AAEH;EACE,mBAAmB;CACpB;;AACD;EACE,kBAAkB;CACnB;;AAED;EACE,0BAAkB;KAAlB,uBAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;CACnB;;AAED;EACE,sBAAsB;CACvB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;CAItB;;AAHC;EACE,cAAc;CACf;;AAEH;EACE,cAAc;CACf;;AAED;EACE,oCAAoC;EAEpC,+BAA+B;EAC/B,4BAA4B;CAuB7B;;AArBC;EACE,gBAAgB;EAChB,0BAA0B;EAC1B,uBAAuB;EACvB,sBAAsB;EACtB,kBAAkB;CACnB;;AACD;EACE,iBAAiB;CAClB;;AACD;EACE,gBAAgB;CACjB;;AACD;EACE,aAAa;EACb,iBAAiB;EACjB,oCAAoC;EAEpC,+BAA+B;EAC/B,4BAA4B;CAC7B;;AAvKH;;EAAA;IACE,gBAAgB;IAChB,WAAW;GACZ;GAAA;;AACD;;EAAA;IACE,kBAAkB;IAClB,iBAAiB;IACjB,WAAW;GACZ;GAAA;;AAcC;;EAAA;IACE,cAAc;GACf;KAAA;;AAaC;;EAAA;IACE,YAAY;GACb;OAAA;;AACD;;EAAA;IACE,cAAc;GACf;OAAA;;AA0BD;;EAAA;IACE,aAAa;GACd;OAAA;;AACD;;EAAA;IACE,aAAa;GACd;OAAA;;AAkGP;EACE,oCAAoC;EAEpC,+BAA+B;EAC/B,4BAA4B;CAC7B","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.bold {\r\n  font-weight: 600;\r\n}\r\n\r\n.cDisplayRoot {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n\r\n  @media screen and (min-width: 768px) {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  @media screen and (min-width: 1080px) {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n\r\n  .container {\r\n    margin: 0 auto;\r\n    padding: 15px;\r\n    text-align: center;\r\n    font-size: 20px;\r\n    -webkit-touch-callout: none;\r\n    -webkit-user-select: none;\r\n    -khtml-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n\r\n    @media screen and (min-width: 768px) {\r\n      padding: 25px;\r\n    }\r\n\r\n    img {\r\n      width: 100%;\r\n      margin: 25px 0;\r\n      border: 2px solid black;\r\n    }\r\n\r\n    div:not(.prevNext, .expandedArchives, .hiddenArchives) {\r\n      border: 2px solid black;\r\n      background: white;\r\n      padding: 5%;\r\n\r\n      @media screen and (min-width: 500px) {\r\n        padding: 3%;\r\n      }\r\n      @media screen and (min-width: 768px) {\r\n        padding: 25px;\r\n      }\r\n\r\n      p {\r\n        margin: 0;\r\n        text-align: left;\r\n      }\r\n    }\r\n  }\r\n\r\n  .prevNext {\r\n    margin-bottom: 25px;\r\n    border: none;\r\n    background: none;\r\n\r\n    a {\r\n      display: inline-block;\r\n      width: 25%;\r\n    }\r\n    img {\r\n      max-height: 75px;\r\n      width: auto;\r\n      border: none;\r\n      margin: 0;\r\n      filter: grayscale();\r\n\r\n      height: 50px;\r\n      @media screen and (min-width: 425px) {\r\n        height: 60px;\r\n      }\r\n      @media screen and (min-width: 1024px) {\r\n        height: 75px;\r\n      }\r\n    }\r\n    img:hover {\r\n      filter: none;\r\n    }\r\n  }\r\n\r\n  .comicDetails {\r\n    max-width: 1000px;\r\n    margin: 0 auto;\r\n  }\r\n\r\n  .leftResize, .rightResize {\r\n    width: 2%;\r\n    background: white;\r\n    border: 1px solid darkgray;\r\n    display: inline-block;\r\n    cursor: col-resize;\r\n    padding-bottom: 15px;\r\n\r\n    span {\r\n      float: left;\r\n      line-height: 1;\r\n      width: 100%;\r\n      display: inline-block;\r\n    }\r\n  }\r\n  .leftResize {\r\n    border-right: none;\r\n  }\r\n  .rightResize {\r\n    border-left: none;\r\n  }\r\n\r\n  .imgContainer, .imgContainer * {\r\n    user-select: none;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link,\r\n  .link:active,\r\n  .link:hover,\r\n  .link:visited {\r\n    color: #333;\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link:hover {\r\n    text-decoration: underline;\r\n  }\r\n\r\n  .spacer {\r\n    padding-right: 15px;\r\n    padding-left: 15px;\r\n  }\r\n  .inactive {\r\n    pointer-events: none;\r\n    img {\r\n      display: none;\r\n    }\r\n  }\r\n  .hidden {\r\n    display: none;\r\n  }\r\n\r\n  .expandArchives {\r\n    -webkit-transition: all 2s ease-out;\r\n    -moz-transition: all 2s ease-out;\r\n    -o-transition: all 2s ease-out;\r\n    transition: all 2s ease-out;\r\n\r\n    p {\r\n      cursor: pointer;\r\n      -webkit-user-select: none;\r\n      -moz-user-select: none;\r\n      -ms-user-select: none;\r\n      user-select: none;\r\n    }\r\n    .expandedArchives {\r\n      max-height: none;\r\n    }\r\n    .hiddenArchives {\r\n      max-height: 0px;\r\n    }\r\n    .expandedArchives, .hiddenArchives {\r\n      border: none;\r\n      overflow: hidden;\r\n      -webkit-transition: all 2s ease-out;\r\n      -moz-transition: all 2s ease-out;\r\n      -o-transition: all 2s ease-out;\r\n      transition: all 2s ease-out;\r\n    }\r\n  }\r\n}\r\n\r\n#test {\r\n  -webkit-transition: all 2s ease-out;\r\n  -moz-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
@@ -6896,7 +6914,7 @@ module.exports =
   };
 
 /***/ },
-/* 86 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -6915,7 +6933,7 @@ module.exports =
   };
 
 /***/ },
-/* 87 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -6929,7 +6947,7 @@ module.exports =
 
 
 /***/ },
-/* 88 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -6950,7 +6968,7 @@ module.exports =
   };
 
 /***/ },
-/* 89 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -6958,7 +6976,7 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.Header_root_1Mv {\r\n  /*background: #232323;*/\r\n  background: #0b0d0e;\r\n  color: #fff;\r\n}\r\n\r\n.Header_container_1jj {\r\n  position: relative;\r\n  margin: 0 auto;\r\n  max-width: 1000px;\r\n  /* Clearfix */\r\n  overflow: auto;\r\n  zoom: 1;\r\n}\r\n\r\n.Header_brand_3Km {\r\n  color: rgb(146, 229, 252);\r\n  text-decoration: none;\r\n  font-size: 1.75em; /* ~28px */\r\n\r\n}\r\n\r\n.Header_brandTxt_fin {\r\n  margin-left: 10px;\r\n}\r\n\r\n.Header_navDesktop_2BD {\r\n  margin-top: 6px;\r\n}\r\n\r\n.Header_navDesktop_2BD {\r\n  display: none\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .Header_navDesktop_2BD {\r\n    display: block;\r\n  }\r\n  }\r\n\r\n.Header_mobileBar_1Tw {\r\n  background: #232323;\r\n  text-align: center;\r\n  padding: 10px 0;\r\n}\r\n\r\n.Header_mobileBar_1Tw a {\r\n  padding-top: 0;\r\n  padding-bottom: 0;\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .Header_mobileBar_1Tw {\r\n    display: none;\r\n  }\r\n  }\r\n\r\n.Header_banner_3Ep {\r\n  text-align: center;\r\n  width: 50%;\r\n  padding-right: 15px;\r\n  position: absolute;\r\n  right: 10px;\r\n  top: 50%;\r\n  -webkit-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n}\r\n\r\n.Header_banner_3Ep h2 {\r\n  font-weight: 400;\r\n  margin: 0;\r\n  font-size: 15px;\r\n}\r\n\r\n.Header_banner_3Ep h1 img {\r\n  width: 100%;\r\n  padding: 0;\r\n  max-width: 300px;\r\n}\r\n\r\n.Header_bannerTitle_313 {\r\n  margin: 0;\r\n  font-weight: normal;\r\n  font-size: 30px;\r\n  line-height: 1em\r\n}\r\n\r\n@media screen and (min-width: 500px) {\r\n\r\n  .Header_bannerTitle_313 {\r\n    font-size: 40px;\r\n  }\r\n  }\r\n\r\n.Header_bannerDesc_3Bf {\r\n  padding: 0;\r\n  color: rgba(255, 255, 255, .5);\r\n  font-size: 1.25em;\r\n  margin: 0;\r\n}\r\n\r\nimg.Header_headerCover_1Uh {\r\n  width: 50%;\r\n}", "", {"version":3,"sources":["/./src/components/Header/Header.scss","/./src/components/variables.scss"],"names":[],"mappings":"AAAA;;;;;;;GAOG;;ACPH;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;ADrBhF;EACE,wBAAwB;EACxB,oBAAoB;EACpB,YAAY;CACb;;AAED;EACE,mBAAmB;EACnB,eAAe;EACf,kBAA8B;EAC9B,cAAc;EACd,eAAe;EACf,QAAQ;CACT;;AAED;EACE,0BAA2C;EAC3C,sBAAsB;EACtB,kBAAkB,CAAC,WAAW;;CAE/B;;AAED;EACE,kBAAkB;CACnB;;AAED;EACE,gBAAgB;CACjB;;AACD;EACE,aAAc;CAKf;;AAHC;;EAAA;IACE,eAAe;GAChB;GAAA;;AAEH;EACE,oBAAoB;EACpB,mBAAmB;EACnB,gBAAgB;CASjB;;AAJC;EACE,eAAe;EACf,kBAAkB;CACnB;;AAPD;;EAAA;IACE,cAAc;GACf;GAAA;;AAQH;EACE,mBAAmB;EACnB,WAAW;EACX,oBAAoB;EACpB,mBAAmB;EACnB,YAAY;EACZ,SAAS;EACT,oCAAoC;EAEpC,gCAAgC;EAChC,+BAA+B;EAC/B,4BAA4B;CAY7B;;AAVC;EACE,iBAAiB;EACjB,UAAU;EACV,gBAAgB;CACjB;;AACD;EACE,YAAY;EACZ,WAAW;EACX,iBAAiB;CAClB;;AAGH;EACE,UAAU;EACV,oBAAoB;EACpB,gBAAgB;EAChB,gBAAiB;CAIlB;;AAHC;;EAAA;IACE,gBAAgB;GACjB;GAAA;;AAGH;EACE,WAAW;EACX,+BAA+B;EAC/B,kBAAkB;EAClB,UAAU;CACX;;AAED;EACE,WAAW;CACZ","file":"Header.scss","sourcesContent":["/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n@import '../variables.scss';\r\n\r\n$brand-color: #61dafb;\r\n\r\n.root {\r\n  /*background: #232323;*/\r\n  background: #0b0d0e;\r\n  color: #fff;\r\n}\r\n\r\n.container {\r\n  position: relative;\r\n  margin: 0 auto;\r\n  max-width: $max-content-width;\r\n  /* Clearfix */\r\n  overflow: auto;\r\n  zoom: 1;\r\n}\r\n\r\n.brand {\r\n  color: color($brand-color lightness(+10%));\r\n  text-decoration: none;\r\n  font-size: 1.75em; /* ~28px */\r\n\r\n}\r\n\r\n.brandTxt {\r\n  margin-left: 10px;\r\n}\r\n\r\n.navDesktop {\r\n  margin-top: 6px;\r\n}\r\n.navDesktop {\r\n  display: none;\r\n\r\n  @media screen and (min-width: 768px) {\r\n    display: block;\r\n  }\r\n}\r\n.mobileBar {\r\n  background: #232323;\r\n  text-align: center;\r\n  padding: 10px 0;\r\n  @media screen and (min-width: 768px) {\r\n    display: none;\r\n  }\r\n\r\n  a {\r\n    padding-top: 0;\r\n    padding-bottom: 0;\r\n  }\r\n}\r\n\r\n.banner {\r\n  text-align: center;\r\n  width: 50%;\r\n  padding-right: 15px;\r\n  position: absolute;\r\n  right: 10px;\r\n  top: 50%;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n\r\n  h2 {\r\n    font-weight: 400;\r\n    margin: 0;\r\n    font-size: 15px;\r\n  }\r\n  h1 img {\r\n    width: 100%;\r\n    padding: 0;\r\n    max-width: 300px;\r\n  }\r\n}\r\n\r\n.bannerTitle {\r\n  margin: 0;\r\n  font-weight: normal;\r\n  font-size: 30px;\r\n  line-height: 1em;\r\n  @media screen and (min-width: 500px) {\r\n    font-size: 40px;\r\n  }\r\n}\r\n\r\n.bannerDesc {\r\n  padding: 0;\r\n  color: rgba(255, 255, 255, .5);\r\n  font-size: 1.25em;\r\n  margin: 0;\r\n}\r\n\r\nimg.headerCover {\r\n  width: 50%;\r\n}","/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.Header_root_1Mv {\r\n  /*background: #232323;*/\r\n  background: #0b0d0e;\r\n  color: #fff;\r\n    -webkit-touch-callout: none;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.Header_container_1jj {\r\n  position: relative;\r\n  margin: 0 auto;\r\n  max-width: 1000px;\r\n  /* Clearfix */\r\n  overflow: auto;\r\n  zoom: 1;\r\n}\r\n\r\n.Header_brand_3Km {\r\n  color: rgb(146, 229, 252);\r\n  text-decoration: none;\r\n  font-size: 1.75em; /* ~28px */\r\n\r\n}\r\n\r\n.Header_brandTxt_fin {\r\n  margin-left: 10px;\r\n}\r\n\r\n.Header_navDesktop_2BD {\r\n  margin-top: 6px;\r\n}\r\n\r\n.Header_navDesktop_2BD {\r\n  display: none\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .Header_navDesktop_2BD {\r\n    display: block;\r\n  }\r\n  }\r\n\r\n.Header_mobileBar_1Tw {\r\n  background: #232323;\r\n  text-align: center;\r\n  padding: 10px 0;\r\n}\r\n\r\n.Header_mobileBar_1Tw a {\r\n  padding-top: 0;\r\n  padding-bottom: 0;\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .Header_mobileBar_1Tw {\r\n    display: none;\r\n  }\r\n  }\r\n\r\n.Header_banner_3Ep {\r\n  text-align: center;\r\n  width: 50%;\r\n  padding-right: 15px;\r\n  position: absolute;\r\n  right: 10px;\r\n  top: 50%;\r\n  -webkit-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n}\r\n\r\n.Header_banner_3Ep h2 {\r\n  font-weight: 400;\r\n  margin: 0;\r\n  font-size: 15px;\r\n}\r\n\r\n.Header_banner_3Ep h1 img {\r\n  width: 100%;\r\n  padding: 0;\r\n  max-width: 300px;\r\n}\r\n\r\n.Header_bannerTitle_313 {\r\n  margin: 0;\r\n  font-weight: normal;\r\n  font-size: 30px;\r\n  line-height: 1em\r\n}\r\n\r\n@media screen and (min-width: 500px) {\r\n\r\n  .Header_bannerTitle_313 {\r\n    font-size: 40px;\r\n  }\r\n  }\r\n\r\n.Header_bannerDesc_3Bf {\r\n  padding: 0;\r\n  color: rgba(255, 255, 255, .5);\r\n  font-size: 1.25em;\r\n  margin: 0;\r\n}\r\n\r\nimg.Header_headerCover_1Uh {\r\n  width: 50%;\r\n}", "", {"version":3,"sources":["/./src/components/Header/Header.scss","/./src/components/variables.scss"],"names":[],"mappings":"AAAA;;;;;;;GAOG;;ACPH;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;ADrBhF;EACE,wBAAwB;EACxB,oBAAoB;EACpB,YAAY;IACV,4BAA4B;IAC5B,0BAA0B;IAE1B,uBAAuB;IACvB,sBAAsB;IACtB,kBAAkB;CACrB;;AAED;EACE,mBAAmB;EACnB,eAAe;EACf,kBAA8B;EAC9B,cAAc;EACd,eAAe;EACf,QAAQ;CACT;;AAED;EACE,0BAA2C;EAC3C,sBAAsB;EACtB,kBAAkB,CAAC,WAAW;;CAE/B;;AAED;EACE,kBAAkB;CACnB;;AAED;EACE,gBAAgB;CACjB;;AACD;EACE,aAAc;CAKf;;AAHC;;EAAA;IACE,eAAe;GAChB;GAAA;;AAEH;EACE,oBAAoB;EACpB,mBAAmB;EACnB,gBAAgB;CASjB;;AAJC;EACE,eAAe;EACf,kBAAkB;CACnB;;AAPD;;EAAA;IACE,cAAc;GACf;GAAA;;AAQH;EACE,mBAAmB;EACnB,WAAW;EACX,oBAAoB;EACpB,mBAAmB;EACnB,YAAY;EACZ,SAAS;EACT,oCAAoC;EAEpC,gCAAgC;EAChC,+BAA+B;EAC/B,4BAA4B;CAY7B;;AAVC;EACE,iBAAiB;EACjB,UAAU;EACV,gBAAgB;CACjB;;AACD;EACE,YAAY;EACZ,WAAW;EACX,iBAAiB;CAClB;;AAGH;EACE,UAAU;EACV,oBAAoB;EACpB,gBAAgB;EAChB,gBAAiB;CAIlB;;AAHC;;EAAA;IACE,gBAAgB;GACjB;GAAA;;AAGH;EACE,WAAW;EACX,+BAA+B;EAC/B,kBAAkB;EAClB,UAAU;CACX;;AAED;EACE,WAAW;CACZ","file":"Header.scss","sourcesContent":["/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n@import '../variables.scss';\r\n\r\n$brand-color: #61dafb;\r\n\r\n.root {\r\n  /*background: #232323;*/\r\n  background: #0b0d0e;\r\n  color: #fff;\r\n    -webkit-touch-callout: none;\r\n    -webkit-user-select: none;\r\n    -khtml-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.container {\r\n  position: relative;\r\n  margin: 0 auto;\r\n  max-width: $max-content-width;\r\n  /* Clearfix */\r\n  overflow: auto;\r\n  zoom: 1;\r\n}\r\n\r\n.brand {\r\n  color: color($brand-color lightness(+10%));\r\n  text-decoration: none;\r\n  font-size: 1.75em; /* ~28px */\r\n\r\n}\r\n\r\n.brandTxt {\r\n  margin-left: 10px;\r\n}\r\n\r\n.navDesktop {\r\n  margin-top: 6px;\r\n}\r\n.navDesktop {\r\n  display: none;\r\n\r\n  @media screen and (min-width: 768px) {\r\n    display: block;\r\n  }\r\n}\r\n.mobileBar {\r\n  background: #232323;\r\n  text-align: center;\r\n  padding: 10px 0;\r\n  @media screen and (min-width: 768px) {\r\n    display: none;\r\n  }\r\n\r\n  a {\r\n    padding-top: 0;\r\n    padding-bottom: 0;\r\n  }\r\n}\r\n\r\n.banner {\r\n  text-align: center;\r\n  width: 50%;\r\n  padding-right: 15px;\r\n  position: absolute;\r\n  right: 10px;\r\n  top: 50%;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n\r\n  h2 {\r\n    font-weight: 400;\r\n    margin: 0;\r\n    font-size: 15px;\r\n  }\r\n  h1 img {\r\n    width: 100%;\r\n    padding: 0;\r\n    max-width: 300px;\r\n  }\r\n}\r\n\r\n.bannerTitle {\r\n  margin: 0;\r\n  font-weight: normal;\r\n  font-size: 30px;\r\n  line-height: 1em;\r\n  @media screen and (min-width: 500px) {\r\n    font-size: 40px;\r\n  }\r\n}\r\n\r\n.bannerDesc {\r\n  padding: 0;\r\n  color: rgba(255, 255, 255, .5);\r\n  font-size: 1.25em;\r\n  margin: 0;\r\n}\r\n\r\nimg.headerCover {\r\n  width: 50%;\r\n}","/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
@@ -6975,7 +6993,7 @@ module.exports =
   };
 
 /***/ },
-/* 90 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -6983,7 +7001,7 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n.Navigation_root_1Ac {\r\n\r\n}\r\n\r\n.Navigation_link_mRw {\r\n  display: inline-block;\r\n  padding: 3px 8px;\r\n  text-decoration: none;\r\n  font-size: 1.125em; /* ~18px */\r\n}\r\n\r\n.Navigation_link_mRw, .Navigation_link_mRw:active, .Navigation_link_mRw:visited {\r\n  color: rgba(255, 255, 255, .6);\r\n}\r\n\r\n.Navigation_link_mRw:hover {\r\n  color: rgba(255, 255, 255, 1);\r\n}\r\n\r\n.Navigation_highlight_1Uj {\r\n  margin-right: 8px;\r\n  margin-left: 8px;\r\n  border-radius: 3px;\r\n  background: rgba(0, 0, 0, .15);\r\n  color: #fff;\r\n}\r\n\r\n.Navigation_highlight_1Uj:hover {\r\n  background: rgba(0, 0, 0, .3);\r\n}\r\n\r\n.Navigation_spacer_11z {\r\n  color: rgba(255, 255, 255, .3);\r\n}\r\n", "", {"version":3,"sources":["/./src/components/Navigation/Navigation.scss"],"names":[],"mappings":"AAAA;;;;;;;GAOG;;AAEH;;CAEC;;AAED;EACE,sBAAsB;EACtB,iBAAiB;EACjB,sBAAsB;EACtB,mBAAmB,CAAC,WAAW;CAChC;;AAED;EAGE,+BAA+B;CAChC;;AAED;EACE,8BAA8B;CAC/B;;AAED;EACE,kBAAkB;EAClB,iBAAiB;EACjB,mBAAmB;EACnB,+BAA+B;EAC/B,YAAY;CACb;;AAED;EACE,8BAA8B;CAC/B;;AAED;EACE,+BAA+B;CAChC","file":"Navigation.scss","sourcesContent":["/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n.root {\r\n\r\n}\r\n\r\n.link {\r\n  display: inline-block;\r\n  padding: 3px 8px;\r\n  text-decoration: none;\r\n  font-size: 1.125em; /* ~18px */\r\n}\r\n\r\n.link,\r\n.link:active,\r\n.link:visited {\r\n  color: rgba(255, 255, 255, .6);\r\n}\r\n\r\n.link:hover {\r\n  color: rgba(255, 255, 255, 1);\r\n}\r\n\r\n.highlight {\r\n  margin-right: 8px;\r\n  margin-left: 8px;\r\n  border-radius: 3px;\r\n  background: rgba(0, 0, 0, .15);\r\n  color: #fff;\r\n}\r\n\r\n.highlight:hover {\r\n  background: rgba(0, 0, 0, .3);\r\n}\r\n\r\n.spacer {\r\n  color: rgba(255, 255, 255, .3);\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n.Navigation_root_1Ac {\r\n    -webkit-touch-callout: none;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.Navigation_link_mRw {\r\n  display: inline-block;\r\n  padding: 3px 8px;\r\n  text-decoration: none;\r\n  font-size: 1.125em; /* ~18px */\r\n}\r\n\r\n.Navigation_link_mRw, .Navigation_link_mRw:active, .Navigation_link_mRw:visited {\r\n  color: rgba(255, 255, 255, .6);\r\n}\r\n\r\n.Navigation_link_mRw:hover {\r\n  color: rgba(255, 255, 255, 1);\r\n}\r\n\r\n.Navigation_highlight_1Uj {\r\n  margin-right: 8px;\r\n  margin-left: 8px;\r\n  border-radius: 3px;\r\n  background: rgba(0, 0, 0, .15);\r\n  color: #fff;\r\n}\r\n\r\n.Navigation_highlight_1Uj:hover {\r\n  background: rgba(0, 0, 0, .3);\r\n}\r\n\r\n.Navigation_spacer_11z {\r\n  color: rgba(255, 255, 255, .3);\r\n}\r\n", "", {"version":3,"sources":["/./src/components/Navigation/Navigation.scss"],"names":[],"mappings":"AAAA;;;;;;;GAOG;;AAEH;IACI,4BAA4B;IAC5B,0BAA0B;IAE1B,uBAAuB;IACvB,sBAAsB;IACtB,kBAAkB;CACrB;;AAED;EACE,sBAAsB;EACtB,iBAAiB;EACjB,sBAAsB;EACtB,mBAAmB,CAAC,WAAW;CAChC;;AAED;EAGE,+BAA+B;CAChC;;AAED;EACE,8BAA8B;CAC/B;;AAED;EACE,kBAAkB;EAClB,iBAAiB;EACjB,mBAAmB;EACnB,+BAA+B;EAC/B,YAAY;CACb;;AAED;EACE,8BAA8B;CAC/B;;AAED;EACE,+BAA+B;CAChC","file":"Navigation.scss","sourcesContent":["/**\r\n * React Starter Kit (https://www.reactstarterkit.com/)\r\n *\r\n * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.\r\n *\r\n * This source code is licensed under the MIT license found in the\r\n * LICENSE.txt file in the root directory of this source tree.\r\n */\r\n\r\n.root {\r\n    -webkit-touch-callout: none;\r\n    -webkit-user-select: none;\r\n    -khtml-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.link {\r\n  display: inline-block;\r\n  padding: 3px 8px;\r\n  text-decoration: none;\r\n  font-size: 1.125em; /* ~18px */\r\n}\r\n\r\n.link,\r\n.link:active,\r\n.link:visited {\r\n  color: rgba(255, 255, 255, .6);\r\n}\r\n\r\n.link:hover {\r\n  color: rgba(255, 255, 255, 1);\r\n}\r\n\r\n.highlight {\r\n  margin-right: 8px;\r\n  margin-left: 8px;\r\n  border-radius: 3px;\r\n  background: rgba(0, 0, 0, .15);\r\n  color: #fff;\r\n}\r\n\r\n.highlight:hover {\r\n  background: rgba(0, 0, 0, .3);\r\n}\r\n\r\n.spacer {\r\n  color: rgba(255, 255, 255, .3);\r\n}\r\n"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
@@ -6994,7 +7012,7 @@ module.exports =
   };
 
 /***/ },
-/* 91 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -7008,7 +7026,7 @@ module.exports =
 
 
 /***/ },
-/* 92 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -7029,7 +7047,7 @@ module.exports =
   };
 
 /***/ },
-/* 93 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -7037,7 +7055,7 @@ module.exports =
   
   
   // module
-  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ComicDisplay_bold_gi6 {\r\n  font-weight: 600;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L {\r\n  margin: 0 auto;\r\n  padding: 15px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L img {\r\n  width: 100%;\r\n  margin: 25px 0;\r\n  border: 2px solid black;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div:not(.ComicDisplay_prevNext_3W9):not(.ComicDisplay_expandedArchives_j8P):not(.ComicDisplay_hiddenArchives_2tz) {\r\n  border: 2px solid black;\r\n  background: white;\r\n  padding: 5%;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div:not(.ComicDisplay_prevNext_3W9):not(.ComicDisplay_expandedArchives_j8P):not(.ComicDisplay_hiddenArchives_2tz) p {\r\n  margin: 0;\r\n  text-align: left;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 {\r\n  margin-bottom: 25px;\r\n  border: none;\r\n  background: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 a {\r\n  display: inline-block;\r\n  width: 25%;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 img {\r\n  max-height: 75px;\r\n  width: auto;\r\n  border: none;\r\n  margin: 0;\r\n  -webkit-filter: grayscale();\r\n          filter: grayscale();\r\n  height: 50px\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 img:hover {\r\n  -webkit-filter: none;\r\n          filter: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_comicDetails_3MO {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO {\r\n  width: 2%;\r\n  background: white;\r\n  border: 1px solid darkgray;\r\n  display: inline-block;\r\n  cursor: col-resize;\r\n  padding-bottom: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl span, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO span {\r\n  float: left;\r\n  line-height: 1;\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl {\r\n  border-right: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO {\r\n  border-left: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_imgContainer_38X, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_imgContainer_38X * {\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ a {\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:active, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:hover, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_spacer_BXM {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_inactive_17r {\r\n  pointer-events: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_inactive_17r img {\r\n  display: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_hidden_Zk2 {\r\n  display: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_expandArchives_3X2 {\r\n  -webkit-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_expandArchives_3X2 p {\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_expandArchives_3X2 .ComicDisplay_expandedArchives_j8P {\r\n  max-height: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_expandArchives_3X2 .ComicDisplay_hiddenArchives_2tz {\r\n  max-height: 0px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_expandArchives_3X2 .ComicDisplay_expandedArchives_j8P, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_expandArchives_3X2 .ComicDisplay_hiddenArchives_2tz {\r\n  border: none;\r\n  overflow: hidden;\r\n  -webkit-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 1080px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L {\r\n    padding: 25px;\r\n  }\r\n    }\r\n\r\n@media screen and (min-width: 500px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div:not(.ComicDisplay_prevNext_3W9):not(.ComicDisplay_expandedArchives_j8P):not(.ComicDisplay_hiddenArchives_2tz) {\r\n    padding: 3%;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div:not(.ComicDisplay_prevNext_3W9):not(.ComicDisplay_expandedArchives_j8P):not(.ComicDisplay_hiddenArchives_2tz) {\r\n    padding: 25px;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 425px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 img {\r\n    height: 60px;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 1024px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 img {\r\n    height: 75px;\r\n  }\r\n      }\r\n\r\n#ComicDisplay_test_9EP {\r\n  -webkit-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/comicdisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,iBAAiB;CAClB;;AAED;EACE,oBAAoB;EACpB,YAAY;EACZ,wBAAwB;EACxB,WAAW;EACX,kBAAkB;EAClB,gBAAgB;CAqKjB;;AAzJC;EACE,eAAe;EACf,cAAc;EACd,mBAAmB;EACnB,gBAAgB;CA6BjB;;AAvBC;EACE,YAAY;EACZ,eAAe;EACf,wBAAwB;CACzB;;AAED;EACE,wBAAwB;EACxB,kBAAkB;EAClB,YAAY;CAab;;AAJC;EACE,UAAU;EACV,iBAAiB;CAClB;;AAIL;EACE,oBAAoB;EACpB,aAAa;EACb,iBAAiB;CAwBlB;;AAtBC;EACE,sBAAsB;EACtB,WAAW;CACZ;;AACD;EACE,iBAAiB;EACjB,YAAY;EACZ,aAAa;EACb,UAAU;EACV,4BAAoB;UAApB,oBAAoB;EAEpB,YAAa;CAOd;;AACD;EACE,qBAAa;UAAb,aAAa;CACd;;AAGH;EACE,kBAAkB;EAClB,eAAe;CAChB;;AAED;EACE,UAAU;EACV,kBAAkB;EAClB,2BAA2B;EAC3B,sBAAsB;EACtB,mBAAmB;EACnB,qBAAqB;CAQtB;;AANC;EACE,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,sBAAsB;CACvB;;AAEH;EACE,mBAAmB;CACpB;;AACD;EACE,kBAAkB;CACnB;;AAED;EACE,0BAAkB;KAAlB,uBAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;CACnB;;AAED;EACE,sBAAsB;CACvB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;CAItB;;AAHC;EACE,cAAc;CACf;;AAEH;EACE,cAAc;CACf;;AAED;EACE,oCAAoC;EAEpC,+BAA+B;EAC/B,4BAA4B;CAuB7B;;AArBC;EACE,gBAAgB;EAChB,0BAA0B;EAC1B,uBAAuB;EACvB,sBAAsB;EACtB,kBAAkB;CACnB;;AACD;EACE,iBAAiB;CAClB;;AACD;EACE,gBAAgB;CACjB;;AACD;EACE,aAAa;EACb,iBAAiB;EACjB,oCAAoC;EAEpC,+BAA+B;EAC/B,4BAA4B;CAC7B;;AAjKH;;EAAA;IACE,gBAAgB;IAChB,WAAW;GACZ;GAAA;;AACD;;EAAA;IACE,kBAAkB;IAClB,iBAAiB;IACjB,WAAW;GACZ;GAAA;;AAQC;;EAAA;IACE,cAAc;GACf;KAAA;;AAaC;;EAAA;IACE,YAAY;GACb;OAAA;;AACD;;EAAA;IACE,cAAc;GACf;OAAA;;AA0BD;;EAAA;IACE,aAAa;GACd;OAAA;;AACD;;EAAA;IACE,aAAa;GACd;OAAA;;AAkGP;EACE,oCAAoC;EAEpC,+BAA+B;EAC/B,4BAA4B;CAC7B","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.bold {\r\n  font-weight: 600;\r\n}\r\n\r\n.cDisplayRoot {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n\r\n  @media screen and (min-width: 768px) {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  @media screen and (min-width: 1080px) {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n\r\n  .container {\r\n    margin: 0 auto;\r\n    padding: 15px;\r\n    text-align: center;\r\n    font-size: 20px;\r\n\r\n    @media screen and (min-width: 768px) {\r\n      padding: 25px;\r\n    }\r\n\r\n    img {\r\n      width: 100%;\r\n      margin: 25px 0;\r\n      border: 2px solid black;\r\n    }\r\n\r\n    div:not(.prevNext, .expandedArchives, .hiddenArchives) {\r\n      border: 2px solid black;\r\n      background: white;\r\n      padding: 5%;\r\n\r\n      @media screen and (min-width: 500px) {\r\n        padding: 3%;\r\n      }\r\n      @media screen and (min-width: 768px) {\r\n        padding: 25px;\r\n      }\r\n\r\n      p {\r\n        margin: 0;\r\n        text-align: left;\r\n      }\r\n    }\r\n  }\r\n\r\n  .prevNext {\r\n    margin-bottom: 25px;\r\n    border: none;\r\n    background: none;\r\n\r\n    a {\r\n      display: inline-block;\r\n      width: 25%;\r\n    }\r\n    img {\r\n      max-height: 75px;\r\n      width: auto;\r\n      border: none;\r\n      margin: 0;\r\n      filter: grayscale();\r\n\r\n      height: 50px;\r\n      @media screen and (min-width: 425px) {\r\n        height: 60px;\r\n      }\r\n      @media screen and (min-width: 1024px) {\r\n        height: 75px;\r\n      }\r\n    }\r\n    img:hover {\r\n      filter: none;\r\n    }\r\n  }\r\n\r\n  .comicDetails {\r\n    max-width: 1000px;\r\n    margin: 0 auto;\r\n  }\r\n\r\n  .leftResize, .rightResize {\r\n    width: 2%;\r\n    background: white;\r\n    border: 1px solid darkgray;\r\n    display: inline-block;\r\n    cursor: col-resize;\r\n    padding-bottom: 15px;\r\n\r\n    span {\r\n      float: left;\r\n      line-height: 1;\r\n      width: 100%;\r\n      display: inline-block;\r\n    }\r\n  }\r\n  .leftResize {\r\n    border-right: none;\r\n  }\r\n  .rightResize {\r\n    border-left: none;\r\n  }\r\n\r\n  .imgContainer, .imgContainer * {\r\n    user-select: none;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link,\r\n  .link:active,\r\n  .link:hover,\r\n  .link:visited {\r\n    color: #333;\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link:hover {\r\n    text-decoration: underline;\r\n  }\r\n\r\n  .spacer {\r\n    padding-right: 15px;\r\n    padding-left: 15px;\r\n  }\r\n  .inactive {\r\n    pointer-events: none;\r\n    img {\r\n      display: none;\r\n    }\r\n  }\r\n  .hidden {\r\n    display: none;\r\n  }\r\n\r\n  .expandArchives {\r\n    -webkit-transition: all 2s ease-out;\r\n    -moz-transition: all 2s ease-out;\r\n    -o-transition: all 2s ease-out;\r\n    transition: all 2s ease-out;\r\n\r\n    p {\r\n      cursor: pointer;\r\n      -webkit-user-select: none;\r\n      -moz-user-select: none;\r\n      -ms-user-select: none;\r\n      user-select: none;\r\n    }\r\n    .expandedArchives {\r\n      max-height: none;\r\n    }\r\n    .hiddenArchives {\r\n      max-height: 0px;\r\n    }\r\n    .expandedArchives, .hiddenArchives {\r\n      border: none;\r\n      overflow: hidden;\r\n      -webkit-transition: all 2s ease-out;\r\n      -moz-transition: all 2s ease-out;\r\n      -o-transition: all 2s ease-out;\r\n      transition: all 2s ease-out;\r\n    }\r\n  }\r\n}\r\n\r\n#test {\r\n  -webkit-transition: all 2s ease-out;\r\n  -moz-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}"],"sourceRoot":"webpack://"}]);
+  exports.push([module.id, "/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n/* #222 */\r\n\r\n/* #404040 */\r\n\r\n/* #555 */\r\n\r\n/* #777 */\r\n\r\n/* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n/* Extra small screen / phone */\r\n\r\n/* Small screen / tablet */\r\n\r\n/* Medium screen / desktop */\r\n\r\n/* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n.ComicDisplay_bold_gi6 {\r\n  font-weight: 600;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L {\r\n  margin: 0 auto;\r\n  padding: 15px;\r\n  text-align: center;\r\n  font-size: 20px;\r\n  -webkit-touch-callout: none;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L img {\r\n  width: 100%;\r\n  margin: 25px 0;\r\n  border: 2px solid black;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div:not(.ComicDisplay_prevNext_3W9):not(.ComicDisplay_expandedArchives_j8P):not(.ComicDisplay_hiddenArchives_2tz) {\r\n  border: 2px solid black;\r\n  background: white;\r\n  padding: 5%;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div:not(.ComicDisplay_prevNext_3W9):not(.ComicDisplay_expandedArchives_j8P):not(.ComicDisplay_hiddenArchives_2tz) p {\r\n  margin: 0;\r\n  text-align: left;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 {\r\n  margin-bottom: 25px;\r\n  border: none;\r\n  background: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 a {\r\n  display: inline-block;\r\n  width: 25%;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 img {\r\n  max-height: 75px;\r\n  width: auto;\r\n  border: none;\r\n  margin: 0;\r\n  -webkit-filter: grayscale();\r\n          filter: grayscale();\r\n  height: 50px\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 img:hover {\r\n  -webkit-filter: none;\r\n          filter: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_comicDetails_3MO {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO {\r\n  width: 2%;\r\n  background: white;\r\n  border: 1px solid darkgray;\r\n  display: inline-block;\r\n  cursor: col-resize;\r\n  padding-bottom: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl span, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO span {\r\n  float: left;\r\n  line-height: 1;\r\n  width: 100%;\r\n  display: inline-block;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_leftResize_2cl {\r\n  border-right: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_rightResize_7nO {\r\n  border-left: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_imgContainer_38X, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_imgContainer_38X * {\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ a {\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:active, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:hover, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:visited {\r\n  color: #333;\r\n  text-decoration: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_link_2K6:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_spacer_BXM {\r\n  padding-right: 15px;\r\n  padding-left: 15px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_inactive_17r {\r\n  pointer-events: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_inactive_17r img {\r\n  display: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_hidden_Zk2 {\r\n  display: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_expandArchives_3X2 {\r\n  -webkit-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_expandArchives_3X2 p {\r\n  cursor: pointer;\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  user-select: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_expandArchives_3X2 .ComicDisplay_expandedArchives_j8P {\r\n  max-height: none;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_expandArchives_3X2 .ComicDisplay_hiddenArchives_2tz {\r\n  max-height: 0px;\r\n}\r\n\r\n.ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_expandArchives_3X2 .ComicDisplay_expandedArchives_j8P, .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_expandArchives_3X2 .ComicDisplay_hiddenArchives_2tz {\r\n  border: none;\r\n  overflow: hidden;\r\n  -webkit-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 1080px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n  }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L {\r\n    padding: 25px;\r\n  }\r\n    }\r\n\r\n@media screen and (min-width: 500px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div:not(.ComicDisplay_prevNext_3W9):not(.ComicDisplay_expandedArchives_j8P):not(.ComicDisplay_hiddenArchives_2tz) {\r\n    padding: 3%;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 768px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_container_31L div:not(.ComicDisplay_prevNext_3W9):not(.ComicDisplay_expandedArchives_j8P):not(.ComicDisplay_hiddenArchives_2tz) {\r\n    padding: 25px;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 425px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 img {\r\n    height: 60px;\r\n  }\r\n      }\r\n\r\n@media screen and (min-width: 1024px) {\r\n\r\n  .ComicDisplay_cDisplayRoot_2CZ .ComicDisplay_prevNext_3W9 img {\r\n    height: 75px;\r\n  }\r\n      }\r\n\r\n#ComicDisplay_test_9EP {\r\n  -webkit-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}", "", {"version":3,"sources":["/./src/components/variables.scss","/./src/components/comicdisplay/ComicDisplay.scss"],"names":[],"mappings":"AAAA;;gFAEgF;;AAGxB,UAAU;;AACV,aAAa;;AACb,UAAU;;AACV,UAAU;;AACV,UAAU;;AAElE;;gFAEgF;;AAIhF;;gFAEgF;;AAIhF;;gFAEgF;;AAEhD,gCAAgC;;AAChC,2BAA2B;;AAC3B,6BAA6B;;AAC7B,iCAAiC;;AAEjE;;gFAEgF;;AChChF;EACE,iBAAiB;CAClB;;AAED;EACE,oBAAoB;EACpB,YAAY;EACZ,wBAAwB;EACxB,WAAW;EACX,kBAAkB;EAClB,gBAAgB;CA2KjB;;AA/JC;EACE,eAAe;EACf,cAAc;EACd,mBAAmB;EACnB,gBAAgB;EAChB,4BAA4B;EAC5B,0BAA0B;EAE1B,uBAAuB;EACvB,sBAAsB;EACtB,kBAAkB;CA6BnB;;AAvBC;EACE,YAAY;EACZ,eAAe;EACf,wBAAwB;CACzB;;AAED;EACE,wBAAwB;EACxB,kBAAkB;EAClB,YAAY;CAab;;AAJC;EACE,UAAU;EACV,iBAAiB;CAClB;;AAIL;EACE,oBAAoB;EACpB,aAAa;EACb,iBAAiB;CAwBlB;;AAtBC;EACE,sBAAsB;EACtB,WAAW;CACZ;;AACD;EACE,iBAAiB;EACjB,YAAY;EACZ,aAAa;EACb,UAAU;EACV,4BAAoB;UAApB,oBAAoB;EAEpB,YAAa;CAOd;;AACD;EACE,qBAAa;UAAb,aAAa;CACd;;AAGH;EACE,kBAAkB;EAClB,eAAe;CAChB;;AAED;EACE,UAAU;EACV,kBAAkB;EAClB,2BAA2B;EAC3B,sBAAsB;EACtB,mBAAmB;EACnB,qBAAqB;CAQtB;;AANC;EACE,YAAY;EACZ,eAAe;EACf,YAAY;EACZ,sBAAsB;CACvB;;AAEH;EACE,mBAAmB;CACpB;;AACD;EACE,kBAAkB;CACnB;;AAED;EACE,0BAAkB;KAAlB,uBAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;CACnB;;AAED;EACE,sBAAsB;CACvB;;AAED;EAIE,YAAY;EACZ,sBAAsB;CACvB;;AAED;EACE,2BAA2B;CAC5B;;AAED;EACE,oBAAoB;EACpB,mBAAmB;CACpB;;AACD;EACE,qBAAqB;CAItB;;AAHC;EACE,cAAc;CACf;;AAEH;EACE,cAAc;CACf;;AAED;EACE,oCAAoC;EAEpC,+BAA+B;EAC/B,4BAA4B;CAuB7B;;AArBC;EACE,gBAAgB;EAChB,0BAA0B;EAC1B,uBAAuB;EACvB,sBAAsB;EACtB,kBAAkB;CACnB;;AACD;EACE,iBAAiB;CAClB;;AACD;EACE,gBAAgB;CACjB;;AACD;EACE,aAAa;EACb,iBAAiB;EACjB,oCAAoC;EAEpC,+BAA+B;EAC/B,4BAA4B;CAC7B;;AAvKH;;EAAA;IACE,gBAAgB;IAChB,WAAW;GACZ;GAAA;;AACD;;EAAA;IACE,kBAAkB;IAClB,iBAAiB;IACjB,WAAW;GACZ;GAAA;;AAcC;;EAAA;IACE,cAAc;GACf;KAAA;;AAaC;;EAAA;IACE,YAAY;GACb;OAAA;;AACD;;EAAA;IACE,cAAc;GACf;OAAA;;AA0BD;;EAAA;IACE,aAAa;GACd;OAAA;;AACD;;EAAA;IACE,aAAa;GACd;OAAA;;AAkGP;EACE,oCAAoC;EAEpC,+BAA+B;EAC/B,4BAA4B;CAC7B","file":"ComicDisplay.scss","sourcesContent":["/*\r\n * Colors\r\n * ========================================================================== */\r\n\r\n$white-base:            hsl(255, 255, 255);\r\n$gray-darker:           color(black lightness(+13.5%)); /* #222 */\r\n$gray-dark:             color(black lightness(+25%));   /* #404040 */\r\n$gray:                  color(black lightness(+33.5%)); /* #555 */\r\n$gray-light:            color(black lightness(+46.7%)); /* #777 */\r\n$gray-lighter:          color(black lightness(+93.5%)); /* #eee */\r\n\r\n/*\r\n * Typography\r\n * ========================================================================== */\r\n\r\n$font-family-base:      'Segoe UI', 'HelveticaNeue-Light', sans-serif;\r\n\r\n/*\r\n * Layout\r\n * ========================================================================== */\r\n\r\n$max-content-width:     1000px;\r\n\r\n/*\r\n * Media queries breakpoints\r\n * ========================================================================== */\r\n\r\n$screen-xs-min:         480px;  /* Extra small screen / phone */\r\n$screen-sm-min:         768px;  /* Small screen / tablet */\r\n$screen-md-min:         992px;  /* Medium screen / desktop */\r\n$screen-lg-min:         1200px; /* Large screen / wide desktop */\r\n\r\n/*\r\n * Animations\r\n * ========================================================================== */\r\n\r\n$animation-swift-out:   .45s cubic-bezier(0.3, 1, 0.4, 1) 0s;\r\n","@import '../variables.scss';\r\n\r\n.bold {\r\n  font-weight: 600;\r\n}\r\n\r\n.cDisplayRoot {\r\n  background: #659ca7;\r\n  color: #333;\r\n  border: 3px solid black;\r\n  width: 90%;\r\n  max-width: 1000px;\r\n  margin: 5% auto;\r\n\r\n  @media screen and (min-width: 768px) {\r\n    margin: 5% auto;\r\n    width: 85%;\r\n  }\r\n  @media screen and (min-width: 1080px) {\r\n    margin: 40px auto;\r\n    min-width: 750px;\r\n    width: 50%;\r\n  }\r\n\r\n  .container {\r\n    margin: 0 auto;\r\n    padding: 15px;\r\n    text-align: center;\r\n    font-size: 20px;\r\n    -webkit-touch-callout: none;\r\n    -webkit-user-select: none;\r\n    -khtml-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n\r\n    @media screen and (min-width: 768px) {\r\n      padding: 25px;\r\n    }\r\n\r\n    img {\r\n      width: 100%;\r\n      margin: 25px 0;\r\n      border: 2px solid black;\r\n    }\r\n\r\n    div:not(.prevNext, .expandedArchives, .hiddenArchives) {\r\n      border: 2px solid black;\r\n      background: white;\r\n      padding: 5%;\r\n\r\n      @media screen and (min-width: 500px) {\r\n        padding: 3%;\r\n      }\r\n      @media screen and (min-width: 768px) {\r\n        padding: 25px;\r\n      }\r\n\r\n      p {\r\n        margin: 0;\r\n        text-align: left;\r\n      }\r\n    }\r\n  }\r\n\r\n  .prevNext {\r\n    margin-bottom: 25px;\r\n    border: none;\r\n    background: none;\r\n\r\n    a {\r\n      display: inline-block;\r\n      width: 25%;\r\n    }\r\n    img {\r\n      max-height: 75px;\r\n      width: auto;\r\n      border: none;\r\n      margin: 0;\r\n      filter: grayscale();\r\n\r\n      height: 50px;\r\n      @media screen and (min-width: 425px) {\r\n        height: 60px;\r\n      }\r\n      @media screen and (min-width: 1024px) {\r\n        height: 75px;\r\n      }\r\n    }\r\n    img:hover {\r\n      filter: none;\r\n    }\r\n  }\r\n\r\n  .comicDetails {\r\n    max-width: 1000px;\r\n    margin: 0 auto;\r\n  }\r\n\r\n  .leftResize, .rightResize {\r\n    width: 2%;\r\n    background: white;\r\n    border: 1px solid darkgray;\r\n    display: inline-block;\r\n    cursor: col-resize;\r\n    padding-bottom: 15px;\r\n\r\n    span {\r\n      float: left;\r\n      line-height: 1;\r\n      width: 100%;\r\n      display: inline-block;\r\n    }\r\n  }\r\n  .leftResize {\r\n    border-right: none;\r\n  }\r\n  .rightResize {\r\n    border-left: none;\r\n  }\r\n\r\n  .imgContainer, .imgContainer * {\r\n    user-select: none;\r\n  }\r\n\r\n  a {\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link,\r\n  .link:active,\r\n  .link:hover,\r\n  .link:visited {\r\n    color: #333;\r\n    text-decoration: none;\r\n  }\r\n\r\n  .link:hover {\r\n    text-decoration: underline;\r\n  }\r\n\r\n  .spacer {\r\n    padding-right: 15px;\r\n    padding-left: 15px;\r\n  }\r\n  .inactive {\r\n    pointer-events: none;\r\n    img {\r\n      display: none;\r\n    }\r\n  }\r\n  .hidden {\r\n    display: none;\r\n  }\r\n\r\n  .expandArchives {\r\n    -webkit-transition: all 2s ease-out;\r\n    -moz-transition: all 2s ease-out;\r\n    -o-transition: all 2s ease-out;\r\n    transition: all 2s ease-out;\r\n\r\n    p {\r\n      cursor: pointer;\r\n      -webkit-user-select: none;\r\n      -moz-user-select: none;\r\n      -ms-user-select: none;\r\n      user-select: none;\r\n    }\r\n    .expandedArchives {\r\n      max-height: none;\r\n    }\r\n    .hiddenArchives {\r\n      max-height: 0px;\r\n    }\r\n    .expandedArchives, .hiddenArchives {\r\n      border: none;\r\n      overflow: hidden;\r\n      -webkit-transition: all 2s ease-out;\r\n      -moz-transition: all 2s ease-out;\r\n      -o-transition: all 2s ease-out;\r\n      transition: all 2s ease-out;\r\n    }\r\n  }\r\n}\r\n\r\n#test {\r\n  -webkit-transition: all 2s ease-out;\r\n  -moz-transition: all 2s ease-out;\r\n  -o-transition: all 2s ease-out;\r\n  transition: all 2s ease-out;\r\n}"],"sourceRoot":"webpack://"}]);
   
   // exports
   exports.locals = {
@@ -7060,7 +7078,7 @@ module.exports =
   };
 
 /***/ },
-/* 94 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -7079,7 +7097,7 @@ module.exports =
   };
 
 /***/ },
-/* 95 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -7096,7 +7114,7 @@ module.exports =
   };
 
 /***/ },
-/* 96 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -7116,7 +7134,7 @@ module.exports =
   };
 
 /***/ },
-/* 97 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -7134,7 +7152,7 @@ module.exports =
   };
 
 /***/ },
-/* 98 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -7152,7 +7170,7 @@ module.exports =
   };
 
 /***/ },
-/* 99 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -7170,7 +7188,7 @@ module.exports =
   };
 
 /***/ },
-/* 100 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -7191,7 +7209,7 @@ module.exports =
   };
 
 /***/ },
-/* 101 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -7212,7 +7230,7 @@ module.exports =
   };
 
 /***/ },
-/* 102 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
@@ -7230,46 +7248,13 @@ module.exports =
   };
 
 /***/ },
-/* 103 */
+/* 104 */
 /***/ function(module, exports) {
 
   module.exports = Array.isArray || function (arr) {
     return Object.prototype.toString.call(arr) == '[object Array]';
   };
 
-
-/***/ },
-/* 104 */
-/***/ function(module, exports, __webpack_require__) {
-
-  
-      var content = __webpack_require__(82);
-      var insertCss = __webpack_require__(3);
-  
-      if (typeof content === 'string') {
-        content = [[module.id, content, '']];
-      }
-  
-      module.exports = content.locals || {};
-      module.exports._getCss = function() { return content.toString(); };
-      module.exports._insertCss = insertCss.bind(null, content);
-    
-      var removeCss = function() {};
-  
-      // Hot Module Replacement
-      // https://webpack.github.io/docs/hot-module-replacement
-      // Only activated in browser context
-      if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./App.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./App.scss");
-          if (typeof newContent === 'string') {
-            newContent = [[module.id, content, '']];
-          }
-          removeCss = insertCss(newContent, { replace: true });
-        });
-        module.hot.dispose(function() { removeCss(); });
-      }
-    
 
 /***/ },
 /* 105 */
@@ -7293,8 +7278,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ArchivesTable.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ArchivesTable.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./App.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./App.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7326,8 +7311,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./CastTable.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./CastTable.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ArchivesTable.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ArchivesTable.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7359,8 +7344,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicDisplay.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicDisplay.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./CastTable.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./CastTable.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7392,8 +7377,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicNavigation.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicNavigation.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicDisplay.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicDisplay.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7425,8 +7410,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ErrorPage.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ErrorPage.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicNavigation.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicNavigation.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7458,8 +7443,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Footer.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Footer.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ErrorPage.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ErrorPage.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7491,8 +7476,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Header.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Header.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Footer.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Footer.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7524,8 +7509,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Navigation.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Navigation.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Header.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Header.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7557,8 +7542,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./NotFoundPage.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./NotFoundPage.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Navigation.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Navigation.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7590,8 +7575,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Social.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Social.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./NotFoundPage.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./NotFoundPage.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7623,8 +7608,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicDisplay.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicDisplay.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Social.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Social.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7656,8 +7641,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicNavigation.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicNavigation.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicDisplay.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicDisplay.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7689,8 +7674,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./UploadComic.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./UploadComic.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicNavigation.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./ComicNavigation.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7722,8 +7707,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./about.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./about.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./UploadComic.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./UploadComic.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7755,8 +7740,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Archives.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Archives.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./about.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./about.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7788,8 +7773,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./cast.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./cast.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Archives.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Archives.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7821,8 +7806,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Follow.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Follow.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./cast.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./cast.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7854,8 +7839,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Home.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Home.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Follow.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Follow.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7887,8 +7872,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Page.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Page.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Home.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Home.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7920,8 +7905,8 @@ module.exports =
       // https://webpack.github.io/docs/hot-module-replacement
       // Only activated in browser context
       if (false) {
-        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Upload.scss", function() {
-          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Upload.scss");
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Page.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Page.scss");
           if (typeof newContent === 'string') {
             newContent = [[module.id, content, '']];
           }
@@ -7935,7 +7920,40 @@ module.exports =
 /* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
-  var jade = __webpack_require__(29);
+  
+      var content = __webpack_require__(103);
+      var insertCss = __webpack_require__(3);
+  
+      if (typeof content === 'string') {
+        content = [[module.id, content, '']];
+      }
+  
+      module.exports = content.locals || {};
+      module.exports._getCss = function() { return content.toString(); };
+      module.exports._insertCss = insertCss.bind(null, content);
+    
+      var removeCss = function() {};
+  
+      // Hot Module Replacement
+      // https://webpack.github.io/docs/hot-module-replacement
+      // Only activated in browser context
+      if (false) {
+        module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Upload.scss", function() {
+          var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap&modules&localIdentName=[name]_[local]_[hash:base64:3]!./../../../node_modules/postcss-loader/index.js?parser=postcss-scss!./Upload.scss");
+          if (typeof newContent === 'string') {
+            newContent = [[module.id, content, '']];
+          }
+          removeCss = insertCss(newContent, { replace: true });
+        });
+        module.hot.dispose(function() { removeCss(); });
+      }
+    
+
+/***/ },
+/* 126 */
+/***/ function(module, exports, __webpack_require__) {
+
+  var jade = __webpack_require__(30);
   
   module.exports = function template(locals) {
   var jade_debug = [ new jade.DebugItem( 1, "C:\\Users\\nanja\\Desktop\\Projects\\Webcomic\\src\\views\\error.jade" ) ];
@@ -8220,10 +8238,10 @@ module.exports =
   }
 
 /***/ },
-/* 126 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
-  var jade = __webpack_require__(29);
+  var jade = __webpack_require__(30);
   
   module.exports = function template(locals) {
   var jade_debug = [ new jade.DebugItem( 1, "C:\\Users\\nanja\\Desktop\\Projects\\Webcomic\\src\\views\\index.jade" ) ];
@@ -8326,10 +8344,10 @@ module.exports =
   }
 
 /***/ },
-/* 127 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
-  var isarray = __webpack_require__(103)
+  var isarray = __webpack_require__(104)
   
   /**
    * Expose `pathToRegexp`.
@@ -8758,31 +8776,31 @@ module.exports =
 
 
 /***/ },
-/* 128 */
-/***/ function(module, exports, __webpack_require__) {
-
-  module.exports = __webpack_require__.p + "df8d15fe468a2c3bc211e00b7992e282.gif";
-
-/***/ },
 /* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = __webpack_require__.p + "674502ae330740d31f46633c2d542be6.png";
+  module.exports = __webpack_require__.p + "df8d15fe468a2c3bc211e00b7992e282.gif";
 
 /***/ },
 /* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = __webpack_require__.p + "6f2b04341a77194059123d343d1534d0.png";
+  module.exports = __webpack_require__.p + "674502ae330740d31f46633c2d542be6.png";
 
 /***/ },
 /* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = __webpack_require__.p + "df8d15fe468a2c3bc211e00b7992e282.gif";
+  module.exports = __webpack_require__.p + "6f2b04341a77194059123d343d1534d0.png";
 
 /***/ },
 /* 132 */
+/***/ function(module, exports, __webpack_require__) {
+
+  module.exports = __webpack_require__.p + "df8d15fe468a2c3bc211e00b7992e282.gif";
+
+/***/ },
+/* 133 */
 /***/ function(module, exports) {
 
   module.exports = function(module) {
@@ -8798,253 +8816,253 @@ module.exports =
 
 
 /***/ },
-/* 133 */
+/* 134 */
 /***/ function(module, exports) {
 
   module.exports = require("./assets");
 
 /***/ },
-/* 134 */
+/* 135 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-polyfill");
 
 /***/ },
-/* 135 */
+/* 136 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-runtime/core-js/is-iterable");
 
 /***/ },
-/* 136 */
+/* 137 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-runtime/core-js/json/stringify");
 
 /***/ },
-/* 137 */
+/* 138 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-runtime/core-js/object/create");
 
 /***/ },
-/* 138 */
+/* 139 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-runtime/core-js/object/define-property");
 
 /***/ },
-/* 139 */
+/* 140 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-runtime/core-js/object/set-prototype-of");
 
 /***/ },
-/* 140 */
+/* 141 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-runtime/core-js/symbol");
 
 /***/ },
-/* 141 */
+/* 142 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-runtime/core-js/symbol/iterator");
 
 /***/ },
-/* 142 */
+/* 143 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-runtime/helpers/extends");
 
 /***/ },
-/* 143 */
+/* 144 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-runtime/helpers/objectWithoutProperties");
 
 /***/ },
-/* 144 */
+/* 145 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-runtime/helpers/slicedToArray");
 
 /***/ },
-/* 145 */
+/* 146 */
 /***/ function(module, exports) {
 
   module.exports = require("babel-runtime/helpers/typeof");
 
 /***/ },
-/* 146 */
+/* 147 */
 /***/ function(module, exports) {
 
   module.exports = require("body-parser");
 
 /***/ },
-/* 147 */
+/* 148 */
 /***/ function(module, exports) {
 
   module.exports = require("classnames");
 
 /***/ },
-/* 148 */
+/* 149 */
 /***/ function(module, exports) {
 
   module.exports = require("cookie-parser");
 
 /***/ },
-/* 149 */
+/* 150 */
 /***/ function(module, exports) {
 
   module.exports = require("core-js/library/fn/get-iterator");
 
 /***/ },
-/* 150 */
+/* 151 */
 /***/ function(module, exports) {
 
   module.exports = require("core-js/library/fn/object/create");
 
 /***/ },
-/* 151 */
+/* 152 */
 /***/ function(module, exports) {
 
   module.exports = require("express");
 
 /***/ },
-/* 152 */
+/* 153 */
 /***/ function(module, exports) {
 
   module.exports = require("express-graphql");
 
 /***/ },
-/* 153 */
+/* 154 */
 /***/ function(module, exports) {
 
   module.exports = require("express-jwt");
 
 /***/ },
-/* 154 */
+/* 155 */
 /***/ function(module, exports) {
 
   module.exports = require("fbjs/lib/emptyFunction");
 
 /***/ },
-/* 155 */
+/* 156 */
 /***/ function(module, exports) {
 
   module.exports = require("front-matter");
 
 /***/ },
-/* 156 */
+/* 157 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createBrowserHistory");
 
 /***/ },
-/* 157 */
+/* 158 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/createMemoryHistory");
 
 /***/ },
-/* 158 */
+/* 159 */
 /***/ function(module, exports) {
 
   module.exports = require("history/lib/useQueries");
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports) {
 
   module.exports = require("jade");
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports) {
 
   module.exports = require("jsonwebtoken");
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports) {
 
   module.exports = require("markdown-it");
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports) {
 
   module.exports = require("node-fetch");
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports) {
 
   module.exports = require("passport");
 
 /***/ },
-/* 164 */
+/* 165 */
 /***/ function(module, exports) {
 
   module.exports = require("passport-facebook");
 
 /***/ },
-/* 165 */
+/* 166 */
 /***/ function(module, exports) {
 
   module.exports = require("pg");
 
 /***/ },
-/* 166 */
+/* 167 */
 /***/ function(module, exports) {
 
   module.exports = require("pretty-error");
 
 /***/ },
-/* 167 */
+/* 168 */
 /***/ function(module, exports) {
 
   module.exports = require("react-dom/server");
 
 /***/ },
-/* 168 */
+/* 169 */
 /***/ function(module, exports) {
 
   module.exports = require("react-icons/lib/fa");
 
 /***/ },
-/* 169 */
+/* 170 */
 /***/ function(module, exports) {
 
   module.exports = require("react-icons/lib/fa/envelope");
 
 /***/ },
-/* 170 */
+/* 171 */
 /***/ function(module, exports) {
 
   module.exports = require("react-icons/lib/fa/facebook");
 
 /***/ },
-/* 171 */
+/* 172 */
 /***/ function(module, exports) {
 
   module.exports = require("react-icons/lib/fa/instagram");
 
 /***/ },
-/* 172 */
+/* 173 */
 /***/ function(module, exports) {
 
   module.exports = require("react-icons/lib/fa/rss-square");
 
 /***/ },
-/* 173 */
+/* 174 */
 /***/ function(module, exports) {
 
   module.exports = require("react-icons/lib/fa/tumblr");
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports) {
 
   module.exports = require("react-icons/lib/fa/twitter");

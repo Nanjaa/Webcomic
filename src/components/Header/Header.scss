@@ -15,6 +15,12 @@ $brand-color: #61dafb;
   /*background: #232323;*/
   background: #0b0d0e;
   color: #fff;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .container {
